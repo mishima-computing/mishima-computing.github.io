@@ -1231,3 +1231,17 @@ textarea.form-control {
   resize: vertical;
   min-height: 150px;
 }
+
+/* --- CONTACT PIPELINE RESPONSIVE --- */
+@media (max-width: 768px) {
+  .pipeline-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .pipeline-col-middle, .pipeline-col-right {
+    border-left: none !important;
+    padding-left: 0 !important;
+    border-top: 1px solid var(--border-color) !important;
+    padding-top: 1.5rem !important;
+  }
+}
