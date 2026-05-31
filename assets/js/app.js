@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLanguage();
   initCardGlowEffects();
   initModals();
+  initContactForm();
 });
 
 /* --- THEME CONTROLLER (LIGHT/DARK) --- */
@@ -235,6 +236,95 @@ function initModals() {
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && modal.classList.contains('active')) {
       closeModal();
+    }
+  });
+}
+
+/* --- SECURE CONTACT FORM AJAX HANDLER --- */
+function initContactForm() {
+  const form = document.querySelector('.contact-form');
+  if (!form) return;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn.innerHTML;
+    
+    // Show loading state
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = `
+      <span class="lang-ja">送信中...</span>
+      <span class="lang-en">Sending...</span>
+    `;
+    
+    const formData = new FormData(form);
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      message: formData.get('message')
+    };
+    
+    const action = form.getAttribute('action');
+    
+    try {
+      if (action.includes('YOUR_')) {
+        throw new Error('Endpoint not configured');
+      }
+      
+      let response;
+      if (action.startsWith('https://formsubmit.co/')) {
+        // FormSubmit AJAX handling
+        response = await fetch(action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+      } else {
+        // Custom Serverless API JSON Post (e.g. Cloudflare Worker or API Gateway)
+        response = await fetch(action, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+      }
+      
+      if (response.ok) {
+        // Render beautiful success message right inside the card
+        const card = document.getElementById('contact-form-card');
+        card.innerHTML = `
+          <div style="text-align: center; padding: 4rem 1rem;">
+            <div style="font-size: 3.5rem; margin-bottom: 1.5rem; color: var(--primary); text-shadow: 0 0 20px var(--primary-glow);">✓</div>
+            <h3 class="lang-ja" style="font-size: 1.8rem; margin-bottom: 1rem;">送信が完了しました！</h3>
+            <h3 class="lang-en" style="font-size: 1.8rem; margin-bottom: 1rem;">Message Sent Successfully!</h3>
+            <p class="lang-ja" style="max-width: 480px; margin: 0 auto; color: var(--text-secondary); line-height: 1.8;">
+              お問い合わせいただき誠にありがとうございます。<br>内容を確認の上、折り返しご連絡差し上げます。
+            </p>
+            <p class="lang-en" style="max-width: 480px; margin: 0 auto; color: var(--text-secondary); line-height: 1.8;">
+              Thank you for reaching out to Mishima Computing.<br>We have received your message and will respond to you shortly.
+            </p>
+            <button class="btn btn-secondary" onclick="window.location.reload()" style="margin-top: 2.5rem; padding: 0.75rem 2rem; font-size: 0.9rem;">
+              <span class="lang-ja">もう一度送信する</span>
+              <span class="lang-en">Send Another Message</span>
+            </button>
+          </div>
+        `;
+      } else {
+        throw new Error('Server responded with error');
+      }
+    } catch (error) {
+      console.error(error);
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnText;
+      
+      alert(document.documentElement.lang === 'ja'
+        ? '送信に失敗しました。宛先エンドポイントの設定をご確認いただくか、GitHub Organizationから直接ご連絡ください。'
+        : 'Failed to send message. Please check the endpoint configuration or contact us directly via our GitHub Organization.'
+      );
     }
   });
 }
