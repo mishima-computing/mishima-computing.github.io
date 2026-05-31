@@ -56,8 +56,16 @@ function initLanguage() {
   const langToggle = document.getElementById('lang-toggle');
   if (!langToggle) return;
 
-  // Read saved language or default to Japanese
-  const savedLang = localStorage.getItem('lang') || 'ja';
+  // Determine initial language:
+  // 1. Check if there's a saved language preference.
+  // 2. If not, check browser language setting. Default to 'en' if browser language is not Japanese.
+  let defaultLang = 'ja';
+  const browserLang = navigator.language || navigator.userLanguage;
+  if (browserLang && !browserLang.toLowerCase().startsWith('ja')) {
+    defaultLang = 'en';
+  }
+  
+  const savedLang = localStorage.getItem('lang') || defaultLang;
   setLanguage(savedLang);
 
   langToggle.addEventListener('click', () => {
