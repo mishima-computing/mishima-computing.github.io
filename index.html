@@ -420,8 +420,21 @@
         </div>
 
         <div class="card contact-card" id="contact-form-card">
-          <!-- We use FormSubmit.co, a free static form handler. 
-               Replace 'YOUR_EMAIL_HERE' with your personal email address to activate! -->
+          <!-- 
+            [SECURITY TIP: Avoid Email Spammers on Public GitHub Repos]
+            To protect your personal email from being scraped, do NOT commit or push your email to GitHub.
+            Instead, use FormSubmit's native randomized hash key system:
+            
+            1. Open this index.html file locally on your PC.
+            2. Temporarily replace 'YOUR_EMAIL_HERE' below with your personal email and save the file locally.
+            3. Open index.html in your browser, fill out the form, and click "Submit" locally.
+            4. You will receive an activation email from FormSubmit.co. Click the activation link.
+            5. FormSubmit will then generate and display a unique, randomized string (a secure Hash Key).
+            6. Replace 'YOUR_EMAIL_HERE' below with that secure Hash Key (e.g., action="https://formsubmit.co/your-hash-key").
+            7. Save the file, and THEN commit and push to GitHub!
+            
+            Your personal email address will remain 100% hidden from the public repository!
+          -->
           <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST" class="contact-form">
             <!-- Custom Success Redirect URL -->
             <input type="hidden" name="_next" value="https://mishima-computing.github.io/">
