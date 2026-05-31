@@ -85,6 +85,10 @@ html {
   scroll-behavior: smooth;
 }
 
+[id] {
+  scroll-margin-top: 6.5rem;
+}
+
 body {
   font-family: var(--font-body);
   background-color: var(--bg-primary);
