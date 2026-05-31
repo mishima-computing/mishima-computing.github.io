@@ -57,6 +57,12 @@
               <span class="lang-en">Public Notices</span>
             </a>
           </li>
+          <li>
+            <a href="#contact" class="nav-link">
+              <span class="lang-ja">お問合せ</span>
+              <span class="lang-en">Contact</span>
+            </a>
+          </li>
         </ul>
       </nav>
       
@@ -392,7 +398,73 @@
           </div>
         </div>
       </div>
-    </svg>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section" id="contact" style="background-color: rgba(79, 70, 229, 0.01);">
+      <div class="container contact-container">
+        <div class="contact-intro">
+          <div class="hero-pill" style="border-color: var(--primary-glow); color: var(--primary); box-shadow: 0 0 20px var(--primary-glow);">
+            <span class="pulse"></span>
+            <span class="lang-ja">お問い合わせ</span>
+            <span class="lang-en">Contact Us</span>
+          </div>
+          <h2 style="margin-bottom: 1rem;">
+            <span class="lang-ja">技術相談・お見積りのご依頼</span>
+            <span class="lang-en">Get in Touch</span>
+          </h2>
+          <p style="max-width: 500px; margin: 0 auto;">
+            <span class="lang-ja">AIエージェント設計、分散クラウドインフラ構築、または技術的な検証に関するお問い合わせはこちらからお気軽にご連絡ください。</span>
+            <span class="lang-en">Have a question or a project in mind? Fill out the form below to reach our team regarding AI agents, clouds, or system validation.</span>
+          </p>
+        </div>
+
+        <div class="card contact-card" id="contact-form-card">
+          <!-- We use FormSubmit.co, a free static form handler. 
+               Replace 'YOUR_EMAIL_HERE' with your personal email address to activate! -->
+          <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST" class="contact-form">
+            <!-- Custom Success Redirect URL -->
+            <input type="hidden" name="_next" value="https://mishima-computing.github.io/">
+            <!-- Disable FormSubmit captcha for smoother experience -->
+            <input type="hidden" name="_captcha" value="false">
+            <!-- Custom Email Subject -->
+            <input type="hidden" name="_subject" value="【三嶋電算】ホームページからのお問い合わせ">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name" class="form-label">
+                  <span class="lang-ja">お名前 / 貴社名</span>
+                  <span class="lang-en">Name / Company</span>
+                </label>
+                <input type="text" name="name" id="contact-name" class="form-control" placeholder="Taro Mishima" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-email" class="form-label">
+                  <span class="lang-ja">メールアドレス</span>
+                  <span class="lang-en">Email Address</span>
+                </label>
+                <input type="email" name="email" id="contact-email" class="form-control" placeholder="taro@example.com" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message" class="form-label">
+                <span class="lang-ja">お問い合わせ内容</span>
+                <span class="lang-en">Your Message</span>
+              </label>
+              <textarea name="message" id="contact-message" class="form-control" placeholder="お気軽にご記入ください..." required></textarea>
+            </div>
+
+            <div style="text-align: center; margin-top: 1rem;">
+              <button type="submit" class="btn btn-primary" style="padding: 1rem 3rem;">
+                <span class="lang-ja">送信する</span>
+                <span class="lang-en">Send Message</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
     </section>
   </main>
 
