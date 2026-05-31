@@ -81,14 +81,24 @@ function setLanguage(lang) {
   localStorage.setItem('lang', lang);
   
   const langToggle = document.getElementById('lang-toggle');
-  if (!langToggle) return;
+  if (langToggle) {
+    if (lang === 'ja') {
+      langToggle.innerHTML = `<span>EN</span>`;
+      langToggle.setAttribute('aria-label', 'Switch to English');
+    } else {
+      langToggle.innerHTML = `<span>JA</span>`;
+      langToggle.setAttribute('aria-label', '日本語に切り替え');
+    }
+  }
 
-  if (lang === 'ja') {
-    langToggle.innerHTML = `<span>EN</span>`;
-    langToggle.setAttribute('aria-label', 'Switch to English');
-  } else {
-    langToggle.innerHTML = `<span>JA</span>`;
-    langToggle.setAttribute('aria-label', '日本語に切り替え');
+  // Dynamically update placeholder for the contact message textarea
+  const messageTextarea = document.getElementById('contact-message');
+  if (messageTextarea) {
+    if (lang === 'ja') {
+      messageTextarea.setAttribute('placeholder', 'ご相談内容やお見積のご要件をご自由にご記入ください...');
+    } else {
+      messageTextarea.setAttribute('placeholder', 'Please describe your inquiry, project scope, or estimation requirements...');
+    }
   }
 }
 
