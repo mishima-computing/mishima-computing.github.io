@@ -401,9 +401,9 @@
           <div style="display: flex; flex-direction: column; gap: 3rem;">
             
             <!-- Beautiful, Native HTML Form (No GitHub Account Required, 100% Private) -->
-            <!-- We use Formspree or Cloudflare Workers to securely bridge this form to create issues in mishima-computing/private-inquiries.
-                 Set 'YOUR_FORMSPREE_ID' in the action to activate! -->
-            <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="contact-form" id="main-contact-form">
+            <!-- Bridge this form using a serverless middleware (like your Cloudflare Worker 'mishima-inquiry-bridge')
+                 to securely create private support issues in mishima-computing/private-inquiries without public logs. -->
+            <form action="YOUR_CLOUDFLARE_WORKER_URL" method="POST" class="contact-form" id="main-contact-form">
               <div class="form-row">
                 <div class="form-group">
                   <label for="contact-name" class="form-label">
