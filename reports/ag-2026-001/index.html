@@ -256,14 +256,14 @@
           classDef agent fill:#0f172a,stroke:#3b82f6,stroke-width:1px,color:#94a3b8
           classDef artifact fill:#334155,stroke:#94a3b8,stroke-width:1px,stroke-dasharray: 5 5,color:#e2e8f0
 
-          A[1. 構想・指示<br>Human Owner]:::human -->|タスク定義| B(2. ルーティング<br>Supervisor Codex):::agent
-          B -->|実装依頼| C(3. 実装 Candidate<br>Claude):::agent
+          A[1. 構想・指示<br><svg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' style='vertical-align: text-bottom;'><path d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'></path><circle cx='12' cy='7' r='4'></circle></svg> Human Owner]:::human -->|タスク定義| B(2. ルーティング<br><img src='https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/openai.svg' width='16' height='16' style='vertical-align: text-bottom; filter: invert(0.8);' /> Supervisor Codex):::agent
+          B -->|実装依頼| C(3. 実装 Candidate<br><img src='https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/claude.svg' width='16' height='16' style='vertical-align: text-bottom; filter: invert(0.8);' /> Claude):::agent
           C -.->|コードパッチ| D[[Base SHA / 候補コード]]:::artifact
-          D -->|読み取り専用アクセス| E(4. 監査<br>Codex Auditor):::agent
+          D -->|読み取り専用アクセス| E(4. 監査<br><img src='https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/openai.svg' width='16' height='16' style='vertical-align: text-bottom; filter: invert(0.8);' /> Codex Auditor):::agent
           E -.->|構造化された監査結果| F[[Audit Bundle]]:::artifact
           F -->|検証・採用| B
           B -->|ローカルコミット| G[[Clean Repository]]:::artifact
-          G -->|最終確認・デプロイ| H[5. リリース<br>Human Owner]:::human
+          G -->|最終確認・デプロイ| H[5. リリース<br><svg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' style='vertical-align: text-bottom;'><path d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'></path><circle cx='12' cy='7' r='4'></circle></svg> Human Owner]:::human
         </div>
       </div>
 
@@ -282,42 +282,60 @@
         </thead>
         <tbody>
           <tr>
-            <td>Human Owner</td>
+            <td>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; margin-right: 0.5rem; color: var(--primary);"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              Human Owner
+            </td>
             <td>
               <span class="lang-ja">Merge, Push, Deploy, Publishの最終権限を持つ。本番データ・認証情報・法的決定権を管理。</span>
               <span class="lang-en">Controls merge, push, deploy, publish, production data, credentials, and legal/privacy/brand decisions.</span>
             </td>
           </tr>
           <tr>
-            <td>Supervisor Codex</td>
+            <td>
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/openai.svg" width="18" height="18" style="vertical-align: text-bottom; margin-right: 0.5rem; filter: invert(0.8);" alt="OpenAI">
+              Supervisor Codex
+            </td>
             <td>
               <span class="lang-ja">タスクのルーティング、パッチの検証と採用、ローカルコミットを実行。<strong>※デプロイは行わない</strong>。</span>
               <span class="lang-en">Routes tasks, adopts accepted patches, verifies work, and creates local commits. <strong>Cannot deploy</strong>.</span>
             </td>
           </tr>
           <tr>
-            <td>Codex Auditor</td>
+            <td>
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/openai.svg" width="18" height="18" style="vertical-align: text-bottom; margin-right: 0.5rem; filter: invert(0.8);" alt="OpenAI">
+              Codex Auditor
+            </td>
             <td>
               <span class="lang-ja">独立した読み取り専用（read-only）のレビュワー。構造化された監査結果を返す。</span>
               <span class="lang-en">Independent read-only reviewer. Returns structured deterministic findings.</span>
             </td>
           </tr>
           <tr>
-            <td>Candidate Implementer (Claude)</td>
+            <td>
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/claude.svg" width="18" height="18" style="vertical-align: text-bottom; margin-right: 0.5rem; filter: invert(0.8);" alt="Claude">
+              Candidate Implementer (Claude)
+            </td>
             <td>
               <span class="lang-ja">パッチ候補のみを作成する実装者。</span>
               <span class="lang-en">Produces patch-only candidates without adoption authority.</span>
             </td>
           </tr>
           <tr>
-            <td>Antigravity Visual Pod</td>
+            <td>
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/googlegemini.svg" width="18" height="18" style="vertical-align: text-bottom; margin-right: 0.5rem; filter: invert(0.8);" alt="Gemini">
+              Antigravity Visual Pod
+            </td>
             <td>
               <span class="lang-ja">UI/UX/ブラウザのレビュースペシャリスト。既定では読み取り専用で、バックエンドやDB・パッケージ変更を行わない。</span>
               <span class="lang-en">UI/UX/graphic/browser review specialist. Defaults to review-only; does not change backend, auth, or DB logic.</span>
             </td>
           </tr>
           <tr>
-            <td>Local Tooling Pod</td>
+            <td>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; margin-right: 0.5rem; color: var(--text-secondary);"><polyline points="4 14 10 14 10 20"></polyline><polyline points="20 10 14 10 14 4"></polyline><line x1="14" y1="10" x2="21" y2="3"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+              Local Tooling Pod
+            </td>
             <td>
               <span class="lang-ja">決定論的なエビデンス（テスト実行結果など）を生成する。</span>
               <span class="lang-en">Generates deterministic execution evidence.</span>
@@ -452,7 +470,7 @@
   <script src="../../assets/js/app.js"></script>
   <script type="module">
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+    mermaid.initialize({ startOnLoad: true, theme: 'dark', securityLevel: 'loose' });
   </script>
 </body>
 </html>
