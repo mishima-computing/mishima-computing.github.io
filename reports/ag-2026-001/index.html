@@ -5,13 +5,13 @@
   <title>AG-2026-001 | Mishima Computing K.K.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="AIに、ウォーターフォールを守らせる。成果物だけでなく、その作り方ごと納品するガバナンス層。">
-  
+
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="../../assets/css/style.css">
-  
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://github.com/mishima-computing.png">
-  
+
   <style>
     .report-container {
       max-width: 900px;
@@ -19,40 +19,40 @@
       padding-top: 8rem;
       padding-bottom: 5rem;
     }
-    
+
     .report-header {
       margin-bottom: 3rem;
       border-bottom: 1px solid var(--border-color);
       padding-bottom: 2rem;
     }
-    
+
     .report-meta {
       display: flex;
       align-items: center;
       gap: 1rem;
       margin-bottom: 1.5rem;
     }
-    
+
     .report-content h2 {
       margin-top: 3rem;
       margin-bottom: 1.5rem;
       font-size: 1.8rem;
       color: var(--primary);
     }
-    
+
     .report-content p {
       line-height: 1.8;
       color: var(--text-secondary);
       margin-bottom: 1.5rem;
     }
-    
+
     .report-content ul {
       margin-bottom: 1.5rem;
       padding-left: 1.5rem;
       color: var(--text-secondary);
       line-height: 1.8;
     }
-    
+
     .report-content li {
       margin-bottom: 0.5rem;
     }
@@ -67,19 +67,19 @@
       overflow: hidden;
       box-shadow: var(--glass-shadow);
     }
-    
+
     .roles-table th, .roles-table td {
       padding: 1rem;
       border: 1px solid var(--border-color);
       text-align: left;
     }
-    
+
     .roles-table th {
       background: rgba(6, 182, 212, 0.1);
       color: var(--primary);
       font-weight: 600;
     }
-    
+
     .cta-container {
       margin-top: 4rem;
       padding: 3rem;
@@ -97,7 +97,7 @@
       border-radius: 4px;
       margin-top: 1rem;
     }
-    
+
     .alert-caution h4 {
       color: #d73a49;
       margin-bottom: 0.5rem;
@@ -114,13 +114,13 @@
       padding: 1.25rem 1.5rem;
       border-radius: 0 4px 4px 0;
     }
-    
+
     .summary-block p {
       margin-bottom: 0 !important;
       color: var(--text-primary) !important;
       font-weight: 500;
     }
-    
+
     .summary-block p + p {
       margin-top: 0.75rem;
     }
@@ -143,7 +143,7 @@
           <span class="brand-jp">三嶋電算株式会社</span>
         </div>
       </a>
-      
+
       <nav aria-label="Main Navigation">
         <ul class="nav-links">
           <li><a href="../../#about" class="nav-link"><span class="lang-ja">会社概要</span><span class="lang-en">About</span></a></li>
@@ -153,7 +153,7 @@
           <li><a href="../../contact/" class="nav-link"><span class="lang-ja">お問合せ</span><span class="lang-en">Contact</span></a></li>
         </ul>
       </nav>
-      
+
       <div class="nav-actions">
         <button class="lang-btn" id="lang-toggle" aria-label="Switch Language">
           <span>EN</span>
@@ -163,7 +163,7 @@
   </header>
 
   <main class="container report-container">
-    
+
     <div class="report-header">
       <div class="report-meta">
         <div class="report-tag">AG-2026-001</div>
@@ -180,7 +180,7 @@
     </div>
 
     <div class="report-content">
-      
+
       <div class="summary-block" style="margin-top: 2rem; margin-bottom: 3.5rem; background: transparent; border-left: none; padding: 0;">
         <p class="lang-ja" style="font-size: 1.15rem; line-height: 1.8; font-weight: normal;">
           AIにコードを書かせると、確かに速い。けれど——<br>
@@ -227,43 +227,183 @@
       </p>
 
       <h2>
-        <span class="lang-ja">3. ウォーターフォールとの接続</span>
-        <span class="lang-en">Connecting with Waterfall Methodology</span>
+        <span class="lang-ja">3. 上流工程・SLCP・ウォーターフォール語彙との接続</span>
+        <span class="lang-en">Connecting with Upstream Engineering, SLCP, and Waterfall Discipline</span>
       </h2>
       <div class="summary-block">
-        <p class="lang-ja">この仕組みは「設計を先に固め、後の工程はそれに従う」という伝統的な開発の進め方（ウォーターフォール）と相性が良い、という話です。各工程に確定した記録が残るため、それが「正しく作られた証拠」になります。</p>
-        <p class="lang-en">In short, this fits the traditional "lock the design first, then follow it" style of development (waterfall). Each stage leaves a fixed record, and that record becomes the evidence that the work was built correctly.</p>
+        <p class="lang-ja">この仕組みは単に「設計を先に固める」だけではなく、IPAや経産省（METI）が定義する「企画・要件定義・システム化計画・作業工程・監査証拠」といった上流工程の語彙や概念と深く連動します。AIエージェントの運用をエンタープライズのITガバナンスとして組み込むための設計です。</p>
+        <p class="lang-en">This model is not merely "design first, implementation later." It maps AI agent operations directly to upstream engineering concepts such as requirement definition, work products, traceability, audit evidence, and IT governance.</p>
       </div>
       <p>
-        <span class="lang-ja">本ガバナンスモデルにおける「分類 → 実装 → 監査 → 採用 → リリース」の明確な段階分離は、先に確定した設計を後工程が前提にするウォーターフォール構造と整合します。たとえば、実装担当エージェント（Claude）が吐き出した「ソースコードの状態（base SHA）」に対し、独立した監査エージェント（Codex Auditor）が「監査ログ（audit bundle）」を発行します。これらが確定した中間生成物となり、それがそのまま「正しく作られた」ことを示す証跡（provenance）として機能します。</span>
-        <span class="lang-en">The strict separation of stages (classification → implementation → audit → adoption → release) directly maps to a waterfall paradigm where subsequent phases depend entirely on previously locked designs. For instance, an independent auditor (Codex Auditor) issues an "audit bundle" against the "code state (base SHA)" produced by the implementer (Claude). These intermediate outputs become undeniable, auditable provenance for AI-assisted work.</span>
+        <span class="lang-ja">本ガバナンスモデルにおける段階分離（分類 → 実装 → 監査 → 採用 → リリース）は、伝統的なウォーターフォール構造やSLCP（ソフトウェアライフサイクルプロセス）と整合します。たとえば、実装担当エージェント（Claude）が作成した「ソースコードの状態（base SHA）」に対し、独立した監査エージェント（Codex Auditor）が「監査ログ（audit bundle）」を発行します。これらが確定した中間生成物（作業成果物）となり、それがそのまま「正しく作られた」ことを示す監査証拠として機能します。</span>
+        <span class="lang-en">The strict separation of stages directly maps to a waterfall paradigm where subsequent phases depend entirely on previously locked designs. For instance, an independent auditor (Codex Auditor) issues an "audit bundle" against the "code state (base SHA)" produced by the implementer (Claude). These intermediate outputs become undeniable, auditable provenance for AI-assisted work.</span>
       </p>
+
+      <h3 style="margin-top: 2.5rem; margin-bottom: 1.5rem;">
+        <span class="lang-ja">上流統制としてのAIエージェント運用</span>
+        <span class="lang-en">AI agent governance as upstream control</span>
+      </h3>
+      <p>
+        <span class="lang-ja">AIエージェント開発における真の課題は、単にコード生成の精度を高めることではありません。「上流で合意した適用範囲・責任分界・成果物の基準・確認手続を、後工程（エージェント）に逸脱させないこと」にあります。<br>したがって本モデルでは、classification、Ask Gate、candidate patch、audit bundle、base SHA、bounded revision loop などの各要素を、AI固有のバズワードとしてではなく、構成管理・変更管理・監査証跡といった「上流工程の語彙」で説明可能なガバナンス・オブジェクトとして扱います。</span>
+        <span class="lang-en">The core issue in AI-assisted development is not only code-generation accuracy. It is whether later phases can be prevented from drifting beyond the scope, responsibilities, work products, and review procedures defined upstream. This model therefore treats classification, Ask Gate, candidate patches, audit bundles, base SHA identity, and bounded revision loops as governance objects that can be explained in the vocabulary of upstream engineering, configuration control, change management, and audit evidence.</span>
+      </p>
+
+      <div style="overflow-x: auto; margin: 2rem 0;">
+        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;">
+          <thead>
+            <tr style="border-bottom: 2px solid var(--border-color);">
+              <th style="padding: 0.75rem;">AI Governance Term</th>
+              <th style="padding: 0.75rem;">Waterfall / IPA-METI adjacent term</th>
+              <th style="padding: 0.75rem;">Meaning in this report</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 0.75rem;">workspace classification</td>
+              <td style="padding: 0.75rem;">企画・適用範囲定義・プロジェクト標準</td>
+              <td style="padding: 0.75rem;">AIが触れてよい範囲とルールを事前に定義する作業</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 0.75rem;">no writes before classification</td>
+              <td style="padding: 0.75rem;">要件確定前の実装抑止</td>
+              <td style="padding: 0.75rem;">ルールの事前定義なしにソースコードの変更を許さない制約</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 0.75rem;">Ask Gate</td>
+              <td style="padding: 0.75rem;">未決事項管理・合意形成ゲート</td>
+              <td style="padding: 0.75rem;">AIが判断に迷った際、人間に仕様確認を求めるプロセス</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 0.75rem;">candidate patch</td>
+              <td style="padding: 0.75rem;">工程アウトプット・作業成果物</td>
+              <td style="padding: 0.75rem;">まだ承認されていない、AIによるコードの修正案</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 0.75rem;">candidate_base_sha</td>
+              <td style="padding: 0.75rem;">構成識別子・ベースライン</td>
+              <td style="padding: 0.75rem;">修正案が作られた時点での正確なコードの状態（ハッシュ値）</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 0.75rem;">current_target_sha</td>
+              <td style="padding: 0.75rem;">適用先構成の再確認</td>
+              <td style="padding: 0.75rem;">パッチを適用する直前に、他の変更と競合していないかの確認</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 0.75rem;">deterministic gates</td>
+              <td style="padding: 0.75rem;">検証・レビュー・テスト記録</td>
+              <td style="padding: 0.75rem;">AIの推論ではなく、テストやリンターによる機械的・決定論的な品質チェック</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 0.75rem;">audit bundle</td>
+              <td style="padding: 0.75rem;">監査証拠・監査調書相当</td>
+              <td style="padding: 0.75rem;">AIの思考過程やツールの実行結果をまとめた証跡</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 0.75rem;">Codex Auditor</td>
+              <td style="padding: 0.75rem;">独立監査者・客観的評価者</td>
+              <td style="padding: 0.75rem;">実装者（Claude）とは別に、成果物を第三者視点でチェックするエージェント</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 0.75rem;">Human Owner</td>
+              <td style="padding: 0.75rem;">発注者・利用部門・最終受入責任者</td>
+              <td style="padding: 0.75rem;">最終的なシステムへのマージやデプロイを承認する権限を持つ人間</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 0.75rem;">bounded revision loop</td>
+              <td style="padding: 0.75rem;">変更管理・是正処置の上限</td>
+              <td style="padding: 0.75rem;">エラー時の自動修正試行回数に上限を設け、無限ループを防ぐ仕組み</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 0.75rem;">.agent-runs/ raw artifacts</td>
+              <td style="padding: 0.75rem;">生ログ・監査対象外の未加工証跡</td>
+              <td style="padding: 0.75rem;">AIが実行時に出力した生のデータ。機密情報を含むリスクがあるためコミットしない</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 0.75rem;">sanitized summary</td>
+              <td style="padding: 0.75rem;">提出可能な要約証跡</td>
+              <td style="padding: 0.75rem;">生ログから機密情報をマスクし、リポジトリに保存できる形にした記録</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 0.75rem;">cloud-sync hard stop</td>
+              <td style="padding: 0.75rem;">情報管理・漏洩リスク管理</td>
+              <td style="padding: 0.75rem;">機密な生ログが誤ってクラウドに同期されないようにするための安全停止</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <h2>
         <span class="lang-ja">4. 6つの役割と境界</span>
         <span class="lang-en">Roles & Authority Boundaries</span>
       </h2>
       <div class="summary-block">
-        <p class="lang-ja">要は、「作る人」「チェックする人」「世に出す人」をそれぞれ別の担当に分け、最終的なGOサインは必ず人間が出す——という分業です。下の表と図はその役割分担と処理の流れを示します。</p>
-        <p class="lang-en">In essence: the one who builds, the one who checks, and the one who ships are kept separate—and the final go-ahead is always given by a human. The table and diagram below show this division of roles and the execution flow.</p>
+        <p class="lang-ja">作成者（Producer）、評価者（Reviewer）、採用者（Adopter）、リリース権限者（Release Authority）の各ロールを明確に分離し、最終的な受入とシステム稼働の責任は人間が負う体制を構築します。下の図と表は、その役割分担と工程統制ループを示します。</p>
+        <p class="lang-en">We establish a strict separation between producer, reviewer, adopter, and release authority, ensuring that the ultimate acceptance and operational responsibility rest with a human. The diagram and table below illustrate this division of roles and the control loop.</p>
       </div>
-      
-      <!-- Flow Diagram -->
-      <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--border-radius-md); padding: 2rem; margin-bottom: 2rem; overflow-x: auto; text-align: center;">
-        <div class="mermaid">
-          graph TD
-          classDef human fill:#1e293b,stroke:#06b6d4,stroke-width:2px,color:#e2e8f0
-          classDef agent fill:#0f172a,stroke:#3b82f6,stroke-width:1px,color:#94a3b8
-          classDef artifact fill:#334155,stroke:#94a3b8,stroke-width:1px,stroke-dasharray: 5 5,color:#e2e8f0
 
-          A["1. 構想・指示<br><img src='https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/user.svg' width='16' height='16' style='vertical-align: text-bottom; filter: invert(0.8);' /> Human Owner"]:::human -->|タスク定義| B("2. ルーティング<br><img src='https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/openai.svg' width='16' height='16' style='vertical-align: text-bottom; filter: invert(0.8);' /> Supervisor Codex"):::agent
-          B -->|実装依頼| C("3. 実装 Candidate<br><img src='https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/claude.svg' width='16' height='16' style='vertical-align: text-bottom; filter: invert(0.8);' /> Claude"):::agent
-          C -.->|コードパッチ| D[["Base SHA / 候補コード"]]:::artifact
-          D -->|読み取り専用アクセス| E("4. 監査<br><img src='https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/openai.svg' width='16' height='16' style='vertical-align: text-bottom; filter: invert(0.8);' /> Codex Auditor"):::agent
-          E -.->|構造化された監査結果| F[["Audit Bundle"]]:::artifact
-          F -->|検証・採用| B
-          B -->|ローカルコミット| G[["Clean Repository"]]:::artifact
-          G -->|最終確認・デプロイ| H["5. リリース<br><img src='https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/user.svg' width='16' height='16' style='vertical-align: text-bottom; filter: invert(0.8);' /> Human Owner"]:::human
+      <!-- Static HTML Flow Diagram -->
+      <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--border-radius-md); padding: 2rem; margin-bottom: 2rem; overflow-x: auto;">
+        <h4 style="text-align: center; margin-bottom: 1.5rem; font-weight: normal;">AI Agent Waterfall Control Loop / AIエージェント工程統制ループ</h4>
+        <div style="display: flex; flex-direction: column; gap: 1rem; max-width: 600px; margin: 0 auto; font-size: 0.95rem;">
+
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="flex: 1; text-align: right; color: var(--text-secondary); font-size: 0.85rem;">Task definition / Acceptance</div>
+            <div style="background: #1e293b; border: 2px solid #06b6d4; padding: 0.75rem 1rem; border-radius: 4px; color: #e2e8f0; width: 220px; text-align: center;">
+              1. 構想・指示<br>👤 Human Owner
+            </div>
+            <div style="flex: 1;"></div>
+          </div>
+
+          <div style="text-align: center; color: var(--text-secondary);">↓</div>
+
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="flex: 1; text-align: right; color: var(--text-secondary); font-size: 0.85rem;">Routing / Adoption</div>
+            <div style="background: #0f172a; border: 1px solid #3b82f6; padding: 0.75rem 1rem; border-radius: 4px; color: #94a3b8; width: 220px; text-align: center;">
+              2. ルーティング<br><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/openai.svg" width="14" style="vertical-align: text-bottom; filter: invert(0.8);" alt="OpenAI"/> Supervisor Codex
+            </div>
+            <div style="flex: 1;"></div>
+          </div>
+
+          <div style="text-align: center; color: var(--text-secondary);">↓</div>
+
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="flex: 1; text-align: right; color: var(--text-secondary); font-size: 0.85rem;">Patch-only work product</div>
+            <div style="background: #0f172a; border: 1px solid #3b82f6; padding: 0.75rem 1rem; border-radius: 4px; color: #94a3b8; width: 220px; text-align: center;">
+              3. 実装 Candidate<br><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/claude.svg" width="14" style="vertical-align: text-bottom; filter: invert(0.8);" alt="Claude"/> Claude
+            </div>
+            <div style="flex: 1; color: var(--text-secondary); font-size: 0.85rem; line-height: 1.2;">→ Deterministic Evidence<br>(Local Tooling Pod)</div>
+          </div>
+
+          <div style="text-align: center; color: var(--text-secondary);">↓</div>
+
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="flex: 1; text-align: right; color: var(--text-secondary); font-size: 0.85rem;">Read-only audit finding</div>
+            <div style="background: #0f172a; border: 1px solid #3b82f6; padding: 0.75rem 1rem; border-radius: 4px; color: #94a3b8; width: 220px; text-align: center;">
+              4. 監査<br><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/openai.svg" width="14" style="vertical-align: text-bottom; filter: invert(0.8);" alt="OpenAI"/> Codex Auditor
+            </div>
+            <div style="flex: 1; color: var(--text-secondary); font-size: 0.85rem; line-height: 1.2;">→ Evidence Package<br>(Audit Bundle)</div>
+          </div>
+
+          <div style="text-align: center; color: var(--text-secondary);">↓</div>
+
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="flex: 1; text-align: right; color: var(--text-secondary); font-size: 0.85rem;">Adopted local state</div>
+            <div style="background: #334155; border: 1px dashed #94a3b8; padding: 0.75rem 1rem; border-radius: 4px; color: #e2e8f0; width: 220px; text-align: center;">
+              Clean Repository
+            </div>
+            <div style="flex: 1; color: var(--text-secondary); font-size: 0.85rem; line-height: 1.2;">← Verified & Adopted<br>by Supervisor</div>
+          </div>
+
+          <div style="text-align: center; color: var(--text-secondary);">↓</div>
+
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="flex: 1; text-align: right; color: var(--text-secondary); font-size: 0.85rem;">Merge / Deploy / Publish</div>
+            <div style="background: #1e293b; border: 2px solid #06b6d4; padding: 0.75rem 1rem; border-radius: 4px; color: #e2e8f0; width: 220px; text-align: center;">
+              5. リリース<br>👤 Human Owner
+            </div>
+            <div style="flex: 1;"></div>
+          </div>
+
         </div>
       </div>
 
@@ -344,6 +484,36 @@
         </tbody>
       </table>
 
+      <h3 style="margin-top: 2.5rem; margin-bottom: 1.5rem;">
+        <span class="lang-ja">責任分界と受入</span>
+        <span class="lang-en">Responsibility boundaries and acceptance</span>
+      </h3>
+      <p>
+        <span class="lang-ja">本モデルでは、作成者（producer）、評価者（reviewer）、採用者（adopter）、リリース権限者（release authority）という古典的かつ確実な職責の分離に従っています。
+        <br>Human Ownerは、ビジネス側のオーナー・発注者・最終受入責任者に相当しますが、単一の法的な役割と完全に同一視されるものではありません。一方で、Candidate Implementerは純粋なパッチ生成者（作業成果物の作成者）であり、採用権限を持ちません。Supervisor Codexは承認されたパッチをローカル環境で採用（コミット）できますが、本番環境へのプッシュやデプロイ、公開の権限は規定により遮断されています。また、Codex Auditorは実装から独立した読み取り専用（read-only）の監査者としての客観性を維持します。</span>
+        <span class="lang-en">This follows the classical separation between producer, reviewer, adopter, and release authority. The Human Owner is analogous to the business-side owner, ordering party, and acceptance authority (though not identical to any specific legal role). The Candidate Implementer is strictly a patch producer, possessing no acceptance authority. The Supervisor Codex can adopt accepted patches locally but cannot push, deploy, or publish by default. The Codex Auditor must remain read-only and strictly independent from the implementation.</span>
+      </p>
+
+      <h3 style="margin-top: 2.5rem; margin-bottom: 1.5rem;">
+        <span class="lang-ja">非機能要求としてのAI運用</span>
+        <span class="lang-en">AI operations as non-functional requirements</span>
+      </h3>
+      <p>
+        <span class="lang-ja">生のプロンプト、標準出力・標準エラー出力（stdout/stderr）、スクリーンショットやブラウザ録画、ローカルパスやクラウド同期パスといったデータは、単なる「実装の副産物（詳細）」ではありません。これらは機密性（confidentiality）、追跡可能性（traceability）、監査可能性（auditability）、および運用管理上の要請といった<strong>非機能要求（運用要求・情報管理要求）</strong>として厳格に扱われます。
+        <br><code>.agent-runs/</code> ディレクトリに出力されるデータは、あくまで生の実行時証拠（raw runtime evidence）であり、一般に公開すべき成果物ではありません。そのため、機密情報を除去した「無害化されたサマリ（sanitized summaries）」のみが、デフォルトでコミット履歴に残るアーティファクトとして許可されます。</span>
+        <span class="lang-en">Raw prompts, stdout/stderr, screenshots, browser recordings, local paths, and cloud-sync paths are not merely implementation details. We treat them as critical concerns regarding confidentiality, traceability, auditability, and operational control (non-functional requirements).
+        Therefore, <code>.agent-runs/</code> is designated as raw runtime evidence, not public deliverable material. By default, only sanitized summaries are committed as historical artifacts.</span>
+      </p>
+
+      <h3 style="margin-top: 2.5rem; margin-bottom: 1.5rem;">
+        <span class="lang-ja">参照語彙であり、準拠表明ではない</span>
+        <span class="lang-en">Vocabulary alignment, not a compliance claim</span>
+      </h3>
+      <p>
+        <span class="lang-ja">本レポートでは、説明言語としてIPA（情報処理推進機構）やMETI（経済産業省）等のエンタープライズエンジニアリングにおける隣接語彙を参照していますが、IPA、METI、JIS、ISO、各種監査基準、調達規則、あるいは法的要件への正式な準拠を主張するものではありません。正式なコンプライアンス対応や監査保証には、別途、人間や法務部門による契約や監査プロセスが必須となります。</span>
+        <span class="lang-en">This report uses IPA/METI-adjacent enterprise engineering vocabulary as explanatory language. It does not claim formal compliance with IPA, METI, JIS, ISO, audit standards, procurement rules, or legal requirements. Formal compliance and audit assurance require separate human, legal, contractual, and audit processes.</span>
+      </p>
+
       <h2>
         <span class="lang-ja">5. 中核契約</span>
         <span class="lang-en">Core contracts</span>
@@ -386,6 +556,25 @@
         </p>
       </div>
 
+      <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+        <h4 style="margin-bottom: 1rem;">
+          <span class="lang-ja">参考語彙 (Reference vocabulary)</span>
+          <span class="lang-en">Reference vocabulary</span>
+        </h4>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
+          <span class="lang-ja">以下は本稿の用語整理にあたり参照した公開資料です。本稿はこれらへの準拠、認証、監査保証、又は公的承認を主張するものではありません。</span>
+          <span class="lang-en">The following public materials informed the terminology used in this report. This report does not claim conformance, certification, audit assurance, or public endorsement.</span>
+        </p>
+        <ul style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+          <li><a href="https://www.ipa.go.jp/archive/digital/iot-en-ci/jyouryuu/index.html" target="_blank" rel="noopener noreferrer">IPA システム構築の上流工程強化関連情報</a></li>
+          <li><a href="https://dx.ipa.go.jp/youken-teigi" target="_blank" rel="noopener noreferrer">IPA 要件定義とは？ DX SQUARE</a></li>
+          <li><a href="https://www.ipa.go.jp/archive/digital/iot-en-ci/jyouryuu/hikinou/ent03-b.html" target="_blank" rel="noopener noreferrer">IPA 非機能要求グレード</a></li>
+          <li><a href="https://www.meti.go.jp/policy/netsecurity/sys-kansa/sys-kanri-2023.pdf" target="_blank" rel="noopener noreferrer">METI システム管理基準 2023</a></li>
+          <li><a href="https://www.meti.go.jp/policy/netsecurity/sys-kansa/sys-kansa-2023r.pdf" target="_blank" rel="noopener noreferrer">METI システム監査基準 2023</a></li>
+          <li><a href="https://www.ipa.go.jp/archive/files/000027415.pdf" target="_blank" rel="noopener noreferrer">IPA 共通フレーム2013概説</a></li>
+        </ul>
+      </div>
+
     </div>
 
     <!-- CTA Section -->
@@ -398,7 +587,7 @@
         <span class="lang-ja">本ガバナンス層のコアとなるブートストラップ定義やポリシーは、GitHubにて公開されています（ライセンス選定中）。また、これらを応用したシステム開発・技術検証に関するご相談も承っております。</span>
         <span class="lang-en">The core bootstrap definitions and policies for this governance layer are published on GitHub. We also welcome consultations for applying these models to your mission-critical system validation.</span>
       </p>
-      
+
       <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
         <a href="https://github.com/mishima-computing/ai-org-bootstrap" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
           <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="margin-right: 0.5rem;"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
@@ -428,7 +617,7 @@
           <span class="lang-en">Engineering boutique specializing in AI agents, distributed clouds, and enterprise validation.</span>
         </p>
       </div>
-      
+
       <div>
         <h4 class="footer-links-title">
           <span class="lang-ja">サイトマップ</span>
@@ -454,7 +643,7 @@
         </ul>
       </div>
     </div>
-    
+
     <div class="container footer-bottom">
       <div>
         &copy; 2026 Mishima Computing K.K. / 三嶋電算株式会社. All rights reserved.
@@ -468,9 +657,5 @@
 
   <!-- Scripts -->
   <script src="../../assets/js/app.js"></script>
-  <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true, theme: 'dark', securityLevel: 'loose' });
-  </script>
 </body>
 </html>
