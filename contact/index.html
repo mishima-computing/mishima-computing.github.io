@@ -202,8 +202,8 @@
           </h3>
           
           <p style="font-size: 0.9rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 1.5rem;">
-            <span class="lang-ja">このお問い合わせ窓口は、弊社が提供する<strong>インフラ構築・自動化ソリューションの実証デモ（カタログ）</strong>を兼ねています。余計な維持費やライセンス料を一切かけず、最高水準のセキュリティと極小の運用コストで構築された「生きた実績」をご覧ください。</span>
-            <span class="lang-en">This contact portal serves as a live, functioning <strong>demonstration of our serverless integration capabilities</strong>. Experience how enterprise-grade security and zero-maintenance operations can be achieved at absolutely zero runtime cost.</span>
+            <span class="lang-ja">このお問い合わせ窓口は、弊社が提供する<strong>インフラ構築・自動化ソリューションの実証デモ（カタログ）</strong>を兼ねています。「顧客（フォーム送信者）」「GitOpsシステム（Cloudflare連携）」「三嶋電算株式会社（受信者）」の3者がどのように連携し、安全かつコストゼロで運用されているかをご覧ください。</span>
+            <span class="lang-en">This contact portal serves as a live, functioning <strong>demonstration of our serverless integration capabilities</strong>. Experience how the Customer, the GitOps System, and our Team interact seamlessly with enterprise-grade security and zero runtime cost.</span>
           </p>
           
           <div class="tech-list">
@@ -217,7 +217,7 @@
                   <span class="lang-en">Running Cost: 0 JPY</span>
                 </h4>
                 <p>
-                  <span class="lang-ja">中継APIにCloudflare Workers（毎日10万回まで無料）、保管先にGitHub（Freeプラン）を採用。データベースやサーバーの維持費、フォームサービスのライセンス料などは完全に<strong>0円</strong>です。</span>
+                  <span class="lang-ja">【GitOpsシステム】が中継APIにCloudflare Workersを、データの保管先にGitHubを採用することで、データベース維持費や外部フォームサービスの月額料金を排除。【三嶋電算株式会社】側のシステム維持費は完全に0円（無料）で運用されています。</span>
                   <span class="lang-en">Utilizing Cloudflare Workers (100k requests/day free tier) and GitHub Free tier. No database hosting fees, no server maintenance costs, and no license fees.</span>
                 </p>
               </div>
@@ -232,7 +232,7 @@
                   <span class="lang-en">Zero-Leak & Steel-Clad Security</span>
                 </h4>
                 <p>
-                  <span class="lang-ja">GitHubの「Fine-grained PAT」を採用し、API権限を「非公開リポジトリのIssue書き込みのみ」に極小化。送信データは中継APIで安全に暗号化通信されるため、ホームページ側に一切鍵が露出せず、外部に公開されるログも存在しません。</span>
+                  <span class="lang-ja">【顧客】が入力したお問い合わせ内容は、【GitOpsシステム】を通じて安全な暗号化通信で直接非公開リポジトリへ書き込まれます。ホームページ側に認証キーが一切露出しないため、【顧客】の機密情報が外部に漏洩するリスクはありません。</span>
                   <span class="lang-en">Leveraging GitHub Fine-grained PAT restricted exclusively to "Issues: Write" for a single private repository. Zero credentials exposed to browsers, ensuring zero leakage of client information.</span>
                 </p>
               </div>
@@ -243,11 +243,11 @@
               <div class="tech-icon">📦</div>
               <div class="tech-details">
                 <h4>
-                  <span class="lang-ja">コードによる一元管理 (GitOps)</span>
+                  <span class="lang-ja">インフラのコード管理 (GitOps)</span>
                   <span class="lang-en">Centralized GitOps Management</span>
                 </h4>
                 <p>
-                  <span class="lang-ja">中継APIを動かしている Workers のプログラムソースコード（index.js）や構成定義ファイル（wrangler.toml）は、弊社のプライベートインフラ管理リポジトリ（`infra`）内で一元管理され、すべての構成変更履歴が追跡可能です。</span>
+                  <span class="lang-ja">【GitOpsシステム】を動かすプログラムコードや構成定義ファイルはすべてコード化されており、【三嶋電算株式会社】のプライベートリポジトリ内で厳密にバージョン管理されています。いつ・誰が・何を変更したかが完全に追跡可能です。</span>
                   <span class="lang-en">The middle API code and infrastructure configurations are centrally version-controlled inside our private `infra` repository. High predictability, easy replication, and secure deployment.</span>
                 </p>
               </div>
@@ -258,11 +258,11 @@
               <div class="tech-icon">⚡</div>
               <div class="tech-details">
                 <h4>
-                  <span class="lang-ja">即時自動化 ➔ ミニマル運用</span>
+                  <span class="lang-ja">即時通知 ➔ ミニマル運用フロー</span>
                   <span class="lang-en">Instant Automation & Minimal Ops</span>
                 </h4>
                 <p>
-                  <span class="lang-ja">送信と同時にプライベートリポジトリにIssueが立ち上がり、ご自身のメールへリアルタイム通知。お問合せ内容に記載されたメールアドレスへ直接返信するだけで、管理ツールを開かずとも美しく運用が回ります。</span>
+                  <span class="lang-ja">【顧客】がフォームを送信すると同時に、【GitOpsシステム】が自動でチケットを起票し、【三嶋電算株式会社】のエンジニアへリアルタイム通知を送ります。担当者は新たな管理ツールを開くことなく、いつものメールから直接【顧客】へ返信できるため、最速で美しい運用が回ります。</span>
                   <span class="lang-en">Instantly raises a private support issue and triggers automated email notifications to our team. Simple, robust, and friction-free communications.</span>
                 </p>
               </div>
@@ -273,11 +273,11 @@
               <div class="tech-icon">🎫</div>
               <div class="tech-details">
                 <h4>
-                  <span class="lang-ja">GitHub Issuesによる高度なチケット管理</span>
+                  <span class="lang-ja">GitHub Issuesによる高度な顧客サポート</span>
                   <span class="lang-en">Robust Ticket Ops via GitHub Issues</span>
                 </h4>
                 <p>
-                  <span class="lang-ja">お問合せ内容は単なるメールボックスに眠るのではなく、GitHubの強力な「Issue（サポートチケット）」として自動起票されます。対応ステータス（未着手・対応中・完了）の視覚的管理や、社内メンバーとの対応スレッド共有、過去の解決ナレッジの蓄積が、追加の開発費ゼロで極めて高機能に実現します。</span>
+                  <span class="lang-ja">【顧客】からのご相談は単なるメールとして埋もれることなく、【GitOpsシステム】によってチーム共有の「サポートチケット」として自動蓄積されます。【三嶋電算株式会社】のメンバー全員で未対応・完了のステータスを可視化し、追加開発費ゼロで回答漏れを完全に防ぎます。</span>
                   <span class="lang-en">Inquiries are raised as active GitHub Issues, not static emails. Natively track resolution status (open/closed), collaborate with team comments, and build a searchable troubleshooting database without buying expensive SaaS CRM tools.</span>
                 </p>
               </div>
