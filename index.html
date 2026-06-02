@@ -6,12 +6,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="三嶋電算株式会社は、AIエージェント、分散クラウドインフラ、高信頼性業務システムの設計および技術検証に特化した最先端のテックブティックです。">
   <meta name="description" class="lang-en" content="Mishima Computing K.K. is a high-tech engineering boutique specialized in autonomous AI agents, distributed cloud infrastructure, and mission-critical system validation.">
+  <link rel="canonical" href="https://mishima-computing.github.io/">
   
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="assets/css/style.css">
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://github.com/mishima-computing.png">
+<!-- Agent-readiness structured data -->
+  <script type="application/ld+json" id="mishima-agent-readiness-jsonld">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://mishima-computing.github.io/#organization",
+      "name": "三嶋電算株式会社",
+      "alternateName": "Mishima Computing K.K.",
+      "url": "https://mishima-computing.github.io/",
+      "logo": "https://github.com/mishima-computing.png",
+      "description": "AIエージェント、分散クラウドインフラ、高信頼性業務システムの設計および技術検証を行うエンジニアリング・ブティック。",
+      "email": "info@mishima-computing.github.io",
+      "sameAs": [
+        "https://github.com/mishima-computing",
+        "https://github.com/mishima-computing/mishima-computing.github.io"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2-19-23 Kanda Sudacho, Daiwa Akihabara Bldg 2F",
+        "addressLocality": "Chiyoda-ku",
+        "addressRegion": "Tokyo",
+        "addressCountry": "JP"
+      },
+      "areaServed": "JP",
+      "knowsAbout": [
+        "AI agent readiness",
+        "Generative AI search optimization",
+        "Semantic HTML",
+        "Structured data",
+        "Cloudflare Workers",
+        "GitOps",
+        "Kubernetes",
+        "CI/CD",
+        "Technical validation"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://mishima-computing.github.io/#website",
+      "url": "https://mishima-computing.github.io/",
+      "name": "Mishima Computing K.K. | 三嶋電算株式会社",
+      "inLanguage": [
+        "ja",
+        "en"
+      ],
+      "publisher": {
+        "@id": "https://mishima-computing.github.io/#organization"
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -49,6 +104,12 @@
             <a href="#reports" class="nav-link">
               <span class="lang-ja">技術レポート</span>
               <span class="lang-en">Reports</span>
+            </a>
+          </li>
+          <li>
+            <a href="./agent-readiness/" class="nav-link">
+              <span class="lang-ja">AI検索対応</span>
+              <span class="lang-en">Agent Ready</span>
             </a>
           </li>
           <li>
@@ -107,6 +168,10 @@
             <a href="#reports" class="btn btn-secondary" id="cta-secondary">
               <span class="lang-ja">技術資料を閲覧</span>
               <span class="lang-en">Read Reports</span>
+            </a>
+            <a href="./agent-readiness/" class="btn btn-secondary" id="cta-agent-readiness">
+              <span class="lang-ja">AI検索対応を見る</span>
+              <span class="lang-en">Agent Readiness</span>
             </a>
           </div>
         </div>
@@ -483,6 +548,7 @@
           <li><a href="#about"><span class="lang-ja">会社情報</span><span class="lang-en">About</span></a></li>
           <li><a href="#services"><span class="lang-ja">事業領域</span><span class="lang-en">Services</span></a></li>
           <li><a href="#reports"><span class="lang-ja">技術レポート</span><span class="lang-en">Reports</span></a></li>
+          <li><a href="./agent-readiness/"><span class="lang-ja">AI検索対応</span><span class="lang-en">Agent Readiness</span></a></li>
           <li><a href="/kessan/"><span class="lang-ja">決算公告</span><span class="lang-en">Public Notices</span></a></li>
         </ul>
       </div>
