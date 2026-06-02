@@ -306,18 +306,33 @@
         
         <div class="report-grid">
           <!-- Report 1 -->
-          <div class="card report-card" data-report-id="report-agents" id="card-report-agents">
+          <div class="card" id="card-report-agents" style="display: flex; flex-direction: column; cursor: pointer;" onclick="window.location.href='reports/ag-2026-001/'">
             <div class="report-tag">AG-2026-001</div>
             <div class="report-date">2026.05.15</div>
             <h3 class="card-title">
-              <span class="lang-ja">スケールする自律型マルチエージェントシステムの設計</span>
-              <span class="lang-en">Designing Autonomous Multi-Agent Systems for Scale</span>
+              <span class="lang-ja">AIに、ウォーターフォールを守らせる。</span>
+              <span class="lang-en">Making AI Agents Honor Waterfall Discipline</span>
             </h3>
-            <div class="card-body">
-              <p class="lang-ja">役割分担されたLLMエージェント間で、ステート管理と例外リカバリを分散的に行う調停フレームワークの検証報告。</p>
-              <p class="lang-en">An architectural review of orchestration patterns and self-healing logic for large-scale multi-agent collaborations.</p>
+            <div class="card-body" style="flex: 1;">
+              <p class="lang-ja">設計駆動の開発にAIエージェントを乗せ、制作過程そのものを成果物と同じ品質で残す——bounded な運用契約。</p>
+              <p class="lang-en">A bounded operating contract that brings AI agents into design-driven development and ships the process itself as a deliverable.</p>
+              
+              <ul style="list-style-type: none; padding: 0; margin: 1.5rem 0 0 0; font-size: 0.85rem; color: var(--text-secondary);">
+                <li style="margin-bottom: 0.6rem; display: flex; align-items: start; gap: 0.5rem;">
+                  <span style="color: var(--primary);">✓</span>
+                  <span><span class="lang-ja">設計が、最後まで設計のまま残る</span><span class="lang-en">Design stays intact, end to end</span></span>
+                </li>
+                <li style="margin-bottom: 0.6rem; display: flex; align-items: start; gap: 0.5rem;">
+                  <span style="color: var(--primary);">✓</span>
+                  <span><span class="lang-ja">作り方ごと納品する（過程の成果物化）</span><span class="lang-en">The process ships as a deliverable</span></span>
+                </li>
+                <li style="display: flex; align-items: start; gap: 0.5rem;">
+                  <span style="color: var(--primary);">✓</span>
+                  <span><span class="lang-ja">追跡可能なAI開発という品質の証明</span><span class="lang-en">Provable provenance for AI-assisted code</span></span>
+                </li>
+              </ul>
             </div>
-            <div class="read-more">
+            <div class="read-more" style="margin-top: 1.5rem;">
               <span class="lang-ja">全文を読む</span>
               <span class="lang-en">Read Full Report</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>

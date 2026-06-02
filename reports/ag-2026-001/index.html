@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="ja" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <title>AG-2026-001 | Mishima Computing K.K.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AIに、ウォーターフォールを守らせる。成果物だけでなく、その作り方ごと納品するガバナンス層。">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://github.com/mishima-computing.png">
+  
+  <style>
+    .report-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding-top: 8rem;
+      padding-bottom: 5rem;
+    }
+    
+    .report-header {
+      margin-bottom: 3rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 2rem;
+    }
+    
+    .report-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .report-content h2 {
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      color: var(--primary);
+    }
+    
+    .report-content p {
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+    
+    .report-content ul {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+    
+    .report-content li {
+      margin-bottom: 0.5rem;
+    }
+
+    .roles-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
+      background: var(--bg-secondary);
+      border-radius: var(--border-radius-md);
+      overflow: hidden;
+      box-shadow: var(--glass-shadow);
+    }
+    
+    .roles-table th, .roles-table td {
+      padding: 1rem;
+      border: 1px solid var(--border-color);
+      text-align: left;
+    }
+    
+    .roles-table th {
+      background: rgba(6, 182, 212, 0.1);
+      color: var(--primary);
+      font-weight: 600;
+    }
+    
+    .cta-container {
+      margin-top: 4rem;
+      padding: 3rem;
+      background: radial-gradient(circle at center, hsla(188, 90%, 50%, 0.05) 0%, transparent 70%);
+      border: 1px solid var(--primary-glow);
+      border-radius: var(--border-radius-lg);
+      text-align: center;
+    }
+
+    /* GitHub styled alerts for Non-goals */
+    .alert-caution {
+      border-left: 4px solid #d73a49;
+      background: rgba(215, 58, 73, 0.05);
+      padding: 1rem 1.5rem;
+      border-radius: 4px;
+      margin-top: 1rem;
+    }
+    
+    .alert-caution h4 {
+      color: #d73a49;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Dynamic Design Background Elements -->
+  <div class="grid-bg" id="grid-bg"></div>
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+
+  <!-- STICKY HEADER -->
+  <header class="header" id="main-header">
+    <div class="container navbar">
+      <a href="../../" class="nav-brand" id="brand-link">
+        <img src="https://github.com/mishima-computing.png" alt="Mishima Computing Logo">
+        <div>
+          <span>Mishima Computing</span>
+          <span class="brand-jp">三嶋電算株式会社</span>
+        </div>
+      </a>
+      
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="../../#about" class="nav-link"><span class="lang-ja">会社概要</span><span class="lang-en">About</span></a></li>
+          <li><a href="../../#services" class="nav-link"><span class="lang-ja">事業領域</span><span class="lang-en">Services</span></a></li>
+          <li><a href="../../#reports" class="nav-link active"><span class="lang-ja">技術レポート</span><span class="lang-en">Reports</span></a></li>
+          <li><a href="/kessan/" class="nav-link"><span class="lang-ja">決算公告</span><span class="lang-en">Public Notices</span></a></li>
+          <li><a href="../../contact/" class="nav-link"><span class="lang-ja">お問合せ</span><span class="lang-en">Contact</span></a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-actions">
+        <button class="lang-btn" id="lang-toggle" aria-label="Switch Language">
+          <span>EN</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container report-container">
+    
+    <div class="report-header">
+      <div class="report-meta">
+        <div class="report-tag">AG-2026-001</div>
+        <div class="report-date">2026.05.15</div>
+      </div>
+      <h1 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.5rem; line-height: 1.3;">
+        <span class="lang-ja">AIに、ウォーターフォールを守らせる。</span>
+        <span class="lang-en">Making AI Agents Honor Waterfall Discipline</span>
+      </h1>
+      <p style="font-size: 1.2rem; color: var(--text-primary); border-left: 4px solid var(--primary); padding-left: 1.5rem;">
+        <span class="lang-ja">「成果物だけでなく、その作り方ごと納品する」<br>AIの"賢さ"ではなく、設計駆動と追跡可能性（provenance）を担保し、制作過程を証明するガバナンス層の検証報告です。</span>
+        <span class="lang-en">"Shipping the process alongside the deliverable."<br>A report on the governance layer that ensures design-driven execution, provable provenance, and verifiable processes rather than merely relying on AI's "smartness."</span>
+      </p>
+    </div>
+
+    <div class="report-content">
+      
+      <h2>
+        <span class="lang-ja">1. 設計思想</span>
+        <span class="lang-en">Design philosophy</span>
+      </h2>
+      <p>
+        <span class="lang-ja">生成量を盲目的に最大化するのではなく、書き込み前の権限を最小化します。最初にワークスペースを分類し、実装（implementation）、監査（audit）、採用（adoption）、リリース（release）の権限を分離します。生成された未加工のアーティファクト（raw artifacts）は漏洩リスクを持つものとして扱い、LLMの推論・判断よりも、決定論的なゲート（deterministic gates）を優先します。</span>
+        <span class="lang-en">We do not maximize generation blindly. We minimize authority before writes, classify the workspace first, and strictly separate implementation, audit, adoption, and release authorities. Raw artifacts are treated as carrying exposure risk, and we prefer deterministic gates over LLM judgment.</span>
+      </p>
+
+      <h2>
+        <span class="lang-ja">2. なぜ必要か</span>
+        <span class="lang-en">Why this exists</span>
+      </h2>
+      <p>
+        <span class="lang-ja">LLMは有能ですが、既定では範囲を広げすぎます。単にGitブランチを切るだけでは、汚れたワークツリー（dirty worktree）や古いプロジェクト状態の継承、クラウド同期における生ログやローカルメタデータの流出を防げません。これらを防ぐため、監査バンドル（audit bundles）やベースSHA識別（base SHA identity）、そして有限の修正ループ（bounded revision loops）を持つガバナンス層が必要です。</span>
+        <span class="lang-en">LLMs are capable but overbroad by default. Branches alone do not prevent the inheritance of dirty worktrees or old project states. Cloud-sync paths can inadvertently expose raw logs and local metadata. Candidate patches thus require audit bundles, base SHA identities, and bounded revision loops to ensure isolation and security.</span>
+      </p>
+
+      <h2>
+        <span class="lang-ja">3. ウォーターフォールとの接続</span>
+        <span class="lang-en">Connecting with Waterfall Methodology</span>
+      </h2>
+      <p>
+        <span class="lang-ja">本ガバナンスモデルにおける「分類 → 実装 → 監査 → 採用 → リリース」の明確な段階分離は、先に確定した設計を後工程が前提にするウォーターフォール構造と見事に合致しています。各段階における base SHA（ソースコードの状態）や audit bundle（監査ログの塊）が確定した中間生成物となり、それがそのまま「AIによる開発の正当性」を示す証跡（provenance）として機能します。</span>
+        <span class="lang-en">The strict separation of stages (classification → implementation → audit → adoption → release) directly maps to a waterfall paradigm where subsequent phases depend entirely on previously locked designs. Intermediate outputs like base SHAs and audit bundles serve as undeniable, auditable provenance for AI-assisted work.</span>
+      </p>
+
+      <h2>
+        <span class="lang-ja">4. 6つの役割と境界</span>
+        <span class="lang-en">Roles & Authority Boundaries</span>
+      </h2>
+      <table class="roles-table">
+        <thead>
+          <tr>
+            <th>
+              <span class="lang-ja">役割 (Role)</span>
+              <span class="lang-en">Role</span>
+            </th>
+            <th>
+              <span class="lang-ja">権限と境界</span>
+              <span class="lang-en">Authority & Scope</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Human Owner</td>
+            <td>
+              <span class="lang-ja">Merge, Push, Deploy, Publishの最終権限を持つ。本番データ・認証情報・法的決定権を管理。</span>
+              <span class="lang-en">Controls merge, push, deploy, publish, production data, credentials, and legal/privacy/brand decisions.</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Supervisor Codex</td>
+            <td>
+              <span class="lang-ja">タスクのルーティング、パッチの検証と採用、ローカルコミットを実行。<strong>※デプロイは行わない</strong>。</span>
+              <span class="lang-en">Routes tasks, adopts accepted patches, verifies work, and creates local commits. <strong>Cannot deploy</strong>.</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Codex Auditor</td>
+            <td>
+              <span class="lang-ja">独立した読み取り専用（read-only）のレビュワー。構造化された監査結果を返す。</span>
+              <span class="lang-en">Independent read-only reviewer. Returns structured deterministic findings.</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Candidate Implementer (Claude)</td>
+            <td>
+              <span class="lang-ja">パッチ候補のみを作成する実装者。</span>
+              <span class="lang-en">Produces patch-only candidates without adoption authority.</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Antigravity Visual Pod</td>
+            <td>
+              <span class="lang-ja">UI/UX/ブラウザのレビュースペシャリスト。既定では読み取り専用で、バックエンドやDB・パッケージ変更を行わない。</span>
+              <span class="lang-en">UI/UX/graphic/browser review specialist. Defaults to review-only; does not change backend, auth, or DB logic.</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Local Tooling Pod</td>
+            <td>
+              <span class="lang-ja">決定論的なエビデンス（テスト実行結果など）を生成する。</span>
+              <span class="lang-en">Generates deterministic execution evidence.</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>
+        <span class="lang-ja">5. 中核契約</span>
+        <span class="lang-en">Core contracts</span>
+      </h2>
+      <p>
+        <span class="lang-ja">システムを安全に動作させるための機械的なガバナンスルールです：</span>
+        <span class="lang-en">Mechanical governance rules required to operate the system securely:</span>
+      </p>
+      <ul>
+        <li>
+          <span class="lang-ja">設計分類（classification）前にコードを書かない</span>
+          <span class="lang-en">No writes allowed before classification is finalized</span>
+        </li>
+        <li>
+          <span class="lang-ja">汚れたリポジトリ（dirty repo）では動作を停止する</span>
+          <span class="lang-en">Hard stop enforced if the repository is dirty</span>
+        </li>
+        <li>
+          <span class="lang-ja">生成途中の生データ（.agent-runs/）はコミットせず、無害化されたサマリ（sanitized summaries）のみをコミットする</span>
+          <span class="lang-en">Raw artifacts in `.agent-runs/` are ignored; only sanitized summaries are committed</span>
+        </li>
+      </ul>
+
+      <div class="alert-caution">
+        <h4>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+          <span class="lang-ja">6. 非目標 (Non-goals)</span>
+          <span class="lang-en">6. Non-goals</span>
+        </h4>
+        <p>
+          <span class="lang-ja">当ブートストラップ（ガバナンス層）は、以下の機能を<strong>提供しません</strong>。<br>
+          自律的なデプロイ機能、シークレット（鍵情報）の自動ハンドリング、本番データへのアクセス権限、CIやプロバイダ設定の代行。また、スキャナーがシークレット不在を完全に証明する保証も行いません。本システムはあくまで「ガバナンス層」であり、アプリケーションコードやデプロイ設定そのものではありません。</span>
+          <span class="lang-en">This bootstrap does <strong>not provide</strong> autonomous deployment, secret handling, production data access, or CI/provider configuration. It does not guarantee that scanners prove the complete absence of secrets. It is strictly a governance layer, not application code or deploy configuration.</span>
+        </p>
+      </div>
+
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-container">
+      <h3 style="margin-bottom: 1.5rem;">
+        <span class="lang-ja">オープンソースで公開中</span>
+        <span class="lang-en">Available Open Source</span>
+      </h3>
+      <p style="color: var(--text-secondary); margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+        <span class="lang-ja">本ガバナンス層のコアとなるブートストラップ定義やポリシーは、GitHubにて公開されています（ライセンス選定中）。また、これらを応用したシステム開発・技術検証に関するご相談も承っております。</span>
+        <span class="lang-en">The core bootstrap definitions and policies for this governance layer are published on GitHub. We also welcome consultations for applying these models to your mission-critical system validation.</span>
+      </p>
+      
+      <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+        <a href="https://github.com/mishima-computing/ai-org-bootstrap" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="margin-right: 0.5rem;"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+          <span class="lang-ja">GitHub リポジトリ</span>
+          <span class="lang-en">GitHub Repository</span>
+        </a>
+        <a href="../../contact/" class="btn btn-primary">
+          <span class="lang-ja">技術検証のご相談</span>
+          <span class="lang-en">Consult with Us</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 0.5rem;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="main-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <a href="../../" class="footer-logo">
+          <img src="https://github.com/mishima-computing.png" alt="Mishima Computing Logo">
+          <span>Mishima Computing K.K.</span>
+        </a>
+        <p class="footer-desc">
+          <span class="lang-ja">AIエージェント、分散クラウドインフラ、高信頼性業務システムの設計および技術検証を行うエンジニアリング・ブティック。</span>
+          <span class="lang-en">Engineering boutique specializing in AI agents, distributed clouds, and enterprise validation.</span>
+        </p>
+      </div>
+      
+      <div>
+        <h4 class="footer-links-title">
+          <span class="lang-ja">サイトマップ</span>
+          <span class="lang-en">Sitemap</span>
+        </h4>
+        <ul class="footer-links">
+          <li><a href="../../#about"><span class="lang-ja">会社情報</span><span class="lang-en">About</span></a></li>
+          <li><a href="../../#services"><span class="lang-ja">事業領域</span><span class="lang-en">Services</span></a></li>
+          <li><a href="../../#reports"><span class="lang-ja">技術レポート</span><span class="lang-en">Reports</span></a></li>
+          <li><a href="/kessan/"><span class="lang-ja">決算公告</span><span class="lang-en">Public Notices</span></a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-links-title">
+          <span class="lang-ja">お問合せ / その他</span>
+          <span class="lang-en">Contact / Info</span>
+        </h4>
+        <ul class="footer-links">
+          <li><a href="mailto:info@mishima-computing.github.io">info@mishima-computing.github.io</a></li>
+          <li><a href="https://github.com/mishima-computing" target="_blank" rel="noopener noreferrer">GitHub Org</a></li>
+          <li><a href="https://github.com/teru-murata" target="_blank" rel="noopener noreferrer">Representative GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <div>
+        &copy; 2026 Mishima Computing K.K. / 三嶋電算株式会社. All rights reserved.
+      </div>
+      <div>
+        <span class="lang-ja">本店: 東京都千代田区 | 創設地: 静岡県三島市</span>
+        <span class="lang-en">HQ: Chiyoda-ku, Tokyo | Lab: Mishima City, Shizuoka</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../../assets/js/app.js"></script>
+</body>
+</html>
