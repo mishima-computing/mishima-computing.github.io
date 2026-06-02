@@ -253,80 +253,170 @@
           <thead>
             <tr style="border-bottom: 2px solid var(--border-color);">
               <th style="padding: 0.75rem;">AI Governance Term</th>
-              <th style="padding: 0.75rem;">Waterfall / IPA-METI adjacent term</th>
-              <th style="padding: 0.75rem;">Meaning in this report</th>
+              <th style="padding: 0.75rem;">
+                <span class="lang-ja">Waterfall / IPA-METI adjacent term</span>
+                <span class="lang-en">Waterfall / Upstream Term</span>
+              </th>
+              <th style="padding: 0.75rem;">
+                <span class="lang-ja">Meaning in this report</span>
+                <span class="lang-en">Meaning in this report</span>
+              </th>
             </tr>
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid var(--border-color);">
               <td style="padding: 0.75rem;">workspace classification</td>
-              <td style="padding: 0.75rem;">企画・適用範囲定義・プロジェクト標準</td>
-              <td style="padding: 0.75rem;">AIが触れてよい範囲とルールを事前に定義する作業</td>
+              <td style="padding: 0.75rem;">
+                <span class="lang-ja">企画・適用範囲定義・プロジェクト標準</span>
+                <span class="lang-en">Planning, Scope Definition, Project Standards</span>
+              </td>
+              <td style="padding: 0.75rem;">
+                <span class="lang-ja">AIが触れてよい範囲とルールを事前に定義する作業</span>
+                <span class="lang-en">Pre-defining the scope and rules for AI operations</span>
+              </td>
             </tr>
             <tr style="border-bottom: 1px solid var(--border-color);">
               <td style="padding: 0.75rem;">no writes before classification</td>
-              <td style="padding: 0.75rem;">要件確定前の実装抑止</td>
-              <td style="padding: 0.75rem;">ルールの事前定義なしにソースコードの変更を許さない制約</td>
+              <td style="padding: 0.75rem;">
+                <span class="lang-ja">要件確定前の実装抑止</span>
+                <span class="lang-en">Preventing Implementation Before Requirements</span>
+              </td>
+              <td style="padding: 0.75rem;">
+                <span class="lang-ja">ルールの事前定義なしにソースコードの変更を許さない制約</span>
+                <span class="lang-en">Constraint forbidding code changes before rule definition</span>
+              </td>
             </tr>
             <tr style="border-bottom: 1px solid var(--border-color);">
               <td style="padding: 0.75rem;">Ask Gate</td>
-              <td style="padding: 0.75rem;">未決事項管理・合意形成ゲート</td>
-              <td style="padding: 0.75rem;">AIが判断に迷った際、人間に仕様確認を求めるプロセス</td>
+              <td style="padding: 0.75rem;">
+                <span class="lang-ja">未決事項管理・合意形成ゲート</span>
+                <span class="lang-en">Pending Issue Management, Consensus Gate</span>
+              </td>
+              <td style="padding: 0.75rem;">
+                <span class="lang-ja">AIが判断に迷った際、人間に仕様確認を求めるプロセス</span>
+                <span class="lang-en">Process where AI requests human clarification on specifications</span>
+              </td>
             </tr>
             <tr style="border-bottom: 1px solid var(--border-color);">
               <td style="padding: 0.75rem;">candidate patch</td>
-              <td style="padding: 0.75rem;">工程アウトプット・作業成果物</td>
-              <td style="padding: 0.75rem;">まだ承認されていない、AIによるコードの修正案</td>
+              <td style="padding: 0.75rem;">
+                <span class="lang-ja">工程アウトプット・作業成果物</span>
+                <span class="lang-en">Phase Output, Work Product</span>
+              </td>
+              <td style="padding: 0.75rem;">
+                <span class="lang-ja">まだ承認されていない、AIによるコードの修正案</span>
+                <span class="lang-en">Unapproved code modification proposed by AI</span>
+              </td>
             </tr>
             <tr style="border-bottom: 1px solid var(--border-color);">
               <td style="padding: 0.75rem;">candidate_base_sha</td>
-              <td style="padding: 0.75rem;">構成識別子・ベースライン</td>
-              <td style="padding: 0.75rem;">修正案が作られた時点での正確なコードの状態（ハッシュ値）</td>
+              <td style="padding: 0.75rem;">
+                <span class="lang-ja">構成識別子・ベースライン</span>
+                <span class="lang-en">Configuration Identifier, Baseline</span>
+              </td>
+              <td style="padding: 0.75rem;">
+                <span class="lang-ja">修正案が作られた時点での正確なコードの状態（ハッシュ値）</span>
+                <span class="lang-en">The exact code state (hash) at the time the patch was generated</span>
+              </td>
             </tr>
             <tr style="border-bottom: 1px solid var(--border-color);">
               <td style="padding: 0.75rem;">current_target_sha</td>
-              <td style="padding: 0.75rem;">適用先構成の再確認</td>
-              <td style="padding: 0.75rem;">パッチを適用する直前に、他の変更と競合していないかの確認</td>
+              <td style="padding: 0.75rem;">
+                <span class="lang-ja">適用先構成の再確認</span>
+                <span class="lang-en">Target Configuration Re-verification</span>
+              </td>
+              <td style="padding: 0.75rem;">
+                <span class="lang-ja">パッチを適用する直前に、他の変更と競合していないかの確認</span>
+                <span class="lang-en">Verifying no conflicts exist before applying the patch</span>
+              </td>
             </tr>
             <tr style="border-bottom: 1px solid var(--border-color);">
               <td style="padding: 0.75rem;">deterministic gates</td>
-              <td style="padding: 0.75rem;">検証・レビュー・テスト記録</td>
-              <td style="padding: 0.75rem;">AIの推論ではなく、テストやリンターによる機械的・決定論的な品質チェック</td>
+              <td style="padding: 0.75rem;">
+                <span class="lang-ja">検証・レビュー・テスト記録</span>
+                <span class="lang-en">Verification, Review, Test Records</span>
+              </td>
+              <td style="padding: 0.75rem;">
+                <span class="lang-ja">AIの推論ではなく、テストやリンターによる機械的・決定論的な品質チェック</span>
+                <span class="lang-en">Mechanical, deterministic quality checks by tests/linters</span>
+              </td>
             </tr>
             <tr style="border-bottom: 1px solid var(--border-color);">
               <td style="padding: 0.75rem;">audit bundle</td>
-              <td style="padding: 0.75rem;">監査証拠・監査調書相当</td>
-              <td style="padding: 0.75rem;">AIの思考過程やツールの実行結果をまとめた証跡</td>
+              <td style="padding: 0.75rem;">
+                <span class="lang-ja">監査証拠・監査調書相当</span>
+                <span class="lang-en">Audit Evidence, Audit Working Papers</span>
+              </td>
+              <td style="padding: 0.75rem;">
+                <span class="lang-ja">AIの思考過程やツールの実行結果をまとめた証跡</span>
+                <span class="lang-en">Consolidated evidence of AI reasoning and tool execution results</span>
+              </td>
             </tr>
             <tr style="border-bottom: 1px solid var(--border-color);">
               <td style="padding: 0.75rem;">Codex Auditor</td>
-              <td style="padding: 0.75rem;">独立監査者・客観的評価者</td>
-              <td style="padding: 0.75rem;">実装者（Claude）とは別に、成果物を第三者視点でチェックするエージェント</td>
+              <td style="padding: 0.75rem;">
+                <span class="lang-ja">独立監査者・客観的評価者</span>
+                <span class="lang-en">Independent Auditor, Objective Evaluator</span>
+              </td>
+              <td style="padding: 0.75rem;">
+                <span class="lang-ja">実装者（Claude）とは別に、成果物を第三者視点でチェックするエージェント</span>
+                <span class="lang-en">An agent reviewing work products from a third-party perspective</span>
+              </td>
             </tr>
             <tr style="border-bottom: 1px solid var(--border-color);">
               <td style="padding: 0.75rem;">Human Owner</td>
-              <td style="padding: 0.75rem;">発注者・利用部門・最終受入責任者</td>
-              <td style="padding: 0.75rem;">最終的なシステムへのマージやデプロイを承認する権限を持つ人間</td>
+              <td style="padding: 0.75rem;">
+                <span class="lang-ja">発注者・利用部門・最終受入責任者</span>
+                <span class="lang-en">Ordering Party, Final Acceptance Authority</span>
+              </td>
+              <td style="padding: 0.75rem;">
+                <span class="lang-ja">最終的なシステムへのマージやデプロイを承認する権限を持つ人間</span>
+                <span class="lang-en">The human authorized to approve final merges and deployments</span>
+              </td>
             </tr>
             <tr style="border-bottom: 1px solid var(--border-color);">
               <td style="padding: 0.75rem;">bounded revision loop</td>
-              <td style="padding: 0.75rem;">変更管理・是正処置の上限</td>
-              <td style="padding: 0.75rem;">エラー時の自動修正試行回数に上限を設け、無限ループを防ぐ仕組み</td>
+              <td style="padding: 0.75rem;">
+                <span class="lang-ja">変更管理・是正処置の上限</span>
+                <span class="lang-en">Change Management, Corrective Action Limits</span>
+              </td>
+              <td style="padding: 0.75rem;">
+                <span class="lang-ja">エラー時の自動修正試行回数に上限を設け、無限ループを防ぐ仕組み</span>
+                <span class="lang-en">Mechanism limiting automated fix attempts to prevent infinite loops</span>
+              </td>
             </tr>
             <tr style="border-bottom: 1px solid var(--border-color);">
               <td style="padding: 0.75rem;">.agent-runs/ raw artifacts</td>
-              <td style="padding: 0.75rem;">生ログ・監査対象外の未加工証跡</td>
-              <td style="padding: 0.75rem;">AIが実行時に出力した生のデータ。機密情報を含むリスクがあるためコミットしない</td>
+              <td style="padding: 0.75rem;">
+                <span class="lang-ja">生ログ・監査対象外の未加工証跡</span>
+                <span class="lang-en">Raw Logs, Unprocessed Evidence</span>
+              </td>
+              <td style="padding: 0.75rem;">
+                <span class="lang-ja">AIが実行時に出力した生のデータ。機密情報を含むリスクがあるためコミットしない</span>
+                <span class="lang-en">Raw AI execution data. Not committed due to confidentiality risks.</span>
+              </td>
             </tr>
             <tr style="border-bottom: 1px solid var(--border-color);">
               <td style="padding: 0.75rem;">sanitized summary</td>
-              <td style="padding: 0.75rem;">提出可能な要約証跡</td>
-              <td style="padding: 0.75rem;">生ログから機密情報をマスクし、リポジトリに保存できる形にした記録</td>
+              <td style="padding: 0.75rem;">
+                <span class="lang-ja">提出可能な要約証跡</span>
+                <span class="lang-en">Submittable Summarized Evidence</span>
+              </td>
+              <td style="padding: 0.75rem;">
+                <span class="lang-ja">生ログから機密情報をマスクし、リポジトリに保存できる形にした記録</span>
+                <span class="lang-en">Records masked of confidential info, safe for repository storage</span>
+              </td>
             </tr>
             <tr style="border-bottom: 1px solid var(--border-color);">
               <td style="padding: 0.75rem;">cloud-sync hard stop</td>
-              <td style="padding: 0.75rem;">情報管理・漏洩リスク管理</td>
-              <td style="padding: 0.75rem;">機密な生ログが誤ってクラウドに同期されないようにするための安全停止</td>
+              <td style="padding: 0.75rem;">
+                <span class="lang-ja">情報管理・漏洩リスク管理</span>
+                <span class="lang-en">Information Management, Leak Risk Control</span>
+              </td>
+              <td style="padding: 0.75rem;">
+                <span class="lang-ja">機密な生ログが誤ってクラウドに同期されないようにするための安全停止</span>
+                <span class="lang-en">Safety stop preventing accidental cloud synchronization of confidential raw logs</span>
+              </td>
             </tr>
           </tbody>
         </table>
