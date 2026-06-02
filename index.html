@@ -107,12 +107,6 @@
             </a>
           </li>
           <li>
-            <a href="./agent-readiness/" class="nav-link">
-              <span class="lang-ja">AI検索対応</span>
-              <span class="lang-en">Agent Ready</span>
-            </a>
-          </li>
-          <li>
             <a href="/kessan/" class="nav-link">
               <span class="lang-ja">決算公告</span>
               <span class="lang-en">Public Notices</span>
@@ -168,10 +162,6 @@
             <a href="#reports" class="btn btn-secondary" id="cta-secondary">
               <span class="lang-ja">技術資料を閲覧</span>
               <span class="lang-en">Read Reports</span>
-            </a>
-            <a href="./agent-readiness/" class="btn btn-secondary" id="cta-agent-readiness">
-              <span class="lang-ja">AI検索対応を見る</span>
-              <span class="lang-en">Agent Readiness</span>
             </a>
           </div>
         </div>
@@ -405,18 +395,18 @@
           </div>
 
           <!-- Report 2 -->
-          <div class="card report-card" data-report-id="report-cloud" id="card-report-cloud">
+          <div class="card" id="card-report-agent-readiness" style="display: flex; flex-direction: column; cursor: pointer;" onclick="window.location.href='agent-readiness/'">
             <div class="report-tag">AG-2026-002</div>
-            <div class="report-date">2026.04.28</div>
+            <div class="report-date">2026.06.03</div>
             <h3 class="card-title">
-              <span class="lang-ja">AI推論における分散クラウド基盤のベンチマーク</span>
-              <span class="lang-en">Benchmarking Distributed Cloud Infrastructures for AI Inference</span>
+              <span class="lang-ja">AIエージェント時代の企業Webと構造的最適化</span>
+              <span class="lang-en">Agent Readiness for Enterprise Web</span>
             </h3>
-            <div class="card-body">
-              <p class="lang-ja">オンプレミスGPUとエッジCDN間におけるvLLMサービングエンジンのスループットおよびバッチ処理最適化の記録。</p>
-              <p class="lang-en">Quantifying performance metrics of low-latency model inference across distributed edge clusters utilizing continuous batching.</p>
+            <div class="card-body" style="flex: 1;">
+              <p class="lang-ja">llms.txtに頼らない、本質的な構造化データ（JSON-LD）とセマンティックHTMLによる「攻め」の発見・推奨基盤構築。</p>
+              <p class="lang-en">Building an offensive discovery foundation using essential structured data and semantic HTML, moving beyond simple text hacks.</p>
             </div>
-            <div class="read-more">
+            <div class="read-more" style="margin-top: 1.5rem;">
               <span class="lang-ja">全文を読む</span>
               <span class="lang-en">Read Full Report</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -548,7 +538,6 @@
           <li><a href="#about"><span class="lang-ja">会社情報</span><span class="lang-en">About</span></a></li>
           <li><a href="#services"><span class="lang-ja">事業領域</span><span class="lang-en">Services</span></a></li>
           <li><a href="#reports"><span class="lang-ja">技術レポート</span><span class="lang-en">Reports</span></a></li>
-          <li><a href="./agent-readiness/"><span class="lang-ja">AI検索対応</span><span class="lang-en">Agent Readiness</span></a></li>
           <li><a href="/kessan/"><span class="lang-ja">決算公告</span><span class="lang-en">Public Notices</span></a></li>
         </ul>
       </div>
