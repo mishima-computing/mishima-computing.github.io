@@ -149,7 +149,7 @@
           
           <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 2.5rem;">
             <span class="lang-ja">業務自動化、AIエージェントの検証、システムインフラ設計など、技術的なご相談やお見積のご依頼を承ります。必要事項をご記入の上、送信してください。</span>
-            <span class="lang-en">We welcome technical consultations, proof-of-concept planning, and estimation requests. Please fill out the form below to reach our engineering team.</span>
+            <span class="lang-en">We welcome technical consultations, AI agent validation requests, and infrastructure design estimations. Please fill out the form below to reach our engineering team.</span>
           </p>
 
           <div class="card contact-card" id="contact-form-card" style="border-color: var(--primary-glow); padding: 3.5rem 3rem;">
@@ -202,8 +202,8 @@
           </h3>
           
           <p style="font-size: 0.9rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 1.5rem;">
-            <span class="lang-ja">このお問い合わせ窓口は、弊社が提供する<strong>インフラ構築・自動化ソリューションの実証デモ（カタログ）</strong>を兼ねています。「顧客（フォーム送信者）」「GitOpsシステム（Cloudflare連携）」「三嶋電算株式会社（受信者）」の3者がどのように連携し、安全かつコストゼロで運用されているかをご覧ください。</span>
-            <span class="lang-en">This contact portal serves as a live, functioning <strong>demonstration of our serverless integration capabilities</strong>. Experience how the Customer, the GitOps System, and our Team interact seamlessly with enterprise-grade security and zero runtime cost.</span>
+            <span class="lang-ja">このお問い合わせ窓口は、弊社が提供する<strong>インフラ構築・自動化ソリューションの実証デモ（カタログ）</strong>を兼ねています。「顧客（フォーム送信者）」「自動連携システム（以下、GitOpsシステム）」「三嶋電算株式会社（受信者）」の3者がどのように連携し、安全かつ低コストで運用されているかをご覧ください。</span>
+            <span class="lang-en">This contact portal serves as a live, functioning <strong>demonstration of our serverless integration capabilities</strong>. Experience how the Customer, the GitOps System, and our Team interact seamlessly with enterprise-grade security and minimal runtime cost.</span>
           </p>
           
           <div class="tech-list">
@@ -213,12 +213,12 @@
               <div class="tech-icon">💸</div>
               <div class="tech-details">
                 <h4>
-                  <span class="lang-ja">ランニングコスト 0円 (完全無料)</span>
-                  <span class="lang-en">Running Cost: 0 JPY</span>
+                  <span class="lang-ja">ランニングコスト 0円（無料枠の範囲内）</span>
+                  <span class="lang-en">Running Cost: 0 JPY (Within Free Tiers)</span>
                 </h4>
                 <p>
-                  <span class="lang-ja">【GitOpsシステム】が中継APIにCloudflare Workersを、データの保管先にGitHubを採用することで、データベース維持費や外部フォームサービスの月額料金を排除。【三嶋電算株式会社】側のシステム維持費は完全に0円（無料）で運用されています。</span>
-                  <span class="lang-en">Utilizing Cloudflare Workers (100k requests/day free tier) and GitHub Free tier. No database hosting fees, no server maintenance costs, and no license fees.</span>
+                  <span class="lang-ja">【GitOpsシステム】が中継APIにCloudflare Workersを、データの保管先にGitHubを採用することで、データベース維持費や外部フォームサービスの月額料金を排除。【三嶋電算株式会社】側のシステム維持費は無料枠の範囲内で0円に抑えて運用しています。</span>
+                  <span class="lang-en">Utilizing Cloudflare Workers and GitHub APIs as our GitOps System, we eliminate database hosting and third-party form service fees. We keep our system maintenance costs at zero within the free tier limits.</span>
                 </p>
               </div>
             </div>
@@ -228,12 +228,12 @@
               <div class="tech-icon">🔒</div>
               <div class="tech-details">
                 <h4>
-                  <span class="lang-ja">ゼロ・リーク＆最高峰のセキュリティ</span>
-                  <span class="lang-en">Zero-Leak & Steel-Clad Security</span>
+                  <span class="lang-ja">堅牢なセキュリティ設計（認証情報をブラウザに露出しない）</span>
+                  <span class="lang-en">Hardened, Credential-Safe Security</span>
                 </h4>
                 <p>
-                  <span class="lang-ja">【顧客】が入力したお問い合わせ内容は、【GitOpsシステム】を通じて安全な暗号化通信で直接非公開リポジトリへ書き込まれます。ホームページ側に認証キーが一切露出しないため、【顧客】の機密情報が外部に漏洩するリスクはありません。</span>
-                  <span class="lang-en">Leveraging GitHub Fine-grained PAT restricted exclusively to "Issues: Write" for a single private repository. Zero credentials exposed to browsers, ensuring zero leakage of client information.</span>
+                  <span class="lang-ja">【顧客】が入力したお問い合わせ内容は、【GitOpsシステム】を通じて安全な暗号化通信で直接非公開リポジトリへ書き込まれます。ホームページ側に認証キーが一切露出しないため、【顧客】の機密情報が外部に露出するリスクを大幅に低減します。</span>
+                  <span class="lang-en">Inquiries submitted by the Customer are securely encrypted by the GitOps System and written directly to a private repository. Since no authentication keys are exposed to the browser, minimizing the risk of client information exposure.</span>
                 </p>
               </div>
             </div>
@@ -243,12 +243,12 @@
               <div class="tech-icon">📦</div>
               <div class="tech-details">
                 <h4>
-                  <span class="lang-ja">インフラのコード管理 (GitOps)</span>
+                  <span class="lang-ja">すべてをコードで管理（GitOps方式）</span>
                   <span class="lang-en">Centralized GitOps Management</span>
                 </h4>
                 <p>
                   <span class="lang-ja">【GitOpsシステム】を動かすプログラムコードや構成定義ファイルはすべてコード化されており、【三嶋電算株式会社】のプライベートリポジトリ内で厳密にバージョン管理されています。いつ・誰が・何を変更したかが完全に追跡可能です。</span>
-                  <span class="lang-en">The middle API code and infrastructure configurations are centrally version-controlled inside our private `infra` repository. High predictability, easy replication, and secure deployment.</span>
+                  <span class="lang-en">All program codes and infrastructure configurations for the GitOps System are strictly version-controlled within Mishima Computing's private repository. Every change is fully traceable.</span>
                 </p>
               </div>
             </div>
@@ -258,12 +258,12 @@
               <div class="tech-icon">⚡</div>
               <div class="tech-details">
                 <h4>
-                  <span class="lang-ja">即時通知 ➔ ミニマル運用フロー</span>
+                  <span class="lang-ja">即時通知で運用負荷を最小に</span>
                   <span class="lang-en">Instant Automation & Minimal Ops</span>
                 </h4>
                 <p>
-                  <span class="lang-ja">【顧客】がフォームを送信すると同時に、【GitOpsシステム】が自動でチケットを起票し、【三嶋電算株式会社】のエンジニアへリアルタイム通知を送ります。担当者は新たな管理ツールを開くことなく、いつものメールから直接【顧客】へ返信できるため、最速で美しい運用が回ります。</span>
-                  <span class="lang-en">Instantly raises a private support issue and triggers automated email notifications to our team. Simple, robust, and friction-free communications.</span>
+                  <span class="lang-ja">【顧客】がフォームを送信すると同時に、【GitOpsシステム】が自動でチケットを起票し、【三嶋電算株式会社】のエンジニアへリアルタイム通知を送ります。担当者は新たな管理ツールを開くことなく、いつものメールから直接【顧客】へ返信できるため、無駄のないシンプルな運用が回ります。</span>
+                  <span class="lang-en">The moment a Customer submits the form, the GitOps System automatically creates a ticket and sends a real-time notification to our engineers. Our team can reply directly to the Customer via their standard email without opening new management tools, enabling a streamlined and simple workflow.</span>
                 </p>
               </div>
             </div>
@@ -277,8 +277,8 @@
                   <span class="lang-en">Robust Ticket Ops via GitHub Issues</span>
                 </h4>
                 <p>
-                  <span class="lang-ja">【顧客】からのご相談は単なるメールとして埋もれることなく、【GitOpsシステム】によってチーム共有の「サポートチケット」として自動蓄積されます。【三嶋電算株式会社】のメンバー全員で未対応・完了のステータスを可視化し、追加開発費ゼロで回答漏れを完全に防ぎます。</span>
-                  <span class="lang-en">Inquiries are raised as active GitHub Issues, not static emails. Natively track resolution status (open/closed), collaborate with team comments, and build a searchable troubleshooting database without buying expensive SaaS CRM tools.</span>
+                  <span class="lang-ja">【顧客】からのご相談は単なるメールとして埋もれることなく、【GitOpsシステム】によってチーム共有の「サポートチケット」として自動蓄積されます。【三嶋電算株式会社】のメンバー全員で未対応・完了のステータスを可視化し、追加開発費をかけずに、対応漏れのリスクを大幅に減らします。</span>
+                  <span class="lang-en">Customer inquiries are not lost in static emails; the GitOps System automatically accumulates them as shared "support tickets". Mishima Computing's team can visualize open/closed statuses, drastically reducing the risk of missed replies without any additional development costs.</span>
                 </p>
               </div>
             </div>
