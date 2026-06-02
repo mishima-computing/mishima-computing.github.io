@@ -256,14 +256,14 @@
           classDef agent fill:#0f172a,stroke:#3b82f6,stroke-width:1px,color:#94a3b8
           classDef artifact fill:#334155,stroke:#94a3b8,stroke-width:1px,stroke-dasharray: 5 5,color:#e2e8f0
 
-          A["1. 構想・指示<br><svg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' style='vertical-align: text-bottom;'><path d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'></path><circle cx='12' cy='7' r='4'></circle></svg> Human Owner"]:::human -->|タスク定義| B("2. ルーティング<br><img src='https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/openai.svg' width='16' height='16' style='vertical-align: text-bottom; filter: invert(0.8);' /> Supervisor Codex"):::agent
-          B -->|実装依頼| C("3. 実装 Candidate<br><img src='https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/claude.svg' width='16' height='16' style='vertical-align: text-bottom; filter: invert(0.8);' /> Claude"):::agent
+          A["1. 構想・指示<br>👤 Human Owner"]:::human -->|タスク定義| B("2. ルーティング<br>🤖 Supervisor Codex"):::agent
+          B -->|実装依頼| C("3. 実装 Candidate<br>🧠 Claude"):::agent
           C -.->|コードパッチ| D[["Base SHA / 候補コード"]]:::artifact
-          D -->|読み取り専用アクセス| E("4. 監査<br><img src='https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/openai.svg' width='16' height='16' style='vertical-align: text-bottom; filter: invert(0.8);' /> Codex Auditor"):::agent
+          D -->|読み取り専用アクセス| E("4. 監査<br>🔍 Codex Auditor"):::agent
           E -.->|構造化された監査結果| F[["Audit Bundle"]]:::artifact
           F -->|検証・採用| B
           B -->|ローカルコミット| G[["Clean Repository"]]:::artifact
-          G -->|最終確認・デプロイ| H["5. リリース<br><svg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' style='vertical-align: text-bottom;'><path d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'></path><circle cx='12' cy='7' r='4'></circle></svg> Human Owner"]:::human
+          G -->|最終確認・デプロイ| H["5. リリース<br>🚀 Human Owner"]:::human
         </div>
       </div>
 
