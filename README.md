@@ -40,3 +40,23 @@ If you attempt to align an inline SVG icon (like a GitHub logo) with text inside
   <path d="..."/>
 </svg>
 ```
+
+### CSS Sprites for Image Optimization
+
+To reduce HTTP requests and ensure icons load simultaneously without layout shift, we used a traditional CSS Sprite technique for the "AI Pathways" section. Instead of loading four separate icon images, we loaded a single 4-panel concept art image and used CSS `object-position` and `object-fit: none` (or container masking) to display only a specific quadrant for each card.
+
+This "old school" technique is highly effective for static sites where minimizing initial load latency is crucial for Core Web Vitals.
+
+### Dynamic Glow Effects with CSS Variables
+
+For the premium "glassmorphic" feel on the cards, we implemented a dynamic glow effect that tracks the user's mouse cursor. 
+Instead of heavy JavaScript animation libraries, we used a lightweight vanilla JS listener that simply updates CSS custom properties (`--x` and `--y`) on mousemove:
+
+```javascript
+card.addEventListener('mousemove', e => {
+  const rect = card.getBoundingClientRect();
+  card.style.setProperty('--x', `${e.clientX - rect.left}px`);
+  card.style.setProperty('--y', `${e.clientY - rect.top}px`);
+});
+```
+Then, pure CSS handles the visual rendering using a radial-gradient background tied to those variables. This ensures smooth 60fps rendering offloaded to the GPU.
