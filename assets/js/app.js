@@ -1,10 +1,26 @@
+const CLOUDFLARE_WEB_ANALYTICS_TOKEN = 'YOUR_CLOUDFLARE_WEB_ANALYTICS_TOKEN';
+
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initLanguage();
   initCardGlowEffects();
   initModals();
   initContactForm();
+  initCloudflareWebAnalytics();
 });
+
+/* --- CLOUDFLARE WEB ANALYTICS --- */
+function initCloudflareWebAnalytics() {
+  const token = CLOUDFLARE_WEB_ANALYTICS_TOKEN.trim();
+  if (!token || token === 'YOUR_CLOUDFLARE_WEB_ANALYTICS_TOKEN') return;
+  if (document.querySelector('script[data-cf-beacon]')) return;
+
+  const script = document.createElement('script');
+  script.defer = true;
+  script.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+  script.setAttribute('data-cf-beacon', JSON.stringify({ token }));
+  document.body.appendChild(script);
+}
 
 /* --- THEME CONTROLLER (LIGHT/DARK) --- */
 function initTheme() {
