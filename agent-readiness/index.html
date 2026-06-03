@@ -187,6 +187,30 @@
             "@type": "Answer",
             "text": "はい。Cloudflare Web Analytics や問い合わせ導線の source パラメータを用いて、どのページが読まれ、どのCTAから診断依頼につながったかを確認し、構造化データ、FAQ、見出し、導線の改善に活用します。"
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Cloudflare Web Analytics は商用サイトでも無料で使えますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい。Cloudflare Web Analytics は Cloudflare の全プランで利用できる軽量なアクセス解析です。Cloudflare 経由でプロキシしていないサイトでも、JS snippet を設置することで最大10サイトまで計測できます。Cloudflare 経由でプロキシしているサイトでは、Web Analytics の対象サイト数に上限はありません。ただし、無料で使えることと、すべての商用要件を無料プランで満たせることは別です。SLA、優先サポート、WAFルール、ログ保持、業務停止リスクへの保証が必要なサイトでは、有料プランや別途契約を検討します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "なぜ無料で使えるのですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "主な理由は、Cloudflare Web Analytics が広告用の個人追跡ではなく、ページ表示や読み込み性能を把握するための軽量な計測機能として設計されているためです。Cloudflare は、Web Analytics が収集する情報を最小限のタイミング指標のみであるとし、顧客サイトをまたいで個々のエンドユーザーを追跡しないとしています。また、Cloudflare は無料プランを入口として提供し、より高度なセキュリティ、運用保証、サポート、ログ、エンタープライズ機能が必要になった段階で商用プランへ移行するモデルを取っています。小規模な会社HPや検証段階では無料で始め、本番重要度が上がったら有料化を判断する、という使い方が現実的です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "どの段階で有料プランを検討すべきですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "単なる会社HP、サービス紹介ページ、問い合わせ導線の効果測定であれば、まずは無料の Cloudflare Web Analytics で十分です。一方で、EC、会員制サイト、業務停止が売上に直結するサイト、強いWAF運用、SLA、優先サポート、長期ログ保持、監査対応が必要なサイトでは、有料プランを検討します。三嶋電算のAI検索対応アドオンでは、最初から過剰な有料構成を前提にせず、無料枠で実測を始め、必要性が確認できた段階で段階的に拡張する方針を取ります。"
+          }
         }
       ]
     }
@@ -676,6 +700,51 @@
           </p>
           <p class="lang-en">
             Yes. We use Cloudflare Web Analytics and source-tagged inquiry paths to see which pages are read and which CTAs lead to diagnostic requests, then use that evidence to refine structured data, FAQ, headings, and conversion paths.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>
+            <span class="lang-ja">Cloudflare Web Analytics は商用サイトでも無料で使えますか？</span>
+            <span class="lang-en">Can Cloudflare Web Analytics be used for commercial websites for free?</span>
+          </h3>
+          <p class="lang-ja">
+            はい。Cloudflare Web Analytics は Cloudflare の全プランで利用できる軽量なアクセス解析です。Cloudflare 経由でプロキシしていないサイトでも、JS snippet を設置することで最大10サイトまで計測できます。Cloudflare 経由でプロキシしているサイトでは、Web Analytics の対象サイト数に上限はありません。<br>
+            ただし、無料で使えることと、すべての商用要件を無料プランで満たせることは別です。SLA、優先サポート、WAFルール、ログ保持、業務停止リスクへの保証が必要なサイトでは、有料プランや別途契約を検討します。
+          </p>
+          <p class="lang-en">
+            Yes. Cloudflare Web Analytics is available on all Cloudflare plans. For sites not proxied through Cloudflare, up to 10 sites can be measured by installing the JavaScript snippet. For sites proxied through Cloudflare, Cloudflare lists no site limit for Web Analytics.<br>
+            However, “free to use” does not mean every commercial requirement is covered by the Free plan. If a site requires SLA, priority support, stronger WAF controls, log retention, or business continuity guarantees, a paid plan or contract should be considered.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>
+            <span class="lang-ja">なぜ無料で使えるのですか？</span>
+            <span class="lang-en">Why can it be free?</span>
+          </h3>
+          <p class="lang-ja">
+            主な理由は、Cloudflare Web Analytics が広告用の個人追跡ではなく、ページ表示や読み込み性能を把握するための軽量な計測機能として設計されているためです。Cloudflare は、Web Analytics が収集する情報を最小限のタイミング指標のみであるとし、顧客サイトをまたいで個々のエンドユーザーを追跡しないとしています。<br>
+            また、Cloudflare は無料プランを入口として提供し、より高度なセキュリティ、運用保証、サポート、ログ、エンタープライズ機能が必要になった段階で Pro / Business / Enterprise 相当のプランへ移行する商用モデルを取っています。小規模な会社HPや検証段階では無料で始め、本番重要度が上がったら有料化を判断する、という使い方が現実的です。
+          </p>
+          <p class="lang-en">
+            The main reason is that Cloudflare Web Analytics is designed as lightweight measurement for page views and performance, not as advertising-oriented individual tracking. Cloudflare states that Web Analytics collects a minimal amount of information, mainly timing metrics, and does not track individual end users across customers’ Internet properties.<br>
+            Cloudflare also uses a freemium model: small sites and early-stage deployments can start for free, while organizations that need stronger security, operational guarantees, support, logs, or enterprise controls can move to paid plans. For a small company website or diagnostic add-on, starting free and upgrading only when operational requirements increase is a practical approach.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>
+            <span class="lang-ja">どの段階で有料プランを検討すべきですか？</span>
+            <span class="lang-en">When should a paid Cloudflare plan be considered?</span>
+          </h3>
+          <p class="lang-ja">
+            単なる会社HP、サービス紹介ページ、問い合わせ導線の効果測定であれば、まずは無料の Cloudflare Web Analytics で十分です。一方で、EC、会員制サイト、業務停止が売上に直結するサイト、強いWAF運用、SLA、優先サポート、長期ログ保持、監査対応が必要なサイトでは、有料プランを検討します。<br>
+            三嶋電算のAI検索対応アドオンでは、最初から過剰な有料構成を前提にせず、無料枠で実測を始め、必要性が確認できた段階で段階的に拡張する方針を取ります。
+          </p>
+          <p class="lang-en">
+            For a company website, service landing page, or inquiry-path measurement, Cloudflare Web Analytics on the free tier is usually enough to start. Paid plans should be considered for ecommerce, membership sites, revenue-critical services, stronger WAF operations, SLA, priority support, long-term log retention, or audit requirements.<br>
+            Mishima Computing’s AI Search Readiness Add-on does not assume an overbuilt paid stack from day one. We start with lightweight measurement where appropriate, then scale the Cloudflare setup only when business or operational requirements justify it.
           </p>
         </div>
       </div>
