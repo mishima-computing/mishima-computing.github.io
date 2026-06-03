@@ -1,10 +1,26 @@
+const CLOUDFLARE_WEB_ANALYTICS_TOKEN = '02ab2c59c50c4d02a6ce497849d891eb';
+
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initLanguage();
   initCardGlowEffects();
   initModals();
   initContactForm();
+  initCloudflareWebAnalytics();
 });
+
+/* --- CLOUDFLARE WEB ANALYTICS --- */
+function initCloudflareWebAnalytics() {
+  const token = CLOUDFLARE_WEB_ANALYTICS_TOKEN.trim();
+  if (!token) return;
+  if (document.querySelector('script[data-cf-beacon]')) return;
+
+  const script = document.createElement('script');
+  script.defer = true;
+  script.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+  script.setAttribute('data-cf-beacon', JSON.stringify({ token }));
+  document.body.appendChild(script);
+}
 
 /* --- THEME CONTROLLER (LIGHT/DARK) --- */
 function initTheme() {
@@ -258,13 +274,31 @@ function initContactForm() {
   // Prepopulate message from URL if present
   const urlParams = new URLSearchParams(window.location.search);
   const subject = urlParams.get('subject');
+  const src = urlParams.get('src');
+  const source = src ? src.trim().slice(0, 120) : '';
+  const sourceInput = document.getElementById('contact-source');
   const messageInput = document.getElementById('contact-message');
+  if (sourceInput) {
+    sourceInput.value = source;
+  }
+
   if (subject === 'free_diagnostic' && messageInput) {
     const currentLang = document.documentElement.getAttribute('lang') || 'ja';
+    const jaSourceLine = source ? `【流入元】:${source}\n` : '';
+    const enSourceLine = source ? `[Source]: ${source}\n` : '';
+
     if (currentLang === 'ja') {
-      messageInput.value = "無料でAI検索・HP診断を依頼する\n\n【対象サイトURL】:\n【ご相談内容】:\n";
+      messageInput.value =
+        "無料でAI検索・HP診断を依頼する\n\n" +
+        jaSourceLine +
+        "【対象サイトURL】:\n" +
+        "【ご相談内容】:\n";
     } else {
-      messageInput.value = "Request a Free AI Search & HP Diagnostic\n\n[Website URL]:\n[Inquiry Details]:\n";
+      messageInput.value =
+        "Request a Free AI Search & HP Diagnostic\n\n" +
+        enSourceLine +
+        "[Website URL]:\n" +
+        "[Inquiry Details]:\n";
     }
   }
 
@@ -285,7 +319,8 @@ function initContactForm() {
     const data = {
       name: formData.get('name'),
       email: formData.get('email'),
-      message: formData.get('message')
+      message: formData.get('message'),
+      source: formData.get('source')
     };
     
     const action = form.getAttribute('action');
