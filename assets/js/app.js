@@ -1,4 +1,4 @@
-const CLOUDFLARE_WEB_ANALYTICS_TOKEN = 'YOUR_CLOUDFLARE_WEB_ANALYTICS_TOKEN';
+const CLOUDFLARE_WEB_ANALYTICS_TOKEN = '02ab2c59c50c4d02a6ce497849d891eb';
 
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /* --- CLOUDFLARE WEB ANALYTICS --- */
 function initCloudflareWebAnalytics() {
   const token = CLOUDFLARE_WEB_ANALYTICS_TOKEN.trim();
-  if (!token || token === 'YOUR_CLOUDFLARE_WEB_ANALYTICS_TOKEN') return;
+  if (!token) return;
   if (document.querySelector('script[data-cf-beacon]')) return;
 
   const script = document.createElement('script');
