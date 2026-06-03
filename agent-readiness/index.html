@@ -198,7 +198,9 @@
     .flow-pill.highlight { background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(37, 99, 235, 0.1)); border-color: var(--primary-glow); }
     .flow-arrow-down { text-align: center; color: var(--text-secondary); margin-bottom: 1.2rem; font-size: 1.2rem; }
     .flow-tree { border-left: 2px solid var(--primary-glow); margin: 0 0 1.2rem 2.5rem; padding: 1.5rem 0 1.5rem 2.5rem; position: relative; }
-    .flow-tree-item { position: relative; margin-bottom: 1rem; background: var(--bg-primary); padding: 1rem 1.5rem; border-radius: var(--border-radius-md); border: 1px solid var(--border-color); }
+    .flow-tree-item { position: relative; margin-bottom: 1rem; background: var(--bg-primary); padding: 1rem 1.5rem; border-radius: var(--border-radius-md); border: 1px solid var(--border-color); display: flex; align-items: center; gap: 1.5rem; }
+    .flow-path-img { width: 90px; height: 90px; flex-shrink: 0; border-radius: var(--border-radius-sm); background-image: url('../assets/images/ai_pathways_4.jpg'); background-size: 200% 200%; border: 1px solid var(--border-color); box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .flow-tree-text { flex-grow: 1; }
     .flow-tree-item::before { content: ''; position: absolute; left: -2.5rem; top: 50%; width: 2.5rem; height: 2px; background: var(--primary-glow); }
     .flow-tree-item:last-child { margin-bottom: 0; }
     .flow-tree-title { font-weight: 700; margin-bottom: 0.3rem; color: var(--text-primary); }
@@ -330,20 +332,32 @@
           
           <div class="flow-tree">
             <div class="flow-tree-item">
-              <div class="flow-tree-title"><span class="lang-ja">1. 検索エンジンのインデックス</span><span class="lang-en">1. Search Engine Index</span></div>
-              <div class="flow-tree-desc"><span class="lang-ja">Google / Bing が巡回して整理したWeb情報</span><span class="lang-en">Web data crawled and organized by Google / Bing</span></div>
+              <div class="flow-path-img" style="background-position: 0% 0%;"></div>
+              <div class="flow-tree-text">
+                <div class="flow-tree-title"><span class="lang-ja">1. 検索エンジンのインデックス</span><span class="lang-en">1. Search Engine Index</span></div>
+                <div class="flow-tree-desc"><span class="lang-ja">Google / Bing が巡回して整理したWeb情報</span><span class="lang-en">Web data crawled and organized by Google / Bing</span></div>
+              </div>
             </div>
             <div class="flow-tree-item">
-              <div class="flow-tree-title"><span class="lang-ja">2. その場のWeb検索</span><span class="lang-en">2. Real-time Web Search</span></div>
-              <div class="flow-tree-desc"><span class="lang-ja">ChatGPT Search / Claude Web Search など</span><span class="lang-en">ChatGPT Search / Claude Web Search, etc.</span></div>
+              <div class="flow-path-img" style="background-position: 100% 0%;"></div>
+              <div class="flow-tree-text">
+                <div class="flow-tree-title"><span class="lang-ja">2. その場のWeb検索</span><span class="lang-en">2. Real-time Web Search</span></div>
+                <div class="flow-tree-desc"><span class="lang-ja">ChatGPT Search / Claude Web Search など</span><span class="lang-en">ChatGPT Search / Claude Web Search, etc.</span></div>
+              </div>
             </div>
             <div class="flow-tree-item">
-              <div class="flow-tree-title"><span class="lang-ja">3. 学習用・検索用クローラー</span><span class="lang-en">3. Training & Search Crawlers</span></div>
-              <div class="flow-tree-desc"><span class="lang-ja">OAI-SearchBot / GPTBot / ClaudeBot / Google-Extended など</span><span class="lang-en">OAI-SearchBot / GPTBot / ClaudeBot / Google-Extended, etc.</span></div>
+              <div class="flow-path-img" style="background-position: 0% 100%;"></div>
+              <div class="flow-tree-text">
+                <div class="flow-tree-title"><span class="lang-ja">3. 学習用・検索用クローラー</span><span class="lang-en">3. Training & Search Crawlers</span></div>
+                <div class="flow-tree-desc"><span class="lang-ja">OAI-SearchBot / GPTBot / ClaudeBot / Google-Extended など</span><span class="lang-en">OAI-SearchBot / GPTBot / ClaudeBot / Google-Extended, etc.</span></div>
+              </div>
             </div>
             <div class="flow-tree-item">
-              <div class="flow-tree-title"><span class="lang-ja">4. AIエージェントの直接閲覧</span><span class="lang-en">4. Agent Direct Parsing</span></div>
-              <div class="flow-tree-desc"><span class="lang-ja">HTML / ボタン / フォーム / アクセシビリティツリー</span><span class="lang-en">Raw HTML / Buttons / Forms / Accessibility Trees</span></div>
+              <div class="flow-path-img" style="background-position: 100% 100%;"></div>
+              <div class="flow-tree-text">
+                <div class="flow-tree-title"><span class="lang-ja">4. AIエージェントの直接閲覧</span><span class="lang-en">4. Agent Direct Parsing</span></div>
+                <div class="flow-tree-desc"><span class="lang-ja">HTML / ボタン / フォーム / アクセシビリティツリー</span><span class="lang-en">Raw HTML / Buttons / Forms / Accessibility Trees</span></div>
+              </div>
             </div>
           </div>
           
