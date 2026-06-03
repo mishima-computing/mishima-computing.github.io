@@ -190,7 +190,27 @@
     .machine-box code { font-family: var(--font-mono); font-size: 0.88rem; color: var(--primary); }
     .faq-item { border-bottom: 1px solid var(--border-color); padding: 1.5rem 0; }
     .faq-item h3 { font-size: 1.15rem; margin-bottom: 0.6rem; }
-    @media (max-width: 992px) { .agent-grid { grid-template-columns: 1fr; } .flow-table th { width: auto; } }
+    
+    /* Flowchart Styles */
+    .ai-flowchart { max-width: 750px; margin: 3rem auto; padding: 2.5rem; background: var(--bg-secondary); border-radius: var(--border-radius-lg); border: 1px solid var(--border-color); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1); }
+    .flow-node { text-align: center; margin-bottom: 1.2rem; }
+    .flow-pill { display: inline-block; padding: 1rem 1.8rem; border-radius: 12px; background: var(--bg-primary); border: 1px solid var(--border-color); font-weight: 500; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); position: relative; z-index: 2; }
+    .flow-pill.highlight { background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(37, 99, 235, 0.1)); border-color: var(--primary-glow); }
+    .flow-arrow-down { text-align: center; color: var(--text-secondary); margin-bottom: 1.2rem; font-size: 1.2rem; }
+    .flow-tree { border-left: 2px solid var(--primary-glow); margin: 0 0 1.2rem 2.5rem; padding: 1.5rem 0 1.5rem 2.5rem; position: relative; }
+    .flow-tree-item { position: relative; margin-bottom: 1rem; background: var(--bg-primary); padding: 1rem 1.5rem; border-radius: var(--border-radius-md); border: 1px solid var(--border-color); }
+    .flow-tree-item::before { content: ''; position: absolute; left: -2.5rem; top: 50%; width: 2.5rem; height: 2px; background: var(--primary-glow); }
+    .flow-tree-item:last-child { margin-bottom: 0; }
+    .flow-tree-title { font-weight: 700; margin-bottom: 0.3rem; color: var(--text-primary); }
+    .flow-tree-desc { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; }
+
+    @media (max-width: 992px) { 
+      .agent-grid { grid-template-columns: 1fr !important; } 
+      .flow-table th { width: auto; }
+      .ai-flowchart { padding: 1.5rem; }
+      .flow-tree { margin-left: 1rem; padding-left: 1.5rem; }
+      .flow-tree-item::before { left: -1.5rem; width: 1.5rem; }
+    }
   </style>
 </head>
 <body>
@@ -280,6 +300,53 @@
           <span class="lang-ja">「AI検索対応」は流行語でも魔法でもありません。AIがウェブから情報を拾い上げる実際の経路（パス）は複数存在します。本アドオンでは、それぞれの経路における技術的な障害を取り除きます。</span>
           <span class="lang-en">"AI Search Readiness" is not magic. AI systems gather information through multiple distinct technical pathways. Our add-on clears technical roadblocks across all of them.</span>
         </p>
+
+        <!-- HTML/CSS FLOWCHART -->
+        <div class="ai-flowchart">
+          <div class="flow-node">
+            <div class="flow-pill">
+              <span class="lang-ja" style="line-height: 1.6;">見込み客の質問<br><strong style="color:var(--text-primary); font-size: 1.1rem;">「近くでAI導入や業務自動化に強い会社は？」</strong></span>
+              <span class="lang-en" style="line-height: 1.6;">Prospect's Query<br><strong style="color:var(--text-primary); font-size: 1.1rem;">"Best local companies for AI automation?"</strong></span>
+            </div>
+          </div>
+          
+          <div class="flow-arrow-down">▼</div>
+          
+          <div class="flow-node">
+            <div class="flow-pill highlight">
+              <span class="lang-ja">生成AI・検索AIが情報を探す</span>
+              <span class="lang-en">Generative AI / Search AI looks for information</span>
+            </div>
+          </div>
+          
+          <div class="flow-tree">
+            <div class="flow-tree-item">
+              <div class="flow-tree-title"><span class="lang-ja">1. 検索エンジンのインデックス</span><span class="lang-en">1. Search Engine Index</span></div>
+              <div class="flow-tree-desc"><span class="lang-ja">Google / Bing が巡回して整理したWeb情報</span><span class="lang-en">Web data crawled and organized by Google / Bing</span></div>
+            </div>
+            <div class="flow-tree-item">
+              <div class="flow-tree-title"><span class="lang-ja">2. その場のWeb検索</span><span class="lang-en">2. Real-time Web Search</span></div>
+              <div class="flow-tree-desc"><span class="lang-ja">ChatGPT Search / Claude Web Search など</span><span class="lang-en">ChatGPT Search / Claude Web Search, etc.</span></div>
+            </div>
+            <div class="flow-tree-item">
+              <div class="flow-tree-title"><span class="lang-ja">3. 学習用・検索用クローラー</span><span class="lang-en">3. Training & Search Crawlers</span></div>
+              <div class="flow-tree-desc"><span class="lang-ja">OAI-SearchBot / GPTBot / ClaudeBot / Google-Extended など</span><span class="lang-en">OAI-SearchBot / GPTBot / ClaudeBot / Google-Extended, etc.</span></div>
+            </div>
+            <div class="flow-tree-item">
+              <div class="flow-tree-title"><span class="lang-ja">4. AIエージェントの直接閲覧</span><span class="lang-en">4. Agent Direct Parsing</span></div>
+              <div class="flow-tree-desc"><span class="lang-ja">HTML / ボタン / フォーム / アクセシビリティツリー</span><span class="lang-en">Raw HTML / Buttons / Forms / Accessibility Trees</span></div>
+            </div>
+          </div>
+          
+          <div class="flow-arrow-down" style="margin-left: 2.5rem;">▼</div>
+          
+          <div class="flow-node" style="margin-left: 2.5rem;">
+            <div class="flow-pill highlight" style="background: rgba(16, 185, 129, 0.05); border-color: rgba(16, 185, 129, 0.4);">
+              <span class="lang-ja" style="line-height: 1.6;"><strong style="color:var(--text-primary);">会社HPに必要な補強</strong><br><span style="color:var(--text-secondary); font-size: 0.95rem;">会社情報・サービス・地域・FAQ・問い合わせ導線・構造化データ</span></span>
+              <span class="lang-en" style="line-height: 1.6;"><strong style="color:var(--text-primary);">Required HP Reinforcements</strong><br><span style="color:var(--text-secondary); font-size: 0.95rem;">Company Info・Services・Region・FAQ・Contact Flows・Structured Data</span></span>
+            </div>
+          </div>
+        </div>
 
         <div class="agent-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
           <article class="card">
