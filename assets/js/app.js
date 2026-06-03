@@ -255,6 +255,19 @@ function initContactForm() {
   const form = document.querySelector('.contact-form');
   if (!form) return;
 
+  // Prepopulate message from URL if present
+  const urlParams = new URLSearchParams(window.location.search);
+  const subject = urlParams.get('subject');
+  const messageInput = document.getElementById('contact-message');
+  if (subject === 'free_diagnostic' && messageInput) {
+    const currentLang = document.documentElement.getAttribute('lang') || 'ja';
+    if (currentLang === 'ja') {
+      messageInput.value = "無料でAI検索・HP診断を依頼する\n\n【対象サイトURL】:\n【ご相談内容】:\n";
+    } else {
+      messageInput.value = "Request a Free AI Search & HP Diagnostic\n\n[Website URL]:\n[Inquiry Details]:\n";
+    }
+  }
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     
