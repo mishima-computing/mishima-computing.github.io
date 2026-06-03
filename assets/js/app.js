@@ -284,37 +284,28 @@ function initContactForm() {
 
   if (subject === 'free_diagnostic' && messageInput) {
     const currentLang = document.documentElement.getAttribute('lang') || 'ja';
-    const jaSourceLine = source ? `【流入元】:${source}\n` : '';
-    const enSourceLine = source ? `[Source]: ${source}\n` : '';
-
     if (currentLang === 'ja') {
       messageInput.value =
         "無料でAI検索・HP診断を依頼する\n\n" +
-        jaSourceLine +
         "【対象サイトURL】:\n" +
         "【ご相談内容】:\n";
     } else {
       messageInput.value =
         "Request a Free AI Search & HP Diagnostic\n\n" +
-        enSourceLine +
         "[Website URL]:\n" +
         "[Inquiry Details]:\n";
     }
   } else if (subject === 'technical_validation' && messageInput) {
     const currentLang = document.documentElement.getAttribute('lang') || 'ja';
-    const jaSourceLine = source ? `【流入元】:${source}\n` : '';
-    const enSourceLine = source ? `[Source]: ${source}\n` : '';
 
     if (currentLang === 'ja') {
       messageInput.value =
         "技術検証（PoC）およびシステム構築について相談する\n\n" +
-        jaSourceLine +
         "【対象システム・課題の概要】:\n" +
         "【ご希望の検証内容・ご要件】:\n";
     } else {
       messageInput.value =
         "Consult about Technical Validation (PoC) & System Development\n\n" +
-        enSourceLine +
         "[System / Challenge Overview]:\n" +
         "[Validation Requirements]:\n";
     }
