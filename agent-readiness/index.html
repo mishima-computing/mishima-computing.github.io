@@ -272,6 +272,68 @@
       </div>
     </section>
 
+    <!-- Section 1.5: AIが情報を拾う4つの経路 -->
+    <section class="section" id="ai-pathways">
+      <div class="container">
+        <h2><span class="lang-ja">AIが会社情報を取得する4つの経路</span><span class="lang-en">4 Pathways of AI Information Retrieval</span></h2>
+        <p class="agent-section-note">
+          <span class="lang-ja">「AI検索対応」は流行語でも魔法でもありません。AIがウェブから情報を拾い上げる実際の経路（パス）は複数存在します。本アドオンでは、それぞれの経路における技術的な障害を取り除きます。</span>
+          <span class="lang-en">"AI Search Readiness" is not magic. AI systems gather information through multiple distinct technical pathways. Our add-on clears technical roadblocks across all of them.</span>
+        </p>
+
+        <div class="agent-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+          <article class="card">
+            <div class="report-tag">Path 1</div>
+            <h3 class="card-title"><span class="lang-ja">検索エンジンのデータベース</span><span class="lang-en">Search Engine Index</span></h3>
+            <div class="card-body">
+              <p class="lang-ja">Googleなどが巡回して構築する巨大なデータベース。多くのAI検索もこれを土台にするため、まずは従来のクローラビリティ（sitemapやセマンティックタグ）を完璧にすることが大前提です。</p>
+              <p class="lang-en" style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">The massive databases built by crawlers like Googlebot. Since most AI search features use this as their foundation, flawless core crawlability (sitemaps, semantic HTML) remains essential.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="report-tag">Path 2</div>
+            <h3 class="card-title"><span class="lang-ja">生成AI検索とRAG</span><span class="lang-en">Generative AI & RAG</span></h3>
+            <div class="card-body">
+              <p class="lang-ja">AIがユーザーの質問を複数のキーワードに分解して（Query Fan-out）情報をかき集める経路。社名だけでなく、課題名や地域名で発見されるようコンテンツ構造を整えます。</p>
+              <p class="lang-en" style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">The process where AI breaks down user questions into multiple sub-queries to gather information. Content must be structured around challenges and locations, not just the company name.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="report-tag">Path 3</div>
+            <h3 class="card-title"><span class="lang-ja">その場でのリアルタイム検索</span><span class="lang-en">Real-time Web Search</span></h3>
+            <div class="card-body">
+              <p class="lang-ja">ChatGPT Searchなどが、会話の中でその場でWebを検索する経路。引用元として選ばれやすくするため、FAQの充実や回答しやすい明確なテキスト配置を行います。</p>
+              <p class="lang-en" style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">Instances where tools like ChatGPT perform live web searches during a conversation. Clear FAQs and logically placed text increase the chances of being cited.</p>
+            </div>
+          </article>
+          
+          <article class="card">
+            <div class="report-tag">Path 4</div>
+            <h3 class="card-title"><span class="lang-ja">AIエージェントの直接閲覧</span><span class="lang-en">Agent Direct Parsing</span></h3>
+            <div class="card-body">
+              <p class="lang-ja">人間の代わりに自律して動くAIが、直接HPのHTMLを読み取る経路。見た目だけでなく、ボタンやフォームの「意味」がAIに伝わるアクセシビリティ構造が必須になります。</p>
+              <p class="lang-en" style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">Autonomous AI agents reading your raw HTML on behalf of users. Beyond visual design, interactive elements like buttons and forms must have clear semantic meaning.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="machine-box">
+          <h3>
+            <span class="lang-ja">※学習用クローラーへの配慮 (robots.txtの設計)</span>
+            <span class="lang-en">*Consideration for Training Crawlers (robots.txt)</span>
+          </h3>
+          <p class="lang-ja" style="margin-top: 1rem; line-height: 1.8;">
+            AIモデルの学習に使われるボット（例: <code>GPTBot</code>）と、検索結果を出すためのボット（例: <code>OAI-SearchBot</code>）は仕組みが異なります。三嶋電算では、「AI検索には表示させたいが、自社のコンテンツをAIの学習データにはされたくない」といったエンタープライズのポリシーに合わせて、公開情報を厳密にコントロールする <code>robots.txt</code> の設計もサポートします。
+          </p>
+          <p class="lang-en" style="margin-top: 0.5rem; font-size: 0.9rem; line-height: 1.6; color: var(--text-secondary);">
+            Bots used for training AI models (e.g., GPTBot) differ from bots that fetch content for search features (e.g., OAI-SearchBot). We help design strict robots.txt policies to ensure your data is discoverable in search without being absorbed into external training datasets, aligning with enterprise compliance.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- Section 2: アドオンで追加するもの -->
     <section class="section" id="add-ons">
       <div class="container">
@@ -360,6 +422,23 @@
             </tr>
           </tbody>
         </table>
+      </div>
+    </section>
+
+    <!-- Section 4.5: 保証に関するポリシー -->
+    <section class="section" id="policy" style="background-color: rgba(239, 68, 68, 0.02); border-top: 1px solid rgba(239, 68, 68, 0.1);">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem;">
+          <span class="lang-ja">誠実なご約束：AIによる推薦や検索順位を「保証」する魔法ではありません</span>
+          <span class="lang-en">Our Commitment: We do not guarantee rankings or AI recommendations.</span>
+        </h2>
+        <p class="lang-ja" style="line-height: 1.8; text-align: left; color: var(--text-secondary);">
+          本サービスは、ChatGPT、Google AI Overviews、Gemini、Claude等での表示順位や推薦を保証するものではありません。<br><br>
+          私たちが行うのは、AIに選ばれるための小手先の裏技ではありません。検索エンジンやAIエージェントが会社情報を発見・解釈する上で妨げとなっている<strong>「読まれない技術的な原因」を一つずつ確実に取り除き</strong>、人間にも機械にも正しく伝わる情報構造へとホームページを「補強」することです。
+        </p>
+        <p class="lang-en" style="line-height: 1.8; text-align: left; color: var(--text-secondary); margin-top: 1rem;">
+          This service does not guarantee rankings, citations, or recommendations on platforms like ChatGPT, Google AI Overviews, Gemini, or Claude. Our approach is purely technical: we systematically remove the technical roadblocks that prevent AI agents and search engines from discovering and understanding your company's information.
+        </p>
       </div>
     </section>
 
