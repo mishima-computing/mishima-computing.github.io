@@ -275,10 +275,15 @@ function initContactForm() {
   const urlParams = new URLSearchParams(window.location.search);
   const subject = urlParams.get('subject');
   const src = urlParams.get('src');
+  const source = src ? src.trim().slice(0, 120) : '';
+  const sourceInput = document.getElementById('contact-source');
   const messageInput = document.getElementById('contact-message');
+  if (sourceInput) {
+    sourceInput.value = source;
+  }
+
   if (subject === 'free_diagnostic' && messageInput) {
     const currentLang = document.documentElement.getAttribute('lang') || 'ja';
-    const source = src ? src.trim().slice(0, 120) : '';
     const jaSourceLine = source ? `【流入元】:${source}\n` : '';
     const enSourceLine = source ? `[Source]: ${source}\n` : '';
 
@@ -314,7 +319,8 @@ function initContactForm() {
     const data = {
       name: formData.get('name'),
       email: formData.get('email'),
-      message: formData.get('message')
+      message: formData.get('message'),
+      source: formData.get('source')
     };
     
     const action = form.getAttribute('action');

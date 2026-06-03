@@ -75,7 +75,7 @@
         "ja",
         "en"
       ],
-      "dateModified": "2026-06-02",
+      "dateModified": "2026-06-03",
       "publisher": {
         "@id": "https://mishima-computing.github.io/#organization"
       }
@@ -121,6 +121,14 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Crawl and sitemap policy implementation"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI検索対応の効果測定と問い合わせ導線分析",
+              "description": "Cloudflare Web Analytics and source-tagged CTAs are used to observe page visits, referral paths, and diagnostic inquiry flow."
             }
           }
         ]
@@ -170,6 +178,14 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "表示や引用は検索エンジン側の判断で保証できません。三嶋電算は、公開情報をクロール可能かつ機械可読にし、正しく発見・解釈される確率を高める実装を行います。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "AI検索対応では効果測定も行いますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい。Cloudflare Web Analytics や問い合わせ導線の source パラメータを用いて、どのページが読まれ、どのCTAから診断依頼につながったかを確認し、構造化データ、FAQ、見出し、導線の改善に活用します。"
           }
         }
       ]
@@ -634,7 +650,29 @@
       </div>
     </section>
 
-    <!-- Section 4.6: 保証に関するポリシー -->
+    <!-- Section 4.6: FAQ -->
+    <section class="section" id="faq" style="padding-top: 0;">
+      <div class="container">
+        <h2>
+          <span class="lang-ja">よくある質問</span>
+          <span class="lang-en">FAQ</span>
+        </h2>
+        <div class="faq-item">
+          <h3>
+            <span class="lang-ja">AI検索対応では効果測定も行いますか？</span>
+            <span class="lang-en">Does AI search readiness include measurement?</span>
+          </h3>
+          <p class="lang-ja">
+            はい。Cloudflare Web Analytics や問い合わせ導線の source パラメータを用いて、どのページが読まれ、どのCTAから診断依頼につながったかを確認し、構造化データ、FAQ、見出し、導線の改善に活用します。
+          </p>
+          <p class="lang-en">
+            Yes. We use Cloudflare Web Analytics and source-tagged inquiry paths to see which pages are read and which CTAs lead to diagnostic requests, then use that evidence to refine structured data, FAQ, headings, and conversion paths.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4.7: 保証に関するポリシー -->
     <section class="section" id="policy" style="background-color: rgba(239, 68, 68, 0.02); border-top: 1px solid rgba(239, 68, 68, 0.1);">
       <div class="container" style="max-width: 800px; text-align: center;">
         <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem;">
