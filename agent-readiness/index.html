@@ -478,6 +478,118 @@
       </div>
     </section>
 
+    <!-- Section 2.5: 効果測定 -->
+    <section class="section" id="measurement">
+      <div class="container">
+        <h2>
+          <span class="lang-ja">効果測定：プライバシーを尊重する軽量アナリティクス</span>
+          <span class="lang-en">Measurement: Privacy-First Lightweight Analytics</span>
+        </h2>
+
+        <p class="agent-section-note">
+          <span class="lang-ja">
+            AI検索対応は、構造化データを追加して終わりではありません。<br>
+            どのページが読まれ、どの導線から問い合わせにつながったかを確認し、会社情報・サービス説明・FAQ・CTAを継続的に改善していく必要があります。<br>
+            三嶋電算では、個人を特定するための追跡ではなく、情報構造と問い合わせ導線を改善するための軽量な計測基盤をあわせて設計します。（当サイト自体がその仕組みを用いたライブショーケースとして稼働しています）
+          </span>
+          <span class="lang-en" style="margin-top: 1rem;">
+            AI search readiness does not end with structured data.<br>
+            We need to observe which pages are read, which paths lead to inquiries, and continuously refine company information, service descriptions, FAQ, and CTAs.<br>
+            Mishima Computing designs lightweight measurement infrastructure focused on improving information architecture and inquiry paths, not identifying individual visitors. (This very website serves as a live implementation showcase of this setup.)
+          </span>
+        </p>
+
+        <div class="agent-grid">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M13 4.07A8 8 0 0 1 19.93 11"></path>
+                <path d="M13 8.1A4 4 0 0 1 15.9 11"></path>
+                <path d="M7 20.3A8 8 0 0 1 4.07 13"></path>
+                <path d="M11 15.9A4 4 0 0 1 8.1 13"></path>
+                <circle cx="12" cy="12" r="1"></circle>
+                <path d="M12 2v2"></path>
+                <path d="M12 20v2"></path>
+                <path d="M2 12h2"></path>
+                <path d="M20 12h2"></path>
+              </svg>
+            </div>
+            <h3 class="card-title">
+              <span class="lang-ja">読まれるページを確認する</span>
+              <span class="lang-en">Page Readability Signals</span>
+            </h3>
+            <div class="card-body">
+              <p class="lang-ja">
+                Cloudflare Web Analytics により、検索・参照元・国・端末・閲覧ページを確認し、
+                どの入口からAI検索対応ページへ到達しているかを把握します。
+              </p>
+              <p class="lang-en">
+                Cloudflare Web Analytics helps identify search and referral sources,
+                countries, devices, and visited paths to understand how users reach the AI readiness page.
+              </p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="6" cy="6" r="3"></circle>
+                <circle cx="18" cy="18" r="3"></circle>
+                <path d="M8.5 8.5 15.5 15.5"></path>
+                <path d="M12 6h3a3 3 0 0 1 3 3v6"></path>
+              </svg>
+            </div>
+            <h3 class="card-title">
+              <span class="lang-ja">問い合わせ導線を検証する</span>
+              <span class="lang-en">Inquiry Path Validation</span>
+            </h3>
+            <div class="card-body">
+              <p class="lang-ja">
+                AI検索対応ページから問い合わせページへの遷移を確認し、
+                CTA文言、配置、無料診断フォームの改善に活かします。
+              </p>
+              <p class="lang-en">
+                We measure movement from the AI readiness page to the contact page
+                and use the data to improve CTA copy, placement, and diagnostic inquiry flow.
+              </p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 3v18h18"></path>
+                <path d="m7 15 4-4 3 3 5-7"></path>
+                <path d="M14 7h5v5"></path>
+              </svg>
+            </div>
+            <h3 class="card-title">
+              <span class="lang-ja">改善サイクルを回す</span>
+              <span class="lang-en">Evidence-Based Iteration</span>
+            </h3>
+            <div class="card-body">
+              <p class="lang-ja">
+                計測結果をもとに、構造化データ、FAQ、ページ見出し、導線を継続改善します。
+                「AIに読ませる」だけでなく、「読まれた後に問い合わせへ進ませる」設計を重視します。
+              </p>
+              <p class="lang-en">
+                Based on measurement results, we refine structured data, FAQ,
+                headings, and conversion paths. The goal is not only to be read by AI,
+                but to guide qualified visitors toward inquiry.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <div style="margin-top: 2rem;">
+          <a href="../contact/?subject=free_diagnostic&amp;src=agent_readiness_measurement" class="btn btn-primary">
+            <span class="lang-ja">AI検索対応と効果測定を相談する</span>
+            <span class="lang-en">Discuss AI readiness and measurement</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- Section 3: 進め方 -->
     <section class="section" id="process" style="background-color: rgba(6, 182, 212, 0.01);">
       <div class="container">
@@ -538,117 +650,6 @@
       </div>
     </section>
 
-    <!-- Section 4.5: 効果測定まで含めたAI検索対応 -->
-    <section class="section" id="measurement">
-      <div class="container">
-        <h2>
-          <span class="lang-ja">効果測定まで含めたAI検索対応</span>
-          <span class="lang-en">AI Search Readiness with Measurement</span>
-        </h2>
-
-        <p class="agent-section-note">
-          <span class="lang-ja">
-            AI検索対応は、構造化データを追加して終わりではありません。
-            どのページが読まれ、どの導線から問い合わせにつながったかを継続的に確認し、
-            会社情報・サービス説明・FAQ・CTAを改善していく運用が必要です。
-          </span>
-          <span class="lang-en">
-            AI search readiness does not end with structured data.
-            We continuously observe which pages are visited, which paths lead to inquiries,
-            and refine company information, service descriptions, FAQ, and CTAs.
-          </span>
-        </p>
-
-        <div class="agent-grid">
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M13 4.07A8 8 0 0 1 19.93 11"></path>
-                <path d="M13 8.1A4 4 0 0 1 15.9 11"></path>
-                <path d="M7 20.3A8 8 0 0 1 4.07 13"></path>
-                <path d="M11 15.9A4 4 0 0 1 8.1 13"></path>
-                <circle cx="12" cy="12" r="1"></circle>
-                <path d="M12 2v2"></path>
-                <path d="M12 20v2"></path>
-                <path d="M2 12h2"></path>
-                <path d="M20 12h2"></path>
-              </svg>
-            </div>
-            <h3 class="card-title">
-              <span class="lang-ja">流入経路の把握</span>
-              <span class="lang-en">Traffic Source Visibility</span>
-            </h3>
-            <div class="card-body">
-              <p class="lang-ja">
-                Cloudflare Web Analytics により、検索・参照元・国・端末・閲覧ページを確認し、
-                どの入口からAI検索対応ページへ到達しているかを把握します。
-              </p>
-              <p class="lang-en">
-                Cloudflare Web Analytics helps identify search and referral sources,
-                countries, devices, and visited paths to understand how users reach the AI readiness page.
-              </p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="6" cy="6" r="3"></circle>
-                <circle cx="18" cy="18" r="3"></circle>
-                <path d="M8.5 8.5 15.5 15.5"></path>
-                <path d="M12 6h3a3 3 0 0 1 3 3v6"></path>
-              </svg>
-            </div>
-            <h3 class="card-title">
-              <span class="lang-ja">問い合わせ導線の検証</span>
-              <span class="lang-en">Inquiry Funnel Validation</span>
-            </h3>
-            <div class="card-body">
-              <p class="lang-ja">
-                AI検索対応ページから問い合わせページへの遷移を確認し、
-                CTA文言、配置、無料診断フォームの改善に活かします。
-              </p>
-              <p class="lang-en">
-                We measure movement from the AI readiness page to the contact page
-                and use the data to improve CTA copy, placement, and diagnostic inquiry flow.
-              </p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 3v18h18"></path>
-                <path d="m7 15 4-4 3 3 5-7"></path>
-                <path d="M14 7h5v5"></path>
-              </svg>
-            </div>
-            <h3 class="card-title">
-              <span class="lang-ja">改善サイクルの証跡化</span>
-              <span class="lang-en">Evidence-Based Iteration</span>
-            </h3>
-            <div class="card-body">
-              <p class="lang-ja">
-                計測結果をもとに、構造化データ、FAQ、ページ見出し、導線を継続改善します。
-                「AIに読ませる」だけでなく、「読まれた後に問い合わせへ進ませる」設計を重視します。
-              </p>
-              <p class="lang-en">
-                Based on measurement results, we refine structured data, FAQ,
-                headings, and conversion paths. The goal is not only to be read by AI,
-                but to guide qualified visitors toward inquiry.
-              </p>
-            </div>
-          </article>
-        </div>
-
-        <div style="margin-top: 2rem;">
-          <a href="../contact/?subject=free_diagnostic&amp;src=agent_readiness_measurement" class="btn btn-primary">
-            <span class="lang-ja">AI検索対応と効果測定を相談する</span>
-            <span class="lang-en">Discuss AI readiness and measurement</span>
-          </a>
-        </div>
-      </div>
-    </section>
 
     <!-- Section 4.6: FAQ -->
     <section class="section" id="faq" style="padding-top: 0;">
