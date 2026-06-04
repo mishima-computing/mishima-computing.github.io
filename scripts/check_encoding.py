@@ -4,6 +4,7 @@ import sys
 # Directories and files to exclude
 EXCLUDE_DIRS = {'.git', 'node_modules'}
 TARGET_EXTENSIONS = {'.md', '.html', '.css', '.js', '.json', '.txt', '.xml', '.yml', '.yaml'}
+TARGET_FILENAMES = {'CNAME', 'LICENSE', '.gitignore', 'Dockerfile'}
 
 def check_files(root_dir='.'):
     violations = []
@@ -14,7 +15,7 @@ def check_files(root_dir='.'):
         
         for filename in filenames:
             ext = os.path.splitext(filename)[1].lower()
-            if ext not in TARGET_EXTENSIONS:
+            if ext not in TARGET_EXTENSIONS and filename not in TARGET_FILENAMES:
                 continue
                 
             filepath = os.path.join(dirpath, filename)
