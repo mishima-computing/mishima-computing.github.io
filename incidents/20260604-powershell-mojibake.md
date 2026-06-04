@@ -52,3 +52,10 @@ $content = [IO.File]::ReadAllText($_.FullName, $utf8NoBom)
 
 3. **コミット前の Diff 検証**
    一括置換などの破壊的操作を行った後は、直ちにコミットせず、`git diff` でマルチバイト文字の整合性を目視（エージェント視点）で確認するステップを設ける。
+
+4. **CIによるエンコーディングの自動監査（事後検出）**
+   人的・エージェント的ミスによる文字化け混入を水際で防ぐため、GitHub Actions による自動エンコーディング監査 (`.github/workflows/encoding-check.yml`) を導入した。
+   対象のテキストファイル群に対し、Python標準ライブラリのみを用いた高速な検査 (`scripts/check_encoding.py`) を全PushおよびPull Request時に実行し、以下のいずれかに該当する場合は直ちにCIを失敗（赤色）させる。
+   - `\xef\xbb\xbf` (UTF-8 BOM) が混入していないこと
+   - `utf-8` (strict) として正しくデコードできること（不正バイトの混入がないこと）
+   - 本文中に `\ufffd` (置換文字 / Replacement Character) が含まれていないこと（不可逆な文字化けの痕跡がないこと）
