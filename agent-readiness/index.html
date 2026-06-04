@@ -346,6 +346,22 @@
           "@type": "Answer",
           "text": "単なる会社HP、サービス紹介ページ、問い合わせ導線の効果測定であれば、まずは無料の Cloudflare Web Analytics で十分です。一方で、EC、会員制サイト、業務停止が売上に直結するサイト、強いWAF運用、SLA、優先サポート、長期ログ保持、監査対応が必要なサイトでは、有料プランを検討します。<br>三嶋電算のAI検索対応アドオンでは、最初から過剰な有料構成を前提にせず、無料枠で実測を始め、必要性が確認できた段階で段階的に拡張する方針を取ります。"
         }
+      },
+      {
+        "@type": "Question",
+        "name": "構造化データ（JSON-LD）を入れれば、AIに推薦されやすくなりますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "いいえ、構造化データは「AIに直接読ませる魔法の呪文」ではありません。多くのAIクローラーはレンダリング後の本文を重視します。<br>私たちが構造化データを導入する真の目的は2つです。1つは、検索インデックスを通じて「この会社が公式の実体である」というエンティティ（Knowledge Graph）を確定させ、AIに継承させること。もう1つは、AIが地の文から情報を推測する手間（RAGの負荷）を減らし、回答への組み込みを安全かつ容易にすることです。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "FAQPageの構造化データにはどのような効果がありますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "FAQの「質問と回答」のペアは、生成AIやRAG（検索拡張生成）が情報を引き出す際の「検索単位（チャンク）」と完全に一致するため、AIがより正確に自社の情報を引用できるようになります。<br>（現在、Googleの検索結果上でアコーディオン表示されるリッチリザルトは厳しく制限されています。当サービスの狙いは検索結果を派手にすることではなく、あくまでAI推論の精度向上です）"
+        }
       }
     ]
   }
@@ -580,8 +596,8 @@
             <div class="report-tag">Signals</div>
             <h3 class="card-title"><span class="lang-ja">機械可読シグナルの追加</span><span class="lang-en">Machine Readable Signals</span></h3>
             <div class="card-body">
-              <p class="lang-ja">構造化データ (Organization, Service, FAQ等)、適切な sitemap.xml、robots.txt を追加し、検索エンジンとAIに自社を正しく認識させます。</p>
-              <p class="lang-en" style="margin-top: 0.5rem;">We inject structured data (JSON-LD) and properly configure sitemaps to ensure search engines and AI correctly interpret your entity.</p>
+              <p class="lang-ja">「構造化データを置けば推薦される」という神話ではなく、AIの推論負荷（RAGの検索手間）を減らし、企業エンティティを確定させるためのJSON-LDを注入します。</p>
+              <p class="lang-en" style="margin-top: 0.5rem;">Instead of treating structured data as magic SEO dust, we inject precise JSON-LD to consolidate your Knowledge Graph entity and reduce inference overhead for AI/RAG systems.</p>
             </div>
           </article>
           <article class="card">
@@ -832,6 +848,36 @@
           <p class="lang-en">
             The main reason is that Cloudflare Web Analytics is designed as lightweight measurement for page views and performance, not as advertising-oriented individual tracking. Cloudflare states that Web Analytics collects a minimal amount of information, mainly timing metrics, and does not track individual end users across customers’ Internet properties.<br>
             Cloudflare also uses a freemium model: small sites and early-stage deployments can start for free, while organizations that need stronger security, operational guarantees, support, logs, or enterprise controls can move to paid plans. For a small company website or diagnostic add-on, starting free and upgrading only when operational requirements increase is a practical approach.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>
+            <span class="lang-ja">構造化データ（JSON-LD）を入れれば、AIに推薦されやすくなりますか？</span>
+            <span class="lang-en">Will adding structured data (JSON-LD) increase AI recommendations?</span>
+          </h3>
+          <p class="lang-ja">
+            いいえ、構造化データは「AIに直接読ませる魔法の呪文」ではありません。多くのAIクローラーはレンダリング後の本文を重視します。<br>
+            私たちが構造化データを導入する真の目的は2つです。1つは、検索インデックスを通じて「この会社が公式の実体である」というエンティティ（Knowledge Graph）を確定させ、AIに継承させること。もう1つは、AIが地の文から情報を推測する手間（RAGの負荷）を減らし、回答への組み込みを安全かつ容易にすることです。
+          </p>
+          <p class="lang-en">
+            No, structured data is not a "magic spell" for AI rankings. Most AI crawlers prioritize rendered prose.<br>
+            Our true purpose for structured data is twofold: First, to consolidate your official entity (Knowledge Graph) via the search index so AI models inherit it. Second, to explicitly declare facts so AI models don't have to guess from prose, reducing inference overhead in RAG systems and making your information safer to cite.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>
+            <span class="lang-ja">FAQPageの構造化データにはどのような効果がありますか？</span>
+            <span class="lang-en">What is the specific effect of FAQPage structured data?</span>
+          </h3>
+          <p class="lang-ja">
+            FAQの「質問と回答」のペアは、生成AIやRAG（検索拡張生成）が情報を引き出す際の「検索単位（チャンク）」と完全に一致するため、AIがより正確に自社の情報を引用できるようになります。<br>
+            （現在、Googleの検索結果上でアコーディオン表示されるリッチリザルトは厳しく制限されています。当サービスの狙いは検索結果を派手にすることではなく、あくまでAI推論の精度向上です）
+          </p>
+          <p class="lang-en">
+            The "Question-and-Answer" pair format in an FAQ aligns perfectly with the retrieval chunks used by Generative AI and RAG systems. This structural alignment makes it significantly easier and more accurate for AI to retrieve and cite your specific answers.<br>
+            (Note: Google has heavily restricted rich result accordion displays for general FAQs. Our goal is not flashy search results, but pure AI inference accuracy.)
           </p>
         </div>
 
