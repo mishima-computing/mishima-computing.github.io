@@ -2,7 +2,7 @@ import os
 import sys
 
 # Directories and files to exclude
-EXCLUDE_DIRS = {'.git', 'node_modules', 'mishima_agent_readiness_pack'}
+EXCLUDE_DIRS = {'.git', 'node_modules'}
 TARGET_EXTENSIONS = {'.md', '.html', '.css', '.js', '.json', '.txt', '.xml', '.yml', '.yaml'}
 
 def check_files(root_dir='.'):
