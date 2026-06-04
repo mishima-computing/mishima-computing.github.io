@@ -259,6 +259,97 @@
       .flow-path-img { width: 200px; height: 150px; }
     }
   </style>
+  <!-- Organization JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://mishima-computing.github.io/#organization",
+    "name": "三嶋電算株式会社",
+    "alternateName": "Mishima Computing K.K.",
+    "url": "https://mishima-computing.github.io/",
+    "logo": "https://github.com/mishima-computing.png",
+    "description": "AIエージェント、分散クラウドインフラ、高信頼性業務システムの設計および技術検証を行うエンジニアリング・ブティック。",
+    "knowsAbout": ["AIエージェント", "AI検索対応", "構造化データ", "分散クラウドインフラ", "高信頼性業務システム"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "東京都",
+      "addressLocality": "千代田区",
+      "addressCountry": "JP"
+    },
+    "sameAs": [
+      "https://github.com/mishima-computing",
+      "https://github.com/teru-murata"
+    ]
+  }
+  </script>
+
+  <!-- Service JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "AI検索・AIエージェント対応アドオン",
+    "alternateName": "AI Search Readiness Add-on",
+    "serviceType": "AI検索対応・情報構造最適化",
+    "url": "https://mishima-computing.github.io/agent-readiness/",
+    "provider": { "@id": "https://mishima-computing.github.io/#organization" },
+    "areaServed": { "@type": "Country", "name": "JP" },
+    "description": "既存サイトを作り直さず、検索エンジン・生成AI・AIエージェントに正しく解釈される情報構造へ補強するアドオン。",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "提供プラン",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI検索・HP簡易診断(無料)" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI検索対応ライトアドオン" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI検索対応スタンダードアドオン" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "営業HPリニューアル相談" } }
+      ]
+    }
+  }
+  </script>
+
+  <!-- FAQPage JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "AI検索対応では効果測定も行いますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい。Cloudflare Web Analytics や問い合わせ導線の source パラメータを用いて、どのページが読まれ、どのCTAから診断依頼につながったかを確認し、構造化データ、FAQ、見出し、導線の改善に活用します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Cloudflare Web Analytics は商用サイトでも無料で使えますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい。Cloudflare Web Analytics は Cloudflare の全プランで利用できる軽量なアクセス解析です。Cloudflare 経由でプロキシしていないサイトでも、JS snippet を設置することで最大10サイトまで計測できます。Cloudflare 経由でプロキシしているサイトでは、Web Analytics の対象サイト数に上限はありません。<br>ただし、無料で使えることと、すべての商用要件を無料プランで満たせることは別です。SLA、優先サポート、WAFルール、ログ保持、業務停止リスクへの保証が必要なサイトでは、有料プランや別途契約を検討します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "なぜ無料で使えるのですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "主な理由は、Cloudflare Web Analytics が広告用の個人追跡ではなく、ページ表示や読み込み性能を把握するための軽量な計測機能として設計されているためです。Cloudflare は、Web Analytics が収集する情報を最小限のタイミング指標のみであるとし、顧客サイトをまたいで個々のエンドユーザーを追跡しないとしています。<br>また、Cloudflare は無料プランを入口として提供し、より高度なセキュリティ、運用保証、サポート、ログ、エンタープライズ機能が必要になった段階で Pro / Business / Enterprise 相当のプランへ移行する商用モデルを取っています。小規模な会社HPや検証段階では無料で始め、本番重要度が上がったら有料化を判断する、という使い方が現実的です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "どの段階で有料プランを検討すべきですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "単なる会社HP、サービス紹介ページ、問い合わせ導線の効果測定であれば、まずは無料の Cloudflare Web Analytics で十分です。一方で、EC、会員制サイト、業務停止が売上に直結するサイト、強いWAF運用、SLA、優先サポート、長期ログ保持、監査対応が必要なサイトでは、有料プランを検討します。<br>三嶋電算のAI検索対応アドオンでは、最初から過剰な有料構成を前提にせず、無料枠で実測を始め、必要性が確認できた段階で段階的に拡張する方針を取ります。"
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <div class="grid-bg" id="grid-bg"></div>
