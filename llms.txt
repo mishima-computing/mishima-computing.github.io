@@ -1,0 +1,25 @@
+# Mishima Computing K.K. (三嶋電算株式会社)
+
+> AIエージェント、分散クラウドインフラ、高信頼性業務システムの設計・技術検証を行うエンジニアリング・ブティック。既存サイトを作り直さず、検索エンジン・生成AI・AIエージェントに正しく解釈される情報構造へ補強する「AI検索対応アドオン」を提供。本店:東京都千代田区 / 創設地:静岡県三島市。
+
+三嶋電算の方針は、検索順位やAIの推薦を「保証」することではなく、AIが企業情報を発見・解釈する上での技術的障害を取り除くことにあります。
+
+## 主要ページ / Core pages
+- [トップ / Company overview](https://mishima-computing.github.io/): 会社概要・事業領域・技術レポートの入口
+- [AI検索・AIエージェント対応 / AI Search Readiness](https://mishima-computing.github.io/agent-readiness/): 主力サービス。AIが情報を取得する4経路(検索インデックス / 生成AI検索・RAG / リアルタイムWeb検索 / エージェント直接閲覧)への対応とプラン
+- [お問合せ / Contact](https://mishima-computing.github.io/contact/): 無料のAI検索・HP診断の申込窓口
+
+## サービス / Services
+- AI検索対応ライトアドオン: title/description/FAQ/構造化データ/sitemap/Search Console確認などの基礎補強
+- AI検索対応スタンダードアドオン: ライトに加え、会社情報整理・サービスページ改善・問い合わせ導線改善・Googleビジネスプロフィール確認
+- 営業HPリニューアル: 既存構造に限界がある場合のみ、情報設計から再構築
+- 無料簡易診断: A4 2〜3枚の現状診断レポート
+
+## コンプライアンス・方針 / Compliance & policy
+- [決算公告 / Public Notices](https://mishima-computing.github.io/kessan/): 会社法上の決算公告
+- [プライバシー / Privacy](https://mishima-computing.github.io/privacy/): 個人を特定しない軽量計測(Cloudflare Web Analytics)の方針
+- ChatGPT / Google AI Overviews / Gemini / Claude 等での表示順位・推薦は保証しない
+
+## 連絡先 / Contact
+- GitHub: https://github.com/mishima-computing
+- Representative: https://github.com/teru-murata
