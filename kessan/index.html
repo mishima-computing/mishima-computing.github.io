@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja" data-theme="dark">
+<html lang="ja" data-theme="light">
 <head>
   <meta charset="utf-8">
   <title>決算公告 - Mishima Computing K.K. | 三嶋電算株式会社</title>
@@ -39,12 +39,6 @@
   </script>
 </head>
 <body>
-
-  <!-- Dynamic Design Background Elements -->
-  <div class="grid-bg" id="grid-bg"></div>
-  <div class="glow-orb orb-1"></div>
-  <div class="glow-orb orb-2"></div>
-
   <!-- STICKY HEADER -->
   <header class="header" id="main-header">
     <div class="container navbar">
@@ -61,7 +55,7 @@
           <li><a href="../#about" class="nav-link"><span class="lang-ja">会社概要</span><span class="lang-en" lang="en">About</span></a></li>
           <li><a href="../#services" class="nav-link"><span class="lang-ja">事業領域</span><span class="lang-en" lang="en">Services</span></a></li>
           <li><a href="../#reports" class="nav-link"><span class="lang-ja">技術レポート</span><span class="lang-en" lang="en">Reports</span></a></li>
-          <li><a href="#" class="nav-link active" aria-current="page"><span class="lang-ja">決算公告</span><span class="lang-en" lang="en">Public Notices</span></a></li>
+          <li><a href="#" class="nav-link"><span class="lang-ja">決算公告</span><span class="lang-en" lang="en">Public Notices</span></a></li>
           <li><a href="../contact/" class="nav-link"><span class="lang-ja">お問合せ</span><span class="lang-en" lang="en">Contact</span></a></li>
         </ul>
       </nav>
@@ -77,7 +71,7 @@
     </div>
   </header>
 
-  <main>
+  <main class="kessan-legal-register">
     <!-- KESSAN HEADER -->
     <section class="kessan-header">
       <div class="container">
@@ -93,31 +87,20 @@
     </section>
 
     <!-- CONTENT SECTION -->
-    <section class="section" style="padding-top: 0;">
+    <section class="section">
       <div class="container">
-        <div class="card kessan-card" id="notice-card">
+        <div class="notice-block kessan-card" id="notice-card">
           <div class="kessan-card-header">
             <h3>
               <span class="lang-ja">第1期 決算公告（貸借対照表）</span>
               <span class="lang-en" lang="en">1st Term Balance Sheet</span>
             </h3>
-            <span class="kessan-status">
+            <span class="notice-status">
               <span class="lang-ja">準備中 (工事中)</span>
               <span class="lang-en" lang="en">Under Construction</span>
             </span>
           </div>
-
-          <!-- Beautiful Preparing Card Content -->
           <div class="construction-container">
-            <div class="construction-icon">
-              <!-- Geometric gear / Fuji contour line animatable SVG -->
-              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="50" cy="50" r="45" stroke-dasharray="6.28 6.28"></circle>
-                <circle cx="50" cy="50" r="35" stroke-dasharray="2 2" opacity="0.5"></circle>
-                <path d="M 30 70 L 50 30 L 70 70 Z" fill="none" stroke-width="1"></path>
-              </svg>
-            </div>
-
             <h4 class="construction-headline">
               <span class="lang-ja">第1期決算公告は準備中です</span>
               <span class="lang-en" lang="en">First Term Notice in Preparation</span>
@@ -128,11 +111,10 @@
               <span class="lang-en" lang="en">As Mishima Computing K.K. is scheduled to be established in June 2026, our first fiscal year will conclude on <strong>December 31, 2026</strong>. The balance sheet will be published here promptly following the shareholders' meeting.</span>
             </p>
 
-            <!-- Legal Timeline -->
-            <div class="construction-steps">
-              <div class="step-item active">
-                <div class="step-bullet">1</div>
-                <div class="step-info">
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-number">1</div>
+                <div class="timeline-content">
                   <h4>
                     <span class="lang-ja">会社設立（第1期スタート）</span>
                     <span class="lang-en" lang="en">Company Incorporation</span>
@@ -144,9 +126,9 @@
                 </div>
               </div>
               
-              <div class="step-item">
-                <div class="step-bullet">2</div>
-                <div class="step-info">
+              <div class="timeline-item">
+                <div class="timeline-number">2</div>
+                <div class="timeline-content">
                   <h4>
                     <span class="lang-ja">第1期 期末（決算日の到来）</span>
                     <span class="lang-en" lang="en">First Fiscal Year End</span>
@@ -158,9 +140,9 @@
                 </div>
               </div>
 
-              <div class="step-item">
-                <div class="step-bullet">3</div>
-                <div class="step-info">
+              <div class="timeline-item">
+                <div class="timeline-number">3</div>
+                <div class="timeline-content">
                   <h4>
                     <span class="lang-ja">定時株主総会 ＆ 電子公告掲載</span>
                     <span class="lang-en" lang="en">Annual General Meeting & Publication</span>
@@ -176,8 +158,8 @@
         </div>
 
         <!-- Corporate Transparency Profile -->
-        <div style="max-width: 800px; margin: 0 auto;">
-          <h4 style="margin-bottom: 1.5rem; text-align: center; color: var(--text-secondary);">
+        <div>
+          <h4>
             <span class="lang-ja">公告の基礎情報</span>
             <span class="lang-en" lang="en">Public Notice Coordinates</span>
           </h4>
@@ -199,7 +181,7 @@
                   <span class="lang-en" lang="en">Registered URL</span>
                 </th>
                 <td>
-                  <a href="https://mishima-computing.github.io/kessan/" style="word-break: break-all;">https://mishima-computing.github.io/kessan/</a>
+                  <a href="https://mishima-computing.github.io/kessan/">https://mishima-computing.github.io/kessan/</a>
                 </td>
               </tr>
               <tr>

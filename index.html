@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja" data-theme="dark">
+<html lang="ja" data-theme="light">
 <head>
   <meta charset="utf-8">
   <title>Mishima Computing K.K. | 三嶋電算株式会社</title>
@@ -94,12 +94,6 @@
   </script>
 </head>
 <body>
-
-  <!-- Dynamic Design Background Elements -->
-  <div class="grid-bg" id="grid-bg"></div>
-  <div class="glow-orb orb-1"></div>
-  <div class="glow-orb orb-2"></div>
-
   <!-- STICKY HEADER -->
   <header class="header" id="main-header">
     <div class="container navbar">
@@ -199,8 +193,8 @@
         <!-- Snowy cap peak guide lines -->
         <path d="M640,125 L680,80 L760,80 L800,125 Q720,150 640,125 Z" fill="none" stroke="currentColor" stroke-width="1.5"></path>
         <!-- Flowing Spring Water Waves at the base -->
-        <path d="M0,280 Q360,310 720,290 T1440,300 L1440,320 L0,320 Z" fill="var(--bg-tertiary)" opacity="0.3"></path>
-        <path d="M0,300 Q360,280 720,310 T1440,290 L1440,320 L0,320 Z" fill="var(--primary)" opacity="0.15"></path>
+        <path d="M0,280 Q360,310 720,290 T1440,300 L1440,320 L0,320 Z" fill="var(--color-surface-subtle)" opacity="0.3"></path>
+        <path d="M0,300 Q360,280 720,310 T1440,290 L1440,320 L0,320 Z" fill="var(--color-keyline)" opacity="0.15"></path>
       </svg>
     </section>
 
@@ -222,7 +216,7 @@
               <span class="lang-ja">我々のアイデンティティは、富士山の清冽な湧水で育まれた静岡県三島市の自然豊かな精神にあります。常に透明で澱みのない、最高品質のエンジニアリングをお約束します。</span>
               <span class="lang-en" lang="en">Our core identity is rooted in the tranquil, crystal-clear spiritual heritage of Mishima City, Shizuoka (nourished by Mount Fuji's fresh springs). We deliver transparent, high-performance logic.</span>
             </p>
-            <div style="margin-top: 2rem;">
+            <div>
               <a href="/kessan/" class="btn btn-secondary">
                 <span class="lang-ja">電子公告を見る (決算公告)</span>
                 <span class="lang-en" lang="en">View Electronic Public Notices</span>
@@ -301,7 +295,7 @@
     </section>
 
     <!-- SERVICES / CORE CAPABILITIES -->
-    <section class="section" id="services" style="background-color: rgba(6, 182, 212, 0.01);">
+    <section class="section" id="services">
       <div class="container">
         <h2 id="services-title">
           <span class="lang-ja">事業領域</span>
@@ -361,60 +355,60 @@
         
         <div class="report-grid">
           <!-- Report 1 -->
-          <div class="card" id="card-report-agents" style="display: flex; flex-direction: column; cursor: pointer;" onclick="window.location.href='reports/waterfall-agents/'">
+          <a class="card" id="card-report-agents" href="/reports/waterfall-agents/">
             <div class="report-tag">AG-2026-001</div>
             <div class="report-date">2026.06.03</div>
             <h3 class="card-title">
               <span class="lang-ja">AIに、ウォーターフォールを守らせる。</span>
               <span class="lang-en" lang="en">Making AI Agents Honor Waterfall Discipline</span>
             </h3>
-            <div class="card-body" style="flex: 1;">
+            <div class="card-body">
               <p class="lang-ja">設計駆動の開発にAIエージェントを乗せ、制作過程そのものを成果物と同じ品質で残す——bounded な運用契約。</p>
               <p class="lang-en" lang="en">A bounded operating contract that brings AI agents into design-driven development and ships the process itself as a deliverable.</p>
               
-              <ul style="list-style-type: none; padding: 0; margin: 1.5rem 0 0 0; font-size: 0.85rem; color: var(--text-secondary);">
-                <li style="margin-bottom: 0.6rem; display: flex; align-items: start; gap: 0.5rem;">
-                  <span style="color: var(--primary);">✓</span>
+              <ul>
+                <li>
+                  <span>✓</span>
                   <span><span class="lang-ja">設計が、最後まで設計のまま残る</span><span class="lang-en" lang="en">Design stays intact, end to end</span></span>
                 </li>
-                <li style="margin-bottom: 0.6rem; display: flex; align-items: start; gap: 0.5rem;">
-                  <span style="color: var(--primary);">✓</span>
+                <li>
+                  <span>✓</span>
                   <span><span class="lang-ja">作り方ごと納品する（過程の成果物化）</span><span class="lang-en" lang="en">The process ships as a deliverable</span></span>
                 </li>
-                <li style="display: flex; align-items: start; gap: 0.5rem;">
-                  <span style="color: var(--primary);">✓</span>
+                <li>
+                  <span>✓</span>
                   <span><span class="lang-ja">追跡可能なAI開発という品質の証明</span><span class="lang-en" lang="en">Provable provenance for AI-assisted code</span></span>
                 </li>
               </ul>
             </div>
-            <div class="read-more" style="margin-top: 1.5rem;">
+            <div class="read-more">
               <span class="lang-ja">全文を読む</span>
               <span class="lang-en" lang="en">Read Full Report</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </div>
-          </div>
+          </a>
 
           <!-- Report 2 -->
-          <div class="card" id="card-report-agent-readiness" style="display: flex; flex-direction: column; cursor: pointer;" onclick="window.location.href='agent-readiness/'">
+          <a class="card" id="card-report-agent-readiness" href="/agent-readiness/">
             <div class="report-tag">AG-2026-002</div>
             <div class="report-date">2026.06.03</div>
             <h3 class="card-title">
               <span class="lang-ja">既存ホームページ向け AI検索対応アドオン</span>
               <span class="lang-en" lang="en">AI Search Readiness Add-on for Existing Sites</span>
             </h3>
-            <div class="card-body" style="flex: 1;">
+            <div class="card-body">
               <p class="lang-ja">Webサイトを全面リニューアルすることなく、既存のHTMLに会社情報、FAQ、構造化データを「補強」し、検索エンジンとAIからの発見性を高める実装手法。</p>
               <p class="lang-en" lang="en">Implementation methodology for augmenting existing websites with structured data and semantic tags to boost AI discovery without full rebuilds.</p>
             </div>
-            <div class="read-more" style="margin-top: 1.5rem;">
+            <div class="read-more">
               <span class="lang-ja">全文を読む</span>
               <span class="lang-en" lang="en">Read Full Report</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </div>
-          </div>
+          </a>
 
           <!-- Report 3 -->
-          <div class="card report-card" data-report-id="report-validation" id="card-report-validation">
+          <a class="card" id="report-validation" href="/#report-validation">
             <div class="report-tag">AG-2026-003</div>
             <div class="report-date">2026.03.10</div>
             <h3 class="card-title">
@@ -430,7 +424,7 @@
               <span class="lang-en" lang="en">Read Full Report</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
@@ -440,11 +434,11 @@
       <div class="container">
         <div class="card github-card" id="github-org-card">
           <div class="github-info">
-            <div class="hero-pill" style="border-color: var(--secondary-glow); color: var(--secondary); box-shadow: 0 0 20px var(--secondary-glow);">
-              <span class="pulse" style="background-color: var(--secondary);"></span>
+            <div class="hero-pill">
+              <span class="pulse"></span>
               <span>Open Source & Community</span>
             </div>
-            <h2 style="margin-bottom: 1.5rem; text-shadow: 0 0 20px rgba(79, 70, 229, 0.2);">
+            <h2>
               <span class="lang-ja">GitHubで私たちの電算を開放する</span>
               <span class="lang-en" lang="en">Discover Our Tech on GitHub</span>
             </h2>
@@ -452,8 +446,8 @@
               <span class="lang-ja">三嶋電算はオープンソースの精神と技術の透明性を重視しています。インフラ定義、ライブラリ、自律化検証のためのエージェントの基本エンジンはGitHub Organizationにて公開しています。最先端のアーキテクチャ設計をぜひご覧ください。</span>
               <span class="lang-en" lang="en">We believe in core architectural transparency. Our automated testing wrappers, system orchestrators, and validation patterns are compiled and maintained openly in our GitHub organization. Explore our codebases and integrate together.</span>
             </p>
-            <div style="margin-top: 2rem;">
-              <a href="https://github.com/mishima-computing" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background: linear-gradient(135deg, var(--secondary), hsl(250, 80%, 60%)); box-shadow: 0 8px 24px var(--secondary-glow);">
+            <div>
+              <a href="https://github.com/mishima-computing" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                 <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
                 <span class="lang-ja">GitHubでOrganizationを見る</span>
                 <span class="lang-en" lang="en">View GitHub Organization</span>
@@ -465,30 +459,30 @@
     </section>
 
     <!-- CONTACT CTA SECTION -->
-    <section class="section contact-section" id="contact" style="background: radial-gradient(circle at center, hsla(188, 90%, 50%, 0.02) 0%, transparent 70%);">
-      <div class="container" style="max-width: 800px; text-align: center;">
-        <div class="card contact-card" style="border-color: var(--primary-glow); padding: 5rem 3rem; background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary)); box-shadow: 0 20px 50px rgba(6, 182, 212, 0.05); position: relative; overflow: hidden;">
-          <div class="hero-pill" style="border-color: var(--primary-glow); color: var(--primary); box-shadow: 0 0 20px var(--primary-glow); margin-bottom: 2rem;">
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="card contact-card">
+          <div class="hero-pill">
             <span class="pulse"></span>
             <span class="lang-ja">サーバーレス実証デモ ＆ カタログ</span>
             <span class="lang-en" lang="en">Serverless Live Demo & Catalog</span>
           </div>
           
-          <h2 style="font-size: clamp(2rem, 3.5vw, 2.75rem); margin-bottom: 1.5rem; text-shadow: 0 0 30px rgba(6, 182, 212, 0.15); display: block;">
+          <h2>
             <span class="lang-ja">お問合せ窓口を開く</span>
             <span class="lang-en" lang="en">Get in Touch</span>
           </h2>
           
-          <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; font-weight: 300;">
+          <p>
             <span class="lang-ja">本ウェブサイトのお問い合わせ窓口は、弊社の自動化・インフラ構築技術の<strong>「稼働中ポートフォリオ（技術デモ）」</strong>となっています。維持費0円（無料枠の範囲内）、認証情報をブラウザに一切露出させない、漏洩リスクを最小化したサーバーレス構成をぜひご体験ください。</span>
             <span class="lang-en" lang="en">Our inquiry system serves as a live, zero-cost, and secure serverless technology showcase. Experience firsthand how we combine Cloudflare Workers and GitHub APIs to build seamless, zero-maintenance operational pipelines.</span>
           </p>
           
           <div>
-            <a href="./contact/" class="btn btn-primary" style="padding: 1.25rem 4rem; font-size: 1.1rem; background: linear-gradient(135deg, var(--primary), var(--secondary)); box-shadow: 0 10px 30px var(--primary-glow);">
+            <a href="./contact/" class="btn btn-primary">
               <span class="lang-ja">お問合せ ＆ デモ画面へ進む</span>
               <span class="lang-en" lang="en">Proceed to Contact & Demo</span>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 0.5rem; vertical-align: middle;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
           </div>
         </div>
@@ -497,14 +491,13 @@
   </main>
 
   <!-- INTERACTIVE MODAL FOR REPORTS -->
-  <div class="modal" id="report-modal" aria-hidden="true" role="dialog" style="opacity: 0; pointer-events: none; visibility: hidden;">
-    <div class="modal-backdrop"></div>
+  <div class="modal" id="report-modal" aria-hidden="true" role="dialog">
     <div class="modal-content">
       <button class="modal-close" aria-label="Close modal">&times;</button>
       <div class="modal-tag-container">
-        <span class="report-tag modal-category" style="margin-bottom: 0;">Category</span>
+        <span class="report-tag modal-category">Category</span>
       </div>
-      <h2 class="modal-title modal-title-text" style="margin-top: 1rem; margin-bottom: 0.5rem;">Report Title</h2>
+      <h2 class="modal-title modal-title-text">Report Title</h2>
       <div class="modal-meta">
         <div>Date: <span class="modal-date">2026.05.01</span></div>
         <div>Author: Mishima Lab</div>

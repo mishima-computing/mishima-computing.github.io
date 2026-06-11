@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja" data-theme="dark">
+<html lang="ja" data-theme="light">
 <head>
   <meta charset="utf-8">
   <title>お問合せ ＆ サーバーレス実証デモ | Mishima Computing K.K.</title>
@@ -11,84 +11,6 @@
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://github.com/mishima-computing.png">
-  
-  <style>
-    /* Custom layout for standalone contact page */
-    .contact-standalone-container {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 4rem;
-      align-items: start;
-      margin-top: 3rem;
-      margin-bottom: 5rem;
-    }
-    
-    .tech-showcase-card {
-      background-color: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius-lg);
-      padding: 3rem 2.5rem;
-      position: sticky;
-      top: 7rem;
-      box-shadow: var(--glass-shadow);
-    }
-
-    .demo-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.35rem 1rem;
-      background: rgba(6, 182, 212, 0.08);
-      border: 1px solid var(--primary-glow);
-      border-radius: 100px;
-      font-size: 0.8rem;
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-      font-weight: 600;
-    }
-
-    .tech-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.75rem;
-      margin-top: 2rem;
-    }
-
-    .tech-item {
-      display: flex;
-      gap: 1rem;
-      align-items: start;
-    }
-
-    .tech-icon {
-      font-size: 1.5rem;
-      line-height: 1;
-      padding-top: 0.15rem;
-    }
-
-    .tech-details h4 {
-      font-size: 1.05rem;
-      margin-bottom: 0.35rem;
-      color: var(--text-primary);
-    }
-
-    .tech-details p {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      margin-bottom: 0;
-      line-height: 1.6;
-    }
-    
-    @media (max-width: 992px) {
-      .contact-standalone-container {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-      .tech-showcase-card {
-        position: static;
-      }
-    }
-  </style>
   <!-- Organization JSON-LD -->
   <script type="application/ld+json">
   {
@@ -116,12 +38,6 @@
   </script>
 </head>
 <body>
-
-  <!-- Dynamic Design Background Elements -->
-  <div class="grid-bg" id="grid-bg"></div>
-  <div class="glow-orb orb-1"></div>
-  <div class="glow-orb orb-2"></div>
-
   <!-- STICKY HEADER -->
   <header class="header" id="main-header">
     <div class="container navbar">
@@ -139,7 +55,7 @@
           <li><a href="../#services" class="nav-link"><span class="lang-ja">事業領域</span><span class="lang-en" lang="en">Services</span></a></li>
           <li><a href="../#reports" class="nav-link"><span class="lang-ja">技術レポート</span><span class="lang-en" lang="en">Reports</span></a></li>
           <li><a href="/kessan/" class="nav-link"><span class="lang-ja">決算公告</span><span class="lang-en" lang="en">Public Notices</span></a></li>
-          <li><a href="#" class="nav-link active"><span class="lang-ja">お問合せ</span><span class="lang-en" lang="en">Contact</span></a></li>
+          <li><a href="#" class="nav-link"><span class="lang-ja">お問合せ</span><span class="lang-en" lang="en">Contact</span></a></li>
         </ul>
       </nav>
       
@@ -154,30 +70,30 @@
     </div>
   </header>
 
-  <main style="padding-top: 8rem; min-height: 85vh;">
+  <main>
     <div class="container">
       
       <div class="contact-standalone-container">
         
         <!-- Left: Standalone Form Card -->
         <div>
-          <div class="hero-pill" style="margin-bottom: 1rem;">
+          <div class="hero-pill">
             <span class="pulse"></span>
             <span class="lang-ja">安全・迅速なサーバーレス窓口</span>
             <span class="lang-en" lang="en">Secure & Fast Serverless Portal</span>
           </div>
           
-          <h1 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.5rem; letter-spacing: -0.01em;">
+          <h1>
             <span class="lang-ja">お問い合わせ・お見積</span>
             <span class="lang-en" lang="en">Contact & Estimate Request</span>
           </h1>
           
-          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 2.5rem;">
+          <p>
             <span class="lang-ja">業務自動化、AIエージェントの検証、システムインフラ設計など、技術的なご相談やお見積のご依頼を承ります。必要事項をご記入の上、送信してください。</span>
             <span class="lang-en" lang="en">We welcome technical consultations, AI agent validation requests, and infrastructure design estimations. Please fill out the form below to reach our engineering team.</span>
           </p>
 
-          <div class="card contact-card" id="contact-form-card" style="border-color: var(--primary-glow); padding: 3.5rem 3rem;">
+          <div class="card contact-card" id="contact-form-card">
             <form action="https://mishima-inquiry-bridge.teru-murata1984.workers.dev" method="POST" class="contact-form" id="main-contact-form">
               <input type="hidden" name="source" id="contact-source">
               <div class="form-row">
@@ -197,7 +113,7 @@
                 </div>
               </div>
 
-              <div class="form-group" style="margin-top: 1.5rem;">
+              <div class="form-group">
                 <label for="contact-message" class="form-label">
                   <span class="lang-ja">お問い合わせ内容</span>
                   <span class="lang-en" lang="en">Your Message</span>
@@ -205,11 +121,11 @@
                 <textarea name="message" id="contact-message" class="form-control" placeholder="ご相談内容やお見積のご要件をご自由にご記入ください..." required></textarea>
               </div>
 
-              <div style="text-align: center; margin-top: 2rem;">
-                <button type="submit" class="btn btn-primary" style="padding: 1rem 3.5rem; width: 100%;">
+              <div>
+                <button type="submit" class="btn btn-primary">
                   <span class="lang-ja">お問合せを送信する</span>
                   <span class="lang-en" lang="en">Send Message</span>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 0.5rem; vertical-align: middle;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
                 </button>
               </div>
             </form>
@@ -222,12 +138,12 @@
             <span>⚙️ Live Technology Catalog</span>
           </div>
           
-          <h2 style="font-size: 1.4rem; color: var(--primary); margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
+          <h2>
             <span class="lang-ja">本フォームのサーバーレス構成</span>
             <span class="lang-en" lang="en">Our Serverless Architecture</span>
           </h2>
           
-          <p style="font-size: 0.9rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 1.5rem;">
+          <p>
             <span class="lang-ja">このお問い合わせ窓口は、弊社が提供する<strong>インフラ構築・自動化ソリューションの実証デモ（カタログ）</strong>を兼ねています。「顧客（フォーム送信者）」「自動連携システム（以下、GitOpsシステム）」「三嶋電算株式会社（受信者）」の3者がどのように連携し、安全かつ低コストで運用されているかをご覧ください。</span>
             <span class="lang-en" lang="en">This contact portal serves as a live, functioning <strong>demonstration of our serverless integration capabilities</strong>. Experience how the Customer, the GitOps System, and our Team interact seamlessly with enterprise-grade security and minimal runtime cost.</span>
           </p>

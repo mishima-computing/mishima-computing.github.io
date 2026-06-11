@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja" data-theme="dark">
+<html lang="ja" data-theme="light">
 <head>
   <meta charset="utf-8">
   <title>AI検索・AIエージェント対応 | Mishima Computing K.K.</title>
@@ -217,48 +217,6 @@
   ]
 }
   </script>
-  <style>
-    .agent-hero { padding-top: 10rem; padding-bottom: 5rem; }
-    .agent-hero .hero-tagline { max-width: 880px; }
-    .agent-section-note { max-width: 820px; color: var(--text-secondary); line-height: 1.9; }
-    .agent-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
-    .signal-list { list-style: none; padding: 0; margin: 1.5rem 0 0 0; color: var(--text-secondary); }
-    .signal-list li { display: flex; gap: 0.7rem; align-items: flex-start; margin-bottom: 0.8rem; }
-    .signal-list li::before { content: "✓"; color: var(--primary); font-weight: 800; }
-    .flow-table th { width: 28%; }
-    .machine-box { border: 1px solid var(--primary-glow); border-radius: var(--border-radius-lg); background: linear-gradient(135deg, rgba(6, 182, 212, 0.06), rgba(37, 99, 235, 0.04)); padding: 2rem; margin-top: 2rem; }
-    .machine-box code { font-family: var(--font-mono); font-size: 0.88rem; color: var(--primary); }
-    .faq-item { border-bottom: 1px solid var(--border-color); padding: 1.5rem 0; }
-    .faq-item h3 { font-size: 1.15rem; margin-bottom: 0.6rem; }
-    
-    /* Flowchart Styles */
-    .ai-flowchart { max-width: 750px; margin: 3rem auto; padding: 2.5rem; background: var(--bg-secondary); border-radius: var(--border-radius-lg); border: 1px solid var(--border-color); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1); }
-    .flow-node { text-align: center; margin-bottom: 1.2rem; }
-    .flow-pill { display: inline-block; padding: 1rem 1.8rem; border-radius: 12px; background: var(--bg-primary); border: 1px solid var(--border-color); font-weight: 500; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); position: relative; z-index: 2; }
-    .flow-pill.highlight { background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(37, 99, 235, 0.1)); border-color: var(--primary-glow); }
-    .flow-arrow-down { text-align: center; color: var(--text-secondary); margin-bottom: 1.2rem; font-size: 1.2rem; }
-    .flow-tree { border-left: 2px solid var(--primary-glow); margin: 0 0 1.2rem 2.5rem; padding: 1.5rem 0 1.5rem 2.5rem; position: relative; }
-    .flow-tree-item { position: relative; margin-bottom: 1.5rem; background: var(--bg-primary); padding: 1.5rem; border-radius: var(--border-radius-md); border: 1px solid var(--border-color); display: flex; align-items: center; gap: 2rem; }
-    .flow-path-img { width: 200px; height: 150px; flex-shrink: 0; border-radius: var(--border-radius-md); background-image: url('../assets/images/ai_pathways_4.jpg'); background-size: 200% 200%; border: 1px solid var(--border-color); box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
-    .flow-tree-text { flex-grow: 1; }
-    .flow-tree-item::before { content: ''; position: absolute; left: -2.5rem; top: 50%; width: 2.5rem; height: 2px; background: var(--primary-glow); }
-    .flow-tree-item:last-child { margin-bottom: 0; }
-    .flow-tree-title { font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--text-primary); }
-    .flow-tree-desc { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; }
-
-    @media (max-width: 992px) { 
-      .agent-grid { grid-template-columns: 1fr !important; } 
-      .flow-table th { width: auto; }
-      .ai-flowchart { padding: 1.5rem; }
-      .flow-tree { margin-left: 1rem; padding-left: 1.5rem; }
-      .flow-tree-item::before { left: -1.5rem; width: 1.5rem; }
-    }
-    @media (max-width: 600px) {
-      .flow-tree-item { flex-direction: column; text-align: center; gap: 1rem; }
-      .flow-tree-item::before { top: 2.5rem; }
-      .flow-path-img { width: 200px; height: 150px; }
-    }
-  </style>
   <!-- Organization JSON-LD -->
   <script type="application/ld+json">
   {
@@ -369,10 +327,6 @@
   </script>
 </head>
 <body>
-  <div class="grid-bg" id="grid-bg"></div>
-  <div class="glow-orb orb-1"></div>
-  <div class="glow-orb orb-2"></div>
-
   <header class="header" id="main-header">
     <div class="container navbar">
       <a href="../" class="nav-brand" id="brand-link">
@@ -429,7 +383,7 @@
     </section>
 
     <!-- Section 1: 課題提起 -->
-    <section class="section" id="pain-points" style="background-color: rgba(6, 182, 212, 0.01);">
+    <section class="section" id="pain-points">
       <div class="container">
         <h2><span class="lang-ja">こんな課題はありませんか？</span><span class="lang-en" lang="en">Common Challenges</span></h2>
         <p class="agent-section-note">
@@ -437,7 +391,7 @@
           <span class="lang-en" lang="en">Beautiful design alone cannot generate leads if the underlying information architecture is weak.</span>
         </p>
 
-        <ul class="signal-list" style="margin-top: 2rem; max-width: 800px;">
+        <ul class="signal-list">
           <li><span class="lang-ja">会社名でしか検索されない（サービス名で見つからない）。</span><span class="lang-en" lang="en">Discoverable only by brand name, not service keywords.</span></li>
           <li><span class="lang-ja">Googleマップの情報が弱く、地域検索で負けている。</span><span class="lang-en" lang="en">Weak Google Business Profile presence losing local search.</span></li>
           <li><span class="lang-ja">ホームページから問い合わせが来ない。</span><span class="lang-en" lang="en">Website generates zero or very few inquiries.</span></li>
@@ -446,9 +400,9 @@
         </ul>
 
         <!-- CONCEPT ILLUSTRATION -->
-        <div style="text-align: center; margin: 3rem 0 1rem 0;">
-          <img src="../assets/images/ai_concept_art.jpg" alt="情報が整理されたHPと、情報が混沌としたHPにおけるAIエージェントの挙動の違い" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.15); max-height: 400px; object-fit: contain;">
-          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 1rem;">
+        <div>
+          <img src="../assets/images/ai_concept_art.jpg" alt="情報が整理されたHPと、情報が混沌としたHPにおけるAIエージェントの挙動の違い">
+          <p>
             <span class="lang-ja">左：情報構造が整理され、AIがスムーズにデータを連携できるHP<br>右：構造化されておらず、AIが情報を探せず迷子になるHP</span>
             <span class="lang-en" lang="en">Left: Structured architecture where AI seamlessly connects data.<br>Right: Unstructured pages where AI struggles to extract information.</span>
           </p>
@@ -469,8 +423,8 @@
         <div class="ai-flowchart">
           <div class="flow-node">
             <div class="flow-pill">
-              <span class="lang-ja" style="line-height: 1.6;">見込み客の質問<br><strong style="color:var(--text-primary); font-size: 1.1rem;">「高い技術力でレガシーシステムの刷新を任せられる会社は？」</strong></span>
-              <span class="lang-en" lang="en" style="line-height: 1.6;">Prospect's Query<br><strong style="color:var(--text-primary); font-size: 1.1rem;">"Highly technical companies for legacy system modernization?"</strong></span>
+              <span class="lang-ja">見込み客の質問<br><strong>「高い技術力でレガシーシステムの刷新を任せられる会社は？」</strong></span>
+              <span class="lang-en" lang="en">Prospect's Query<br><strong>"Highly technical companies for legacy system modernization?"</strong></span>
             </div>
           </div>
           
@@ -487,28 +441,28 @@
 
           <div class="flow-tree">
             <div class="flow-tree-item">
-              <div class="flow-path-img" style="background-position: 0% 0%;"></div>
+              <div class="flow-path-img"></div>
               <div class="flow-tree-text">
                 <div class="flow-tree-title"><span class="lang-ja">1. 検索エンジンのインデックス</span><span class="lang-en" lang="en">1. Search Engine Index</span></div>
                 <div class="flow-tree-desc"><span class="lang-ja">Google / Bing が巡回して整理したWeb情報</span><span class="lang-en" lang="en">Web data crawled and organized by Google / Bing</span></div>
               </div>
             </div>
             <div class="flow-tree-item">
-              <div class="flow-path-img" style="background-position: 100% 0%;"></div>
+              <div class="flow-path-img"></div>
               <div class="flow-tree-text">
                 <div class="flow-tree-title"><span class="lang-ja">2. リアルタイムWeb検索</span><span class="lang-en" lang="en">2. Real-time Web Search</span></div>
                 <div class="flow-tree-desc"><span class="lang-ja">ChatGPT Search / Claude Web Search など</span><span class="lang-en" lang="en">ChatGPT Search / Claude Web Search, etc.</span></div>
               </div>
             </div>
             <div class="flow-tree-item">
-              <div class="flow-path-img" style="background-position: 0% 100%;"></div>
+              <div class="flow-path-img"></div>
               <div class="flow-tree-text">
                 <div class="flow-tree-title"><span class="lang-ja">3. 学習用・検索用クローラー</span><span class="lang-en" lang="en">3. Training & Search Crawlers</span></div>
                 <div class="flow-tree-desc"><span class="lang-ja">OAI-SearchBot / GPTBot / ClaudeBot / Google-Extended など</span><span class="lang-en" lang="en">OAI-SearchBot / GPTBot / ClaudeBot / Google-Extended, etc.</span></div>
               </div>
             </div>
             <div class="flow-tree-item">
-              <div class="flow-path-img" style="background-position: 100% 100%;"></div>
+              <div class="flow-path-img"></div>
               <div class="flow-tree-text">
                 <div class="flow-tree-title"><span class="lang-ja">4. AIエージェントの直接閲覧</span><span class="lang-en" lang="en">4. Agent Direct Parsing</span></div>
                 <div class="flow-tree-desc"><span class="lang-ja">HTML / ボタン / フォーム / アクセシビリティツリー</span><span class="lang-en" lang="en">Raw HTML / Buttons / Forms / Accessibility Trees</span></div>
@@ -516,32 +470,32 @@
             </div>
           </div>
           
-          <div class="flow-arrow-down" style="margin-left: 2.5rem;">▼</div>
+          <div class="flow-arrow-down">▼</div>
           
-          <div class="flow-node" style="margin-left: 2.5rem;">
-            <div class="flow-pill highlight" style="background: rgba(16, 185, 129, 0.05); border-color: rgba(16, 185, 129, 0.4);">
-              <span class="lang-ja" style="line-height: 1.6;"><strong style="color:var(--text-primary);">会社HPに必要な補強</strong><br><span style="color:var(--text-secondary); font-size: 0.95rem;">会社情報・サービス・地域・FAQ・問い合わせ導線・構造化データ</span></span>
-              <span class="lang-en" lang="en" style="line-height: 1.6;"><strong style="color:var(--text-primary);">Required HP Reinforcements</strong><br><span style="color:var(--text-secondary); font-size: 0.95rem;">Company Info・Services・Region・FAQ・Contact Flows・Structured Data</span></span>
+          <div class="flow-node">
+            <div class="flow-pill highlight">
+              <span class="lang-ja"><strong>会社HPに必要な補強</strong><br><span>会社情報・サービス・地域・FAQ・問い合わせ導線・構造化データ</span></span>
+              <span class="lang-en" lang="en"><strong>Required HP Reinforcements</strong><br><span>Company Info・Services・Region・FAQ・Contact Flows・Structured Data</span></span>
             </div>
           </div>
 
-          <div class="flow-arrow-down" style="margin-left: 2.5rem;">▼</div>
+          <div class="flow-arrow-down">▼</div>
           
-          <div class="flow-node" style="margin-left: 2.5rem;">
-            <div class="flow-pill highlight" style="background: rgba(59, 130, 246, 0.05); border-color: rgba(59, 130, 246, 0.4);">
-              <span class="lang-ja" style="line-height: 1.6;"><strong style="color:var(--text-primary);">「三嶋電算です！」</strong><br><span style="color:var(--text-secondary); font-size: 0.95rem;">東京都千代田区神田須田町2丁目19-23 Daiwa秋葉原ビル 2F (登記本店)<br>静岡県三島市 (創設)</span></span>
-              <span class="lang-en" lang="en" style="line-height: 1.6;"><strong style="color:var(--text-primary);">"It's Mishima Computing!"</strong><br><span style="color:var(--text-secondary); font-size: 0.95rem;">Daiwa Akihabara Bldg. 2F, 2-19-23 Kanda Sudacho, Chiyoda-ku, Tokyo (HQ)<br>Founded in Mishima, Shizuoka</span></span>
+          <div class="flow-node">
+            <div class="flow-pill highlight">
+              <span class="lang-ja"><strong>「三嶋電算です！」</strong><br><span>東京都千代田区神田須田町2丁目19-23 Daiwa秋葉原ビル 2F (登記本店)<br>静岡県三島市 (創設)</span></span>
+              <span class="lang-en" lang="en"><strong>"It's Mishima Computing!"</strong><br><span>Daiwa Akihabara Bldg. 2F, 2-19-23 Kanda Sudacho, Chiyoda-ku, Tokyo (HQ)<br>Founded in Mishima, Shizuoka</span></span>
             </div>
           </div>
         </div>
 
-        <div class="agent-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+        <div class="agent-grid">
           <article class="card">
             <div class="report-tag">Path 1</div>
             <h3 class="card-title"><span class="lang-ja">検索エンジンのデータベース</span><span class="lang-en" lang="en">Search Engine Index</span></h3>
             <div class="card-body">
               <p class="lang-ja">Googleなどが巡回して構築する巨大なデータベース。多くのAI検索もこれを土台にするため、まずは従来のクローラビリティ（sitemapやセマンティックタグ）を完璧にすることが大前提です。</p>
-              <p class="lang-en" lang="en" style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">The massive databases built by crawlers like Googlebot. Since most AI search features use this as their foundation, flawless core crawlability (sitemaps, semantic HTML) remains essential.</p>
+              <p class="lang-en" lang="en">The massive databases built by crawlers like Googlebot. Since most AI search features use this as their foundation, flawless core crawlability (sitemaps, semantic HTML) remains essential.</p>
             </div>
           </article>
 
@@ -550,7 +504,7 @@
             <h3 class="card-title"><span class="lang-ja">生成AI検索とRAG</span><span class="lang-en" lang="en">Generative AI & RAG</span></h3>
             <div class="card-body">
               <p class="lang-ja">AIがユーザーの質問を複数のキーワードに分解して（Query Fan-out）情報をかき集める経路。社名だけでなく、課題名や地域名で発見されるようコンテンツ構造を整えます。</p>
-              <p class="lang-en" lang="en" style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">The process where AI breaks down user questions into multiple sub-queries to gather information. Content must be structured around challenges and locations, not just the company name.</p>
+              <p class="lang-en" lang="en">The process where AI breaks down user questions into multiple sub-queries to gather information. Content must be structured around challenges and locations, not just the company name.</p>
             </div>
           </article>
 
@@ -559,7 +513,7 @@
             <h3 class="card-title"><span class="lang-ja">その場でのリアルタイム検索</span><span class="lang-en" lang="en">Real-time Web Search</span></h3>
             <div class="card-body">
               <p class="lang-ja">ChatGPT Searchなどが、会話の中でその場でWebを検索する経路。引用元として選ばれやすくするため、FAQの充実や回答しやすい明確なテキスト配置を行います。</p>
-              <p class="lang-en" lang="en" style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">Instances where tools like ChatGPT perform live web searches during a conversation. Clear FAQs and logically placed text increase the chances of being cited.</p>
+              <p class="lang-en" lang="en">Instances where tools like ChatGPT perform live web searches during a conversation. Clear FAQs and logically placed text increase the chances of being cited.</p>
             </div>
           </article>
           
@@ -568,7 +522,7 @@
             <h3 class="card-title"><span class="lang-ja">AIエージェントの直接閲覧</span><span class="lang-en" lang="en">Agent Direct Parsing</span></h3>
             <div class="card-body">
               <p class="lang-ja">人間の代わりに自律して動くAIが、直接HPのHTMLを読み取る経路。見た目だけでなく、ボタンやフォームの「意味」がAIに伝わるアクセシビリティ構造が必須になります。</p>
-              <p class="lang-en" lang="en" style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">Autonomous AI agents reading your raw HTML on behalf of users. Beyond visual design, interactive elements like buttons and forms must have clear semantic meaning.</p>
+              <p class="lang-en" lang="en">Autonomous AI agents reading your raw HTML on behalf of users. Beyond visual design, interactive elements like buttons and forms must have clear semantic meaning.</p>
             </div>
           </article>
         </div>
@@ -578,11 +532,11 @@
             <span class="lang-ja">※学習用クローラーへの配慮 (robots.txtの設計)</span>
             <span class="lang-en" lang="en">*Consideration for Training Crawlers (robots.txt)</span>
           </h3>
-          <p class="lang-ja" style="margin-top: 1rem; line-height: 1.8;">
+          <p class="lang-ja">
             AIモデルの学習に使われるボット（例: <code>GPTBot</code>）と、検索結果を出すためのボット（例: <code>OAI-SearchBot</code>）は仕組みが異なります。三嶋電算では、「AI検索には表示させたいが、自社のコンテンツをAIの学習データにはされたくない」といったエンタープライズのポリシーに合わせて、公開情報を厳密にコントロールする <code>robots.txt</code> の設計もサポートします。
           </p>
-          <p class="lang-en" lang="en" style="margin-top: 0.5rem; font-size: 0.9rem; line-height: 1.6; color: var(--text-secondary);">
-            Bots used for training AI models (e.g., GPTBot) differ from bots that fetch content for search features (e.g., OAI-SearchBot). We help design strict robots.txt policies to ensure your data is discoverable in search without being absorbed into external training datasets, aligning with enterprise compliance.
+          <p class="lang-en" lang="en">
+            Bots used for training AI models (e.g., GPTBot) differ from bots that fetch content for search features (e.g., OAI-SearchBot). We help design strict robots.txt policies to ensure your data is discoverable in search without being abs&#111;rbed into external training datasets, aligning with enterprise compliance.
           </p>
         </div>
       </div>
@@ -599,7 +553,7 @@
             <h3 class="card-title"><span class="lang-ja">情報構造の最適化</span><span class="lang-en" lang="en">Information Architecture</span></h3>
             <div class="card-body">
               <p class="lang-ja">正確な登記住所や法人格の明記によるエンティティ（実体）の確定、サービスページの改善、問い合わせ前の不安を解消するFAQの追加など、AIが迷わない情報整理を行います。</p>
-              <p class="lang-en" lang="en" style="margin-top: 0.5rem;">We eliminate AI confusion by consolidating your entity with exact registered addresses, improving service pages, and adding targeted FAQs.</p>
+              <p class="lang-en" lang="en">We eliminate AI confusion by consolidating your entity with exact registered addresses, improving service pages, and adding targeted FAQs.</p>
             </div>
           </article>
           <article class="card">
@@ -607,7 +561,7 @@
             <h3 class="card-title"><span class="lang-ja">機械可読シグナルの追加</span><span class="lang-en" lang="en">Machine Readable Signals</span></h3>
             <div class="card-body">
               <p class="lang-ja">「構造化データを置けば推薦される」という神話ではなく、AIの推論負荷（RAGの検索手間）を減らし、企業エンティティを確定させるためのJSON-LDを注入します。</p>
-              <p class="lang-en" lang="en" style="margin-top: 0.5rem;">Instead of treating structured data as magic SEO dust, we inject precise JSON-LD to consolidate your Knowledge Graph entity and reduce inference overhead for AI/RAG systems.</p>
+              <p class="lang-en" lang="en">Instead of treating structured data as magic SEO dust, we inject precise JSON-LD to consolidate your Knowledge Graph entity and reduce inference overhead for AI/RAG systems.</p>
             </div>
           </article>
           <article class="card">
@@ -615,7 +569,7 @@
             <h3 class="card-title"><span class="lang-ja">問い合わせ・マップ導線</span><span class="lang-en" lang="en">Contact & Map Routing</span></h3>
             <div class="card-body">
               <p class="lang-ja">迷わずアクションできる問い合わせ導線の改善と、Googleビジネスプロフィールの情報を整理・連携します。</p>
-              <p class="lang-en" lang="en" style="margin-top: 0.5rem;">We improve inquiry routing for frictionless actions and synchronize information with your Google Business Profile.</p>
+              <p class="lang-en" lang="en">We improve inquiry routing for frictionless actions and synchronize information with your Google Business Profile.</p>
             </div>
           </article>
           <article class="card">
@@ -623,7 +577,7 @@
             <h3 class="card-title"><span class="lang-ja">AIクローラー向け平文案内</span><span class="lang-en" lang="en">LLM-Readable Endpoints</span></h3>
             <div class="card-body">
               <p class="lang-ja">検索AIや自律型エージェントがサイト全体を俯瞰できるよう、ノイズのない平文の案内図 (<code>llms.txt</code>) を標準配置します。</p>
-              <p class="lang-en" lang="en" style="margin-top: 0.5rem;">We deploy standard machine-readable endpoints like <code>llms.txt</code> so AI crawlers can map your core pages and entity info without HTML noise.</p>
+              <p class="lang-en" lang="en">We deploy standard machine-readable endpoints like <code>llms.txt</code> so AI crawlers can map your core pages and entity info without HTML noise.</p>
             </div>
           </article>
         </div>
@@ -642,18 +596,18 @@
           <span class="lang-ja">
             AI検索対応は、構造化データを追加して終わりではありません。<br>
             どのページが読まれ、どの導線から問い合わせにつながったかを確認し、会社情報・サービス説明・FAQ・CTAを継続的に改善していく必要があります。<br>
-            三嶋電算では、個人を特定するための追跡ではなく、情報構造と問い合わせ導線を改善するための軽量な計測基盤をあわせて設計します。（<a href="https://github.com/mishima-computing/mishima-computing.github.io" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: none; font-weight: 500;"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" style="display: inline-block; vertical-align: -0.125em; margin-right: 0.2em;"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>当サイト自体がその仕組みを用いたライブショーケースとして稼働しています</a>）
+            三嶋電算では、個人を特定するための追跡ではなく、情報構造と問い合わせ導線を改善するための軽量な計測基盤をあわせて設計します。（<a href="https://github.com/mishima-computing/mishima-computing.github.io" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>当サイト自体がその仕組みを用いたライブショーケースとして稼働しています</a>）
           </span>
-          <span class="lang-en" lang="en" style="margin-top: 1rem;">
+          <span class="lang-en" lang="en">
             AI search readiness does not end with structured data.<br>
             We need to observe which pages are read, which paths lead to inquiries, and continuously refine company information, service descriptions, FAQ, and CTAs.<br>
-            Mishima Computing designs lightweight measurement infrastructure focused on improving information architecture and inquiry paths, not identifying individual visitors. (<a href="https://github.com/mishima-computing/mishima-computing.github.io" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: none; font-weight: 500;"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" style="display: inline-block; vertical-align: -0.125em; margin-right: 0.2em;"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>This very website serves as a live implementation showcase of this setup.</a>)
+            Mishima Computing designs lightweight measurement infrastructure focused on improving information architecture and inquiry paths, not identifying individual visitors. (<a href="https://github.com/mishima-computing/mishima-computing.github.io" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>This very website serves as a live implementation showcase of this setup.</a>)
           </span>
         </p>
 
-        <div style="text-align: center; margin: 3rem 0 1rem 0;">
-          <img src="../assets/images/measurement_art.jpg" alt="Robots observing nature and taking notes" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.15); max-height: 400px; object-fit: contain;">
-          <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+        <div>
+          <img src="../assets/images/measurement_art.jpg" alt="Robots observing nature and taking notes">
+          <p>
             <span class="lang-ja">情報網の動態を観察し、継続的な改善の証跡を記録する</span>
             <span class="lang-en" lang="en">Observing information networks and recording evidence for continuous improvement</span>
           </p>
@@ -741,7 +695,7 @@
           </article>
         </div>
 
-        <div style="margin-top: 2rem;">
+        <div>
           <a href="../contact/?subject=free_diagnostic&amp;src=agent_readiness_measurement" class="btn btn-primary">
             <span class="lang-ja">AI検索対応と効果測定を相談する</span>
             <span class="lang-en" lang="en">Discuss AI readiness and measurement</span>
@@ -751,7 +705,7 @@
     </section>
 
     <!-- Section 3: 進め方 -->
-    <section class="section" id="process" style="background-color: rgba(6, 182, 212, 0.01);">
+    <section class="section" id="process">
       <div class="container">
         <h2><span class="lang-ja">作り直し不要の進め方</span><span class="lang-en" lang="en">Implementation Process</span></h2>
         
@@ -812,7 +766,7 @@
 
 
     <!-- Section 4.6: FAQ -->
-    <section class="section" id="faq" style="padding-top: 0;">
+    <section class="section" id="faq">
       <div class="container">
         <h2>
           <span class="lang-ja">よくある質問</span>
@@ -909,17 +863,17 @@
     </section>
 
     <!-- Section 4.7: 保証に関するポリシー -->
-    <section class="section" id="policy" style="background-color: rgba(239, 68, 68, 0.02); border-top: 1px solid rgba(239, 68, 68, 0.1);">
-      <div class="container" style="max-width: 800px; text-align: center;">
-        <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem;">
+    <section class="section" id="policy">
+      <div class="container">
+        <h2>
           <span class="lang-ja">当サービスのポリシー：AIによる推薦や検索順位を「保証」する魔法ではありません</span>
           <span class="lang-en" lang="en">Our Policy: We do not guarantee rankings or AI recommendations.</span>
         </h2>
-        <p class="lang-ja" style="line-height: 1.8; text-align: left; color: var(--text-secondary);">
+        <p class="lang-ja">
           本サービスは、ChatGPT、Google AI Overviews、Gemini、Claude等での表示順位や推薦を保証するものではありません。<br><br>
           私たちが行うのは、AIに選ばれるための小手先の裏技ではありません。検索エンジンやAIエージェントが会社情報を発見・解釈する上で妨げとなっている<strong>「読まれない技術的な原因」を一つずつ確実に取り除き</strong>、人間にも機械にも正しく伝わる情報構造へとホームページを「補強」することです。
         </p>
-        <p class="lang-en" lang="en" style="line-height: 1.8; text-align: left; color: var(--text-secondary); margin-top: 1rem;">
+        <p class="lang-en" lang="en">
           This service does not guarantee rankings, citations, or recommendations on platforms like ChatGPT, Google AI Overviews, Gemini, or Claude. Our approach is purely technical: we systematically remove the technical roadblocks that prevent AI agents and search engines from discovering and understanding your company's information.
         </p>
       </div>
@@ -927,10 +881,10 @@
 
     <!-- Section 5: CTA -->
     <section class="section contact-section">
-      <div class="container" style="max-width: 820px; text-align: center;">
-        <div class="card contact-card" style="border-color: var(--primary-glow); padding: 4rem 3rem; background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));">
-          <div class="hero-pill" style="margin-bottom: 2rem;"><span class="pulse"></span><span>Free Diagnostics</span></div>
-          <h2 style="display: block;"><span class="lang-ja">無料でAI検索・HP診断を依頼する</span><span class="lang-en" lang="en">Request a Free Diagnostic</span></h2>
+      <div class="container">
+        <div class="card contact-card">
+          <div class="hero-pill"><span class="pulse"></span><span>Free Diagnostics</span></div>
+          <h2><span class="lang-ja">無料でAI検索・HP診断を依頼する</span><span class="lang-en" lang="en">Request a Free Diagnostic</span></h2>
           <p><span class="lang-ja">今のホームページがAIや検索エンジンにどう解釈されているか、まずは無料の診断をご利用ください。</span><span class="lang-en" lang="en">Find out how search engines and AI interpret your current website. Start with a free diagnostic report.</span></p>
           <a href="../contact/?subject=free_diagnostic&amp;src=agent_readiness_final" class="btn btn-primary"><span class="lang-ja">無料診断を申し込む</span><span class="lang-en" lang="en">Apply for Free Diagnostic</span></a>
         </div>
