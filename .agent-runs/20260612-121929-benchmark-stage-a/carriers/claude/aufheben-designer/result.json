@@ -1,0 +1,105 @@
+{
+  "role_id": "aufheben-designer",
+  "contract_id": "IC-20260612-stageA-uiux-spec-001",
+  "objective": "Ratify docs/design/uiux-spec.md for mishima-computing.github.io: a positive design-thesis, five layers instantiated for the real content, Decidable/Advisory composition propositions with per-objective thresholds, a bilingual JA/EN decision, and an explicit motion-restraint decision, under wording-FROZEN / structure-order-staging-format-FREE scope, claim-class-1 effects only.",
+  "selected_direction": "Synthesis of aggressive H1 + conservative Trust Ledger + genius H1-H3. Design-thesis: 'Evidence Ledger — the company performs its own trust product on itself.' Every index-level view pairs frozen text with an adjacent verifiable proof artifact (kessan notice, incident post-mortem, ADR-0001, agent-readiness manifest, GitHub provenance, serverless contact demo). First viewport = company personhood (JA legal name + registered facts) plus exactly one proof artifact; unverifiable hero metrics survive verbatim but stage below the fold and are excluded from the proof-artifact definition. JA is lead language per view with EN as visible support, per-script tokens (JA ~15-40ch, EN ~45-75ch measure budgets), no JS dependency for content visibility. Motion restraint is an explicit recorded decision: opacity/transform only, NN/g duration bands cited (no fixed ms constants), prefers-reduced-motion removes all motion, ambient grid-bg/glow-orb/pulse made static or removed with WCAG 2.2.2/2.3.1/2.3.3 audit noted.",
+  "rejected_parts": [
+    {
+      "source": "aggressive-designer",
+      "rejected_part": "H3 default form: promoting incidents/ and docs/ markdown into new HTML surfaces and regrouping primary nav around them as the baseline structure.",
+      "reason": "Collides with the 'no new pages' non-goal and an absent owner ruling; aufheben must not expand non-goals. Baseline is deep-linking the trust register to existing surfaces; HTML rendering is recorded in the spec as an owner-ruling-gated option only."
+    },
+    {
+      "source": "aggressive-designer",
+      "rejected_part": "Assumption that the current live site is the previously failed attempt and therefore direct evidence of rejected owner taste.",
+      "reason": "Listed only under assumptions with no evidence pointer; downgraded to speculative per role policy. The spec must justify staging via genre/profile evidence, not via inferred owner-taste history."
+    },
+    {
+      "source": "conservative-designer",
+      "rejected_part": "Fixed motion constant 'motion off or 150-300ms state proof only' in handoff_notes.",
+      "reason": "Genius H3 and ui-feel-foundations require cited duration bands with rationale, never inherited fixed ms constants; the spec cites anchor:motion#nng-animation-duration bands plus proves:/timing-ranges discipline instead."
+    },
+    {
+      "source": "conservative-designer",
+      "rejected_part": "Treating llms.txt, sitemap.xml, manifest.json, and robots.txt as design surfaces the spec restructures.",
+      "reason": "They enter the spec only as wording-preservation inventory entries; restructuring machine-facing files exceeds the UI/UX deliverable and risks the mechanical gate for zero taste-gate benefit."
+    },
+    {
+      "source": "genius",
+      "rejected_part": "Importing Vanta/Drata surface patterns (badge walls, customer counts) beyond genre confirmation; antgroup as citable exemplar; the empty fourth hypothesis stub.",
+      "reason": "Wording is frozen and the company holds no certifications, so badge/count patterns are uncopyable; antgroup is hypothesis-class unverified-by-fetch; the empty stub is a mechanical artifact carrying no content."
+    }
+  ],
+  "implementation_summary": "Write docs/design/uiux-spec.md per .agent-org/intake-template.md. Sections: (1) design-thesis 'Evidence Ledger' stated as a per-view checkable proposition (each view names its proof artifact and adjacency). (2) Five layers: strategy=trust/traceability K.K. performing its own product; scope=all 9 owner-listed pages plus wording inventory covering JS-injected text, metadata, llms.txt, manifest; structure=trust register grouping with deep-link baseline and owner-gated HTML-surface option; frame=personhood-first first viewport, ledger sections, responsive table rules; presentation=per-script tokens, sober disclosure register, restrained Mishima/Fuji identity. (3) Composition propositions each marked Decidable or Advisory with objective rationale: >=1 verifiable proof artifact per index section (Decidable; metrics 100%/<10ms/24/7 explicitly excluded from the definition); <=2 consecutive same-type sections (Decidable); first-viewport = legal personhood + 1 proof artifact + 1 action (Decidable); section-rhythm variety (Advisory). (4) Bilingual: JA lead on all current views, EN visible support, measure budgets JA 15-40ch / EN 45-75ch, no JS-gated visibility; includes a pre-Stage-B verification step for block-multiset gate semantics on paired spans, with recorded fallback (both languages always-visible in DOM). (5) Motion-restraint decision with proves:/timing-ranges table, reduced-motion removal, WCAG SC 2.2.2/2.3.1/2.3.3 acceptance entries. All effect claims limited to claim-class-1 (credibility, focus, scanability, legibility, appeal).",
+  "acceptance_criteria": [
+    "docs/design/uiux-spec.md exists, follows .agent-org/intake-template.md, and is the only file changed in the Stage A diff.",
+    "The design-thesis names a positive memorable move checkable per view; no section of the spec is prohibition-only.",
+    "All five layers are instantiated with this site's actual pages and content blocks, not generic guidance.",
+    "Every composition proposition is marked Decidable or Advisory, carries a threshold with an objective-derived rationale, and names its Stage B verification artifact.",
+    "Proof-artifact definition explicitly excludes the frozen unverifiable metric blocks; those blocks are staged verbatim below the first viewport.",
+    "Lead language is declared per view (JA lead, EN visible support) with per-script tokens and measure budgets; spec states no content visibility may depend on JS.",
+    "Motion section records an explicit decision: opacity/transform only, NN/g band citations without fixed ms constants, prefers-reduced-motion removes all motion, existing ambient animations resolved (static or removed).",
+    "WCAG 2.2 floors (4.5:1 body / 3:1 large-text and non-text contrast, focus visibility, SC 2.2.2/2.3.1/2.3.3) appear as non-negotiable acceptance criteria, not advisory notes.",
+    "Spec contains a wording-preservation inventory covering HTML body text, JS-injected UI text, metadata, llms.txt, sitemap labels, and manifest text.",
+    "All claimed effects are claim-class-1 per anchor:evaluation-instruments#claim-classes; no conversion/engagement/SEO claims appear.",
+    "The trust-register structure specifies deep-link baseline for incidents/docs markdown and marks any HTML surfacing as gated on an explicit owner ruling, without expanding non-goals.",
+    "The spec marks its three structural bets (hero demotion, bilingual model, register grouping) as separable decisions each with a recorded fallback."
+  ],
+  "files_allowed_to_change": [
+    "docs/design/uiux-spec.md"
+  ],
+  "files_not_allowed_to_change": [
+    "index.html",
+    "about/**",
+    "contact/**",
+    "privacy/**",
+    "kessan/**",
+    "incidents/**",
+    "reports/**",
+    "agent-readiness/**",
+    "assets/**",
+    "scripts/**",
+    ".github/**",
+    "llms.txt"
+  ],
+  "required_checks": [
+    "Diff check: Stage A changeset touches only docs/design/uiux-spec.md (docs-only constraint).",
+    "Template conformance review against .agent-org/intake-template.md before merge.",
+    "Claim-class audit: grep spec for class-2 vocabulary (conversion, engagement, SEO, ranking) and reject if present.",
+    "Threshold audit: every Decidable proposition has threshold + rationale + named Stage B verification artifact.",
+    "CI constraints incomplete: no CI action writer outputs or gap reports were provided to this synthesis; the existing block-multiset wording gate is owner-declared and applies to Stage B, not Stage A. Do not invent additional CI gates."
+  ],
+  "security_requirements": [
+    "No secrets, tokens, or personal data in the spec; contact-form discussion references existing serverless catalog only.",
+    "No new external script, font, or asset dependencies may be mandated by the spec; GitHub Pages static-hosting trust boundary unchanged.",
+    "Spec must not instruct Stage B to add analytics, tracking, or third-party embeds.",
+    "Spec must require all content remain readable without JavaScript execution (no JS-gated visibility), per the hard constraint and ADR-0001 rationale."
+  ],
+  "nonfunctional_requirements": [
+    "WCAG 2.2 AA floors as binding acceptance criteria: contrast 4.5:1 body / 3:1 large and non-text, visible focus, keyboard operability, alt text.",
+    "Motion: SC 2.2.2/2.3.1/2.3.3 compliance; prefers-reduced-motion removes all animation; durations cited as NN/g bands only.",
+    "Typography: per-script tokens with JA ~15-40ch and EN ~45-75ch measure budgets; JLREQ/CLREQ mixed-script rules per anchor:typography-cjk-latin.",
+    "Static delivery: plain HTML/CSS on GitHub Pages, no build framework, no SSG; spec must be implementable with hand-edited files per ADR-0001.",
+    "UTF-8 no-BOM file handling discipline noted for Stage B, per the published mojibake incident.",
+    "Spec must keep Stage B mechanically self-checkable before the single owner presentation (each Decidable check names its artifact)."
+  ],
+  "non_goals": [
+    "Stage B implementation (no HTML/CSS/JS edits in Stage A).",
+    "Content rewriting, translation, summarizing, merging, or dropping any text block.",
+    "New public pages (HTML surfacing of incidents/docs markdown only if a future explicit owner ruling permits; the spec must not presume it).",
+    "Analytics, CMS, build frameworks, or package managers.",
+    "Changes to scripts/ or CI workflows.",
+    "Perceptual-gate tooling (#44).",
+    "Claim-class-2 effect claims anywhere in the spec."
+  ],
+  "risks": [
+    "Owner taste gate is subjective; if つまらない meant insufficient visual spectacle, a sober evidence ledger could fail again. Mitigation: thesis mandates boldness via proof density and section-type variety, and carries Mishima/Fuji identity in presentation, not austerity.",
+    "Proof inventory is thin (kessan 準備中, one incident); per-view artifact floors could force padding. Mitigation: spec frames candor staging ('scheduled', capital ¥10,000) as deliberate transparency and sets the floor per index section, not per page.",
+    "Block-multiset gate semantics on paired JA/EN spans and JS-injected text are unverified; bilingual restructuring could trip the mechanical gate. Mitigation: pre-Stage-B gate dry-run required; fallback keeps both languages always-visible in DOM.",
+    "Dark glow palette may fail worst-case-region 4.5:1 audits, forcing larger presentation changes than estimated; spec must declare contrast floors as binding so Stage B budgets for it.",
+    "Removing ambient motion and demoting the hero changes the brand energy the owner may currently like; mitigated by marking each structural bet separable with a recorded fallback.",
+    "Deep-link-only trust register (if HTML surfacing stays disallowed) weakens on-site proof density; floors must be satisfiable with existing HTML surfaces alone."
+  ],
+  "fallback_plan": "Stage A is git-revertible: replace or delete docs/design/uiux-spec.md before merge. Inside the spec, three structural bets are separable with recorded fallbacks: (1) bilingual model falls back to both-languages-always-visible without the JS toggle if gate semantics fail verification; (2) trust register falls back to deep-linking existing surfaces if HTML surfacing is ruled a new page; (3) if first-viewport restructuring is contested, the minimum viable thesis is per-view proof-artifact adjacency alone (aggressive H1 core), which still satisfies the design-thesis requirement.",
+  "handoff_to_implementer": "Write docs/design/uiux-spec.md exactly per implementation_summary and acceptance_criteria. Touch no other file. Quote frozen text blocks verbatim when referencing them; never paraphrase content into the spec as replacement wording. Mark every composition proposition Decidable or Advisory with threshold, rationale, and Stage B verification artifact. Record the motion-restraint and bilingual decisions as explicit decisions with fallbacks, citing anchors (anchor:motion#nng-animation-duration, anchor:accessibility, anchor:color, ui-* profile cards). Cite tailscale/deepseek-/en exemplars as fetch-verified only; antgroup may appear solely as hypothesis-class. Do not claim adoption or completion; ratification occurs by merge."
+}
