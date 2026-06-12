@@ -1,0 +1,21 @@
+{
+  "status": "pass",
+  "composed": ".agent-runs/20260612-121929-benchmark-stage-a/carriers/claude/aufheben-designer/input.md",
+  "sources": [
+    {
+      "path": ".agent-runs/20260612-121929-benchmark-stage-a/carriers/claude/aggressive-designer/result.json",
+      "sha256": "f7d525536c565dae968626d7adbbe5e640eadec7233521b478519423a248421d",
+      "embedded": true
+    },
+    {
+      "path": ".agent-runs/20260612-121929-benchmark-stage-a/carriers/codex/conservative-designer/result.json",
+      "sha256": "2e158ce5448ded23d58664d2523aafa57e34b3d2c6306c0cbc3f7c1ffc63d895",
+      "embedded": true
+    },
+    {
+      "path": ".agent-runs/20260612-121929-benchmark-stage-a/carriers/claude/genius/result.json",
+      "sha256": "d4d4bcfe019c78ca870c453c8b4f1319603ecdd6900e6c559788abdbabf816b5",
+      "embedded": true
+    }
+  ]
+}

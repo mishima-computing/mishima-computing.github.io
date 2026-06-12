@@ -1,0 +1,190 @@
+{
+  "role_id": "aggressive-designer",
+  "objective": "Stage A one-shot benchmark: design input for docs/design/uiux-spec.md — a corporate homepage UI/UX spec for mishima-computing.github.io with a positive design-thesis, five layers, decidable composition propositions, bilingual decisions, and explicit motion restraint, under wording-FROZEN / structure-order-staging-format-FREE interpretation scope.",
+  "proposal_summary": "Thesis candidate: 「営みを開帳する会社」(The company that opens its ledger). The genuinely unusual fact about this site is that a tiny Japanese K.K. (資本金10,000円) publicly publishes 決算公告, a real incident post-mortem with root cause and CI countermeasure, an ADR defending hardcoded HTML for agent readiness, and a contact form that IS the product demo. The spec should make THAT the memorable move: every view composes claim+adjacent verifiable artifact (trust-register composition), demoting the current glow-orb LP register and unverifiable hero metrics to support. 誠実≠退屈 is resolved concretely: sobriety in register, boldness in proof density and section-type variety.",
+  "recommended_direction": "Structure: regroup IA around a visible trust register (kessan / incidents / docs-ADR / reports / agent-readiness) reachable from primary nav. Frame: first viewport = company personhood (JA name, registered facts) plus one proof artifact, per ui-corporate-trust-genre; unverifiable metric cards (100%, <10ms, 24/7) survive verbatim but move below the fold (order FREE). Presentation: JA lead language per view with EN as visible support (襯托法), both readable without JS; per-script tokens, JA ~15-40ch / EN ~45-75ch measure budgets; motion restraint declared explicitly — opacity/transform only, 100-500ms NN/g band, prefers-reduced-motion removes all, pulse/orb ambience cut or made static. Each composition proposition marked Decidable with per-objective threshold (e.g. ≥1 verifiable proof artifact per index section; ≤2 consecutive same-type card-grid sections; 4.5:1 body contrast floor).",
+  "expected_benefits": [
+    "The memorable move is grounded in content that already exists verbatim (incidents/, kessan/, docs/ADR-0001, serverless contact demo) — zero wording risk, maximal differentiation for an AI-trust/traceability company.",
+    "Directly answers the post-mortem: replaces ban-only sobriety with a positive, checkable thesis; separates corporate-trust register from boredom via proof density and section rhythm, not decoration.",
+    "Decidable thresholds let Stage B be mechanically checked against the thesis in one shot, reducing taste-gate variance.",
+    "Removing JS-dependent language visibility aligns the site with its own ADR-0001 machine-readability rationale and the no-JS-for-content hard constraint.",
+    "Motion restraint and contrast floors become explicit acceptance criteria instead of omissions, satisfying WCAG non-negotiables.",
+    "Claim discipline (claim-class-1 only: credibility, focus, scanability) keeps the spec inside what design knowledge can honestly promise."
+  ],
+  "risks": [
+    "Proof inventory is thin: kessan is 準備中, only one incident exists; a ledger thesis stretched over 9 pages may expose emptiness rather than openness.",
+    "Owner taste is known only as negation (つまらない); a sober proof-ledger could fail the same gate if the owner wanted spectacle — the thesis bets that substance, not ornament, was missing.",
+    "incidents/ and docs/ exist only as markdown; surfacing them may collide with the 'no new pages' non-goal — unresolved scope can stall Stage B.",
+    "Demoting the hero poetry and metric cards restructures the first viewport aggressively; one-shot gate gives no recovery if misjudged.",
+    "Order-insensitive block-multiset gate behavior with paired JA/EN spans and JS-hidden text is unverified; restructuring language presentation could trip the mechanical gate.",
+    "Dark-theme glow palette may fail 4.5:1 worst-case-region audits, forcing presentation-layer changes larger than expected."
+  ],
+  "assumptions": [
+    "The current live site is (or closely matches) the previous failed attempt, so its LP register is evidence of what the owner rejected.",
+    "The wording gate compares text-block multisets independent of position, container, or visibility mechanism, so moving and re-nesting blocks is safe.",
+    "staging FREE and structure FREE permit nav regrouping and promoting repo markdown content into the site IA, pending the new-page ruling.",
+    "Stage B implementer can execute per-script typography tokens in plain CSS on GitHub Pages without a build step.",
+    "Bilingual surfaces stay translation-only (Boundary in ui-bilingual-typography); no localization rewrites are needed or allowed."
+  ],
+  "constraints": [
+    "Stage A is docs-only: no HTML/CSS edits; deliverable is docs/design/uiux-spec.md per .agent-org/intake-template.md.",
+    "Spec claims claim-class-1 effects only (credibility, focus, scanability, legibility, appeal) per anchor:evaluation-instruments#claim-classes.",
+    "All text blocks preserved verbatim; wording FROZEN including hero metrics and poetic taglines.",
+    "WCAG floors (contrast, motion, text alternatives) are acceptance criteria, not advisory.",
+    "Static HTML on GitHub Pages; no build framework; no JS dependency for content visibility.",
+    "Non-goals: no content rewriting/translation, no new pages, no analytics/CMS, no scripts/ or CI changes, no #44 tooling."
+  ],
+  "things_to_avoid": [
+    "Ban-only spec: any section that lists prohibitions without a positive checkable move repeats the ratified failure.",
+    "Decorating around the unusual content: treating incidents/kessan/ADR as footer links while the hero stays poetic inverts the thesis.",
+    "Counting the frozen unverifiable metrics (100%, <10ms, 24/7) as proof artifacts to satisfy density thresholds — metric gaming.",
+    "Pack-set constants: every threshold needs an objective rationale recorded in the spec, not inherited numbers.",
+    "Equal-prominence bilingual layout; one lead language per view must be declared, not split 50/50.",
+    "Novelty motion or juiciness claims; ambience animation without proves:/timing-range discipline.",
+    "Citing the antgroup exemplar as evidence — it is hypothesis-class, unverified-by-fetch."
+  ],
+  "questioning_targets_selected": [
+    {
+      "target": "Required scope boundary",
+      "selection_reason": "Owner scope names docs/ and incidents/ as site pages, but the repo holds only markdown there while non-goals forbid new pages; whether the thesis's strongest proof objects may become HTML surfaces is the single biggest unresolved boundary."
+    },
+    {
+      "target": "Reversibility of the proposed change",
+      "selection_reason": "One-shot taste gate means Stage B outcome is irreversible; the spec must front-load its riskiest bets (hero demotion, language model, incident surfacing) as explicit decisions with recorded fallbacks rather than discover them during implementation."
+    },
+    {
+      "target": "Metric gaming pressure",
+      "selection_reason": "Decidable thresholds like proof-artifact-density invite satisfaction-by-counting; frozen wording guarantees the unverifiable hero metrics survive, so the spec must define 'proof artifact' to exclude them or the gate is hollow."
+    }
+  ],
+  "structural_hypotheses": [
+    {
+      "broken_assumption": "Corporate trust for this company is achieved by toning down the existing tech-LP aesthetic (dark glow orbs, Fuji poetry, metric cards) — i.e. that 誠実 is subtraction from 退屈's opposite.",
+      "alternative_structure": "Trust-register composition: first viewport establishes company personhood plus one live proof artifact; every index section pairs a frozen text block with an adjacent verifiable object (kessan notice, incident report, ADR, CI audit, demo form); ornament becomes support, openness becomes the spectacle.",
+      "leverage": "Differentiation comes free from content no competitor K.K. publishes; the thesis is checkable per-view (artifact present or not), giving Stage B a mechanical target for the taste gate.",
+      "what_breaks": "If the owner's つまらない meant lack of visual drama, a sober ledger fails identically; also breaks if proof inventory is too thin to fill per-view floors without padding.",
+      "rejection_conditions": [
+        "Post-mortem or owner clarification shows the failure was visual flatness, not absence of substance.",
+        "Proof-artifact inventory audit finds fewer than one verifiable object per planned index section, forcing decorative fillers.",
+        "aufheben judges first-viewport demotion of hero copy incompatible with owner-known preferences."
+      ]
+    },
+    {
+      "broken_assumption": "The JS lang-toggle duplication (paired lang-ja/lang-en spans, one hidden by app.js) is an acceptable bilingual model for this spec.",
+      "alternative_structure": "One declared lead language per view (JA lead on all current pages; EN as visible secondary support), per-script size/leading/measure tokens, no JS required for either language to be readable — consistent with ADR-0001's own machine-readability argument.",
+      "leverage": "Resolves a hard-constraint violation (JS-dependent content visibility), aligns design with the company's published engineering philosophy, and gives Stage B concrete typographic tokens instead of a toggle hack.",
+      "what_breaks": "Both languages always visible roughly doubles visual text mass; noise budget and JA scan rhythm could degrade; EN-preferring readers lose a clean single-language view.",
+      "rejection_conditions": [
+        "Verification that crawlers and the block-multiset gate already treat hidden spans as fully present AND owner explicitly values the toggle UX.",
+        "Prototype review shows dual-visible text breaks JA measure budgets (~15-40ch) or scanability on key views.",
+        "aufheben rules the language-model change exceeds safe one-shot restructuring risk."
+      ]
+    },
+    {
+      "broken_assumption": "The spec's structure layer must confine itself to the 7 existing HTML pages, leaving incidents/ and docs/ as invisible repo markdown.",
+      "alternative_structure": "IA promotes a 'trust register' group into primary navigation (kessan, incidents, docs/ADR, reports, agent-readiness); markdown sources are surfaced — either as HTML views (if owner rules this is staging, not new pages) or as first-class linked register entries.",
+      "leverage": "The thesis's strongest evidence (a real mojibake post-mortem with CI countermeasure; an ADR that explains the site's own architecture) becomes reachable by the audience the company sells traceability to.",
+      "what_breaks": "If HTML-izing markdown counts as 'new pages', the register can only deep-link to GitHub, weakening on-site proof density and visual coherence.",
+      "rejection_conditions": [
+        "Owner ruling that any new HTML surface, including renderings of existing markdown, violates the new-pages non-goal.",
+        "Block-multiset wording gate cannot accommodate markdown-to-HTML block conversion verbatim.",
+        "aufheben finds nav regrouping conflicts with conservative-designer input on header stability across the hardcoded pages (ADR-0001 sync cost)."
+      ]
+    }
+  ],
+  "conflict_points": [
+    {
+      "point": "Owner scope lists docs/ and incidents/ as site pages, but they exist only as markdown and non-goals forbid new pages; the spec cannot instantiate the structure layer until this is ruled.",
+      "evidence_ref": "incidents/20260604-powershell-mojibake.md; docs/ADR-0001-static-html-for-agent-readiness.md"
+    },
+    {
+      "point": "Frozen hero metrics (100% / <10ms / 24/7) are unverifiable LP claims; they must survive verbatim yet must not count toward proof-artifact-density or sit in the first viewport of a trust-register thesis.",
+      "evidence_ref": "index.html (hero-metrics block)"
+    },
+    {
+      "point": "Current first view leads with campaign posture (poetic hero, glow ambience) where the genre card requires company personhood first; resolving this demotes the most prominent existing design investment.",
+      "evidence_ref": ".agent-org/knowledge/ui/ui-corporate-trust-genre.md"
+    },
+    {
+      "point": "JS-driven language visibility (lang-toggle hiding one script) conflicts with the no-JS-content-visibility hard constraint and with ADR-0001's machine-readability rationale; fixing it is a structural, not cosmetic, change.",
+      "evidence_ref": "docs/ADR-0001-static-html-for-agent-readiness.md; index.html (lang-ja/lang-en spans)"
+    },
+    {
+      "point": "Ambient motion (pulse dots, glow orbs, construction-icon animation) exists without proves:/timing-range discipline or reduced-motion fallback; the spec must decide restraint explicitly, which may conflict with conservative preference to leave presentation untouched.",
+      "evidence_ref": ".agent-org/knowledge/ui/ui-feel-foundations.md; kessan/index.html (construction-icon)"
+    }
+  ],
+  "handoff_notes": "For aufheben-designer only. Synthesis priorities: (1) obtain owner ruling on the incidents/docs surface question before ratifying structure — every hypothesis degrades gracefully to deep-linking if denied; (2) verify block-multiset gate semantics against paired JA/EN spans before adopting the bilingual restructure; (3) keep the thesis sentence itself in the spec verbatim-checkable (per-view artifact adjacency) so Stage B compliance is mechanical; (4) treat H1 as the core bet and H2/H3 as separable — if conservative input contests restructuring risk, H1's first-viewport + density propositions alone still satisfy the design-thesis requirement. All composition thresholds I propose are objective-derived, marked Decidable/Advisory, and claim only class-1 effects. conflict_points is non-empty; no convergence claim is made.",
+  "confidence": {
+    "overall_posture": "grounded",
+    "grounded_claims": [
+      {
+        "claim": "The site already contains publicly committed incident post-mortem and ADR content that is unusual for a Japanese K.K. and on-thesis for a traceability vendor.",
+        "evidence_ref": "incidents/20260604-powershell-mojibake.md"
+      },
+      {
+        "claim": "The company's own ratified architecture decision prioritizes machine readability over DRY, which the JS language toggle contradicts.",
+        "evidence_ref": "docs/ADR-0001-static-html-for-agent-readiness.md"
+      },
+      {
+        "claim": "The current index leads with campaign-register hero and unverifiable metric cards rather than company personhood.",
+        "evidence_ref": "index.html"
+      },
+      {
+        "claim": "Genre guidance requires first-view company personhood and sober disclosure-adjacent register, with decidable proof-object checks.",
+        "evidence_ref": ".agent-org/knowledge/ui/ui-corporate-trust-genre.md"
+      },
+      {
+        "claim": "A ban-only spec is invalid and the design-thesis must name a positive memorable move per the intake contract.",
+        "evidence_ref": ".agent-org/intake-template.md"
+      }
+    ],
+    "speculative_claims": [
+      "The owner's つまらない verdict referred to absence of a substantive memorable move rather than insufficient visual spectacle.",
+      "JA-lead with always-visible EN support will pass the owner taste gate better than the current toggle model."
+    ]
+  },
+  "continuity": {
+    "selected_profiles": [
+      "ui-corporate-trust-genre",
+      "ui-composition-patterns",
+      "ui-bilingual-typography",
+      "ui-information-design",
+      "ui-feel-foundations"
+    ],
+    "version_constraints": [
+      "WCAG 2.2 floors per anchor:accessibility#wcag22-recommendation (non-negotiable acceptance criteria)",
+      "JLREQ/CLREQ mixed-script rules per anchor:typography-cjk-latin entries",
+      "NN/g 100-500ms animation band per anchor:motion#nng-animation-duration",
+      "Static HTML/CSS only; GitHub Pages; no build framework or SSG"
+    ],
+    "ecosystem_facts_used": [
+      "Pages are hardcoded HTML with duplicated header/footer per ADR-0001",
+      "JSON-LD Organization/Service/FAQ structured data already present on index and agent-readiness",
+      "Single stylesheet assets/css/style.css and single script assets/js/app.js",
+      "incidents/ and docs/ content exists as repo markdown, not HTML surfaces",
+      "kessan first-term notice is 準備中, limiting current proof inventory"
+    ],
+    "forbidden_expansions": [
+      "No content rewriting, translation, or new factual claims (ui-information-design Boundary)",
+      "No new analytics, CMS, or perceptual-gate (#44) tooling",
+      "No scripts/ or CI changes",
+      "No claim-class-2 promises (conversion, engagement, SEO) in the spec",
+      "No new pages beyond owner ruling on surfacing existing markdown"
+    ],
+    "safe_change_path": "Stage A merges only docs/design/uiux-spec.md. Sequence inside the spec: thesis and first-viewport proposition first (lowest dependency), then composition thresholds, then bilingual token decision, then IA register grouping gated on the owner's new-page ruling, then motion restraint. Each Decidable proposition names its verification artifact so Stage B can self-check before the single presentation.",
+    "reversibility_plan": "The docs-only merge is git-revertible; the irreversible step is the one-shot owner presentation. Mitigation: the spec marks its three structural bets (hero demotion, bilingual model, register IA) as separable decisions with recorded fallbacks, so aufheben can strip any one without collapsing the thesis; H1's per-view artifact adjacency stands alone as the minimum viable thesis.",
+    "missing_safety_checks": [
+      "Block-multiset gate behavior on JA/EN paired spans and markdown-to-HTML conversion is unverified",
+      "Worst-case-region contrast audit of the current dark palette has not been run",
+      "Reduced-motion behavior of existing pulse/orb/construction animations is unchecked",
+      "Header/footer sync cost of nav regrouping across hardcoded pages is unquantified"
+    ],
+    "knowledge_gaps": [
+      "Owner taste profile beyond the negative つまらない verdict",
+      "Actual EN-audience share to justify lead-language choices per view",
+      "antgroup corporate-trust exemplar remains hypothesis-class, unverified by fetch",
+      "Whether kessan content will exist by Stage B presentation"
+    ]
+  }
+}
