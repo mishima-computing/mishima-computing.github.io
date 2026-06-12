@@ -358,6 +358,14 @@ html[lang="en"] .lang-ja:has(+ .lang-en) {
   min-width: 0;
 }
 
+.nav-link .lang-ja,
+.nav-link .lang-en {
+  overflow-wrap: normal;
+  word-break: keep-all;
+  line-break: strict;
+  white-space: nowrap;
+}
+
 .nav-link::after {
   content: '';
   position: absolute;
@@ -1386,7 +1394,7 @@ html[lang="en"] .lang-ja:has(+ .lang-en) {
 
   .nav-links li {
     display: flex;
-    flex: 1 1 clamp(5.4rem, 30%, 8rem);
+    flex: 1 1 clamp(5.6rem, 30%, 8rem);
     min-width: 0;
   }
 
@@ -1400,8 +1408,6 @@ html[lang="en"] .lang-ja:has(+ .lang-en) {
     font-size: 0.78rem;
     line-height: 1.2;
     text-align: center;
-    overflow-wrap: anywhere;
-    word-break: break-word;
   }
 
   .nav-actions {
@@ -1419,11 +1425,11 @@ html[lang="en"] .lang-ja:has(+ .lang-en) {
   }
 
   .hero {
-    padding-top: 10.75rem;
+    padding-top: 11rem;
   }
 
   .hero-first-viewport {
-    min-height: calc(100vh - 10.75rem);
+    min-height: calc(100vh - 11rem);
   }
 
   .kessan-header,
@@ -1562,6 +1568,11 @@ html[lang="en"] .lang-ja:has(+ .lang-en) {
   .lang-btn {
     min-height: 44px;
     padding: 0.5rem 0.75rem;
+  }
+
+  .nav-link {
+    padding-inline: 0.4rem;
+    font-size: 0.75rem;
   }
 
   .card {
