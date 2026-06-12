@@ -1,0 +1,14 @@
+Canonical role spec controls behavior: roles/implementer.md
+Required schema: schemas/implementation-result.schema.json
+
+OWNER DECISION round 3, superseding the 並記 model (binding; contract IC-20260612-stageA-uiux-spec-001 governs everything else): 「かなりうるさいので、やはり日本語と英語で別にしませんか？」 — bilingual side-by-side display is too noisy. Switch to ONE LANGUAGE AT A TIME.
+
+TASK:
+1. Display model: html[lang="ja"] (and the no-JS default) shows ONLY .lang-ja of each pair; html[lang="en"] shows ONLY .lang-en. CSS-only visibility (e.g. html[lang="en"] .lang-ja { display:none }), JS toggle just flips html[lang] as it already does.
+2. BOTH languages stay in the DOM (wording-preservation invariant; crawlers/llms.txt unaffected). Only PAIRED .lang-ja/.lang-en spans toggle — single-language content (mono path chips, report IDs, dates, code, proper nouns, the JA-only incident page) is never hidden.
+3. Remove the now-obsolete 並記 emphasis CSS (the html[lang="en"] order/weight/size swap rules and any pair-stacking layout that existed only to fit two visible languages — e.g. mobile flex-basis:100% stacking of .lang-en in buttons/nav can be simplified). No leftover double gaps where the hidden span was (audit gap/margin on pair containers).
+4. No-JS first paint = clean JA-only view. The toggle button keeps its current behavior (shows EN when in JA mode, JA when in EN mode).
+5. Audit every pair surface: nav, hero (h1/proof/CTA), registry table, section headings, cards, report bodies, GitHub section, contact form labels+placeholders+submit states, footer, agent-readiness and contact pages.
+6. Wording unchanged anywhere; run python3 scripts/check_encoding.py.
+## Output format
+Your FINAL message must be ONLY the implementation result JSON object (role_id implementer, implementation_contract_id "IC-20260612-stageA-uiux-spec-001"). First character "{", last character "}". No prose, no fences.
