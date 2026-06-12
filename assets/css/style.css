@@ -345,6 +345,101 @@ h4 > .lang-en {
   flex: 0 1 auto;
 }
 
+/* --- LEAD-LANGUAGE EMPHASIS PREFERENCE --- */
+h1:has(> .lang-ja):has(> .lang-en),
+h2:has(> .lang-ja):has(> .lang-en),
+h3:has(> .lang-ja):has(> .lang-en),
+h4:has(> .lang-ja):has(> .lang-en),
+p:has(> .lang-ja):has(> .lang-en),
+.entity-title:has(> .lang-ja):has(> .lang-en),
+.card-body:has(> .lang-ja):has(> .lang-en),
+.metric-label:has(> .lang-ja):has(> .lang-en),
+.footer-desc:has(> .lang-ja):has(> .lang-en) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.lang-ja {
+  order: 1;
+}
+
+.lang-en {
+  order: 2;
+}
+
+html[lang="en"] .lang-en {
+  order: 1;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+html[lang="en"] .lang-ja {
+  order: 2;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+html[lang="en"] h1 > .lang-en,
+html[lang="en"] .entity-title > .lang-en {
+  margin-top: 0;
+  font-size: 1em;
+  line-height: 1.25;
+}
+
+html[lang="en"] h1 > .lang-ja,
+html[lang="en"] .entity-title > .lang-ja {
+  margin-top: 0.45rem;
+  font-size: 0.42em;
+  line-height: 1.25;
+}
+
+html[lang="en"] h2 > .lang-en,
+html[lang="en"] h3 > .lang-en,
+html[lang="en"] h4 > .lang-en {
+  margin-top: 0;
+  font-size: 1em;
+  line-height: 1.35;
+}
+
+html[lang="en"] h2 > .lang-ja,
+html[lang="en"] h3 > .lang-ja,
+html[lang="en"] h4 > .lang-ja,
+html[lang="en"] p > .lang-ja,
+html[lang="en"] .card-body > .lang-ja,
+html[lang="en"] .footer-desc > .lang-ja {
+  margin-top: 0.45rem;
+  font-size: 0.82em;
+  line-height: 1.35;
+}
+
+html[lang="en"] p > .lang-en,
+html[lang="en"] .card-body > .lang-en,
+html[lang="en"] .footer-desc > .lang-en {
+  margin-top: 0;
+}
+
+html[lang="en"] .nav-link .lang-en,
+html[lang="en"] .btn .lang-en,
+html[lang="en"] .footer-links a .lang-en,
+html[lang="en"] .form-label .lang-en,
+html[lang="en"] .hero-pill .lang-en,
+html[lang="en"] .read-more .lang-en,
+html[lang="en"] .proof-link .lang-en {
+  font-size: 1em;
+}
+
+html[lang="en"] .nav-link .lang-ja,
+html[lang="en"] .btn .lang-ja,
+html[lang="en"] .footer-links a .lang-ja,
+html[lang="en"] .form-label .lang-ja,
+html[lang="en"] .hero-pill .lang-ja,
+html[lang="en"] .read-more .lang-ja,
+html[lang="en"] .proof-link .lang-ja {
+  font-size: 0.82em;
+  line-height: 1.25;
+}
+
 /* --- CONTAINERS & LAYOUT --- */
 .container {
   width: 100%;
