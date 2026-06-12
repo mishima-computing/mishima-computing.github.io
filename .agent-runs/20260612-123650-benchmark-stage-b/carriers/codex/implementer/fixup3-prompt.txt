@@ -1,0 +1,16 @@
+Canonical role spec controls behavior: roles/implementer.md
+Required schema: schemas/implementation-result.schema.json
+
+Stage B self-review fix round 3 (same computable-spatial overflow class; contract IC-20260612-stageA-uiux-spec-001 governs). Root-cause this time, not symptom.
+
+EVIDENCE: at 390px viewport the WHOLE page renders wider than the viewport (header JA toggle pushed off-screen, hero CTA extends past right edge even with width:100%/max-width:100%). Classic single-wide-element page widening: some element's min-content width exceeds the viewport, widening the body; width:100% children then track the widened body.
+
+TASK: statically audit the CSS+HTML for elements whose min-content width can exceed 320px and fix each:
+- the company registry grid/table (trust-register/dl/table): column templates like max-content or fixed px must collapse or wrap at small widths; long JA+EN address strings need overflow-wrap:anywhere or break-friendly columns
+- monospace path strings (/agent-readiness/manifest.json, /reports/waterfall-agents/, URLs in proof links/cards): add overflow-wrap:anywhere or word-break where they appear
+- any fixed width/min-width in px >320 anywhere (grep the CSS), any nowrap on content-bearing rows, any grid-template-columns with multiple max-content tracks
+- add the belt-and-braces guards on layout containers only if a true min-content culprit cannot be fully eliminated: html,body { overflow-x: clip } is NOT allowed as the only fix (it hides, not fixes)
+
+Acceptance: no horizontal page widening at 320/390/768; text content unchanged; check_encoding.py clean.
+## Output format
+Your FINAL message must be ONLY the implementation result JSON object (role_id implementer, implementation_contract_id "IC-20260612-stageA-uiux-spec-001"). First character "{", last character "}". No prose, no fences.

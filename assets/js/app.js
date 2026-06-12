@@ -3,7 +3,6 @@ const CLOUDFLARE_WEB_ANALYTICS_TOKEN = '02ab2c59c50c4d02a6ce497849d891eb';
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initLanguage();
-  initCardGlowEffects();
   initModals();
   initContactForm();
   initCloudflareWebAnalytics();
@@ -120,18 +119,7 @@ function setLanguage(lang) {
 
 /* --- DYNAMIC GLASS CARD GLOW EFFECTS --- */
 function initCardGlowEffects() {
-  const cards = document.querySelectorAll('.card');
-  
-  cards.forEach(card => {
-    card.addEventListener('mousemove', e => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      
-      card.style.setProperty('--x', `${x}px`);
-      card.style.setProperty('--y', `${y}px`);
-    });
-  });
+  return;
 }
 
 /* --- MODALS CONTROLLER --- */
@@ -221,6 +209,7 @@ function initModals() {
   const closeBtn = modal.querySelector('.modal-close');
   const backdrop = modal.querySelector('.modal-backdrop');
   const reportCards = document.querySelectorAll('.report-card');
+  let previousFocus = null;
 
   function openModal(reportId) {
     const report = reportContents[reportId];
@@ -239,13 +228,20 @@ function initModals() {
       <div class="lang-en">${report.body.en}</div>
     `;
 
+    previousFocus = document.activeElement;
     modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden'; // Lock scroll
+    if (closeBtn) closeBtn.focus();
   }
 
   function closeModal() {
     modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = ''; // Unlock scroll
+    if (previousFocus && typeof previousFocus.focus === 'function') {
+      previousFocus.focus();
+    }
   }
 
   reportCards.forEach(card => {
@@ -260,8 +256,25 @@ function initModals() {
 
   // Close on Escape key
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
+    if (!modal.classList.contains('active')) return;
+
+    if (e.key === 'Escape') {
       closeModal();
+    }
+
+    if (e.key === 'Tab') {
+      const focusable = modal.querySelectorAll('a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])');
+      if (!focusable.length) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     }
   });
 }

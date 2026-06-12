@@ -1,0 +1,12 @@
+Canonical role spec controls behavior: roles/implementer.md
+Required schema: schemas/implementation-result.schema.json
+
+Stage B self-review fix round (perceptual review finding, contract IC-20260612-stageA-uiux-spec-001 still governs). ONE finding to fix; touch nothing else.
+
+FINDING (perceptual, from controller-executed screenshots): the index hero h1 「三嶋電算株式会社」 line-breaks as 「三嶋電算株式会/社」 at 1280px — a single trailing 社 on its own line. This violates the JLREQ line-composition discipline the spec cites (anchor:typography-cjk-latin#jlreq-line-composition) and the bilingual card's per-script rules.
+
+Fix per your htmlcss craft cards: prevent the orphan break for this CJK display heading without changing the text content (options: word-break/line-break properties, <wbr>-free no-break span around 株式会社, text-wrap balance with lang-aware fallback, or font-size/clamp adjustment so the full name fits one line at >=1024px and breaks at a sanctioned boundary 三嶋電算|株式会社 below that). The chosen mechanism must be CSS-only or markup-only (no JS), must keep the wording-preservation gate green (text content unchanged), and must respect prefers-reduced-motion neutrality.
+
+Run python3 scripts/check_encoding.py after.
+## Output format
+Your FINAL message must be ONLY the implementation result JSON object (role_id implementer, implementation_contract_id "IC-20260612-stageA-uiux-spec-001"). First character "{", last character "}". No prose, no fences.

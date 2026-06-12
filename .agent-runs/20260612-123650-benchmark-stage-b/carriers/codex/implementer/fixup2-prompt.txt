@@ -1,0 +1,12 @@
+Canonical role spec controls behavior: roles/implementer.md
+Required schema: schemas/implementation-result.schema.json
+
+Stage B self-review fix round 2 (computable-spatial finding, contract IC-20260612-stageA-uiux-spec-001 governs). ONE finding; touch nothing else.
+
+FINDING (mechanical, htmlcss-computable-spatial overflow class): at 390px viewport, .proof-link (inline-flex, default nowrap) lays its lang-ja and lang-en spans side by side; the combined string overflows the viewport horizontally (controller screenshot evidence: right-edge clipping of "View Electronic Public No..."). Also audit the header (the JA toggle button was clipped at 390px) and any other inline-flex JA+EN pairs for the same class of overflow.
+
+Fix per htmlcss-computable-spatial: no horizontal overflow at 320px/390px/768px; allowed mechanisms: flex-wrap, stacking the EN span below JA at small widths, max-width:100% + min-width:0, or container-level wrapping. CSS-only; text content unchanged; tap targets stay >=44px-equivalent per the card.
+
+Run python3 scripts/check_encoding.py after.
+## Output format
+Your FINAL message must be ONLY the implementation result JSON object (role_id implementer, implementation_contract_id "IC-20260612-stageA-uiux-spec-001"). First character "{", last character "}". No prose, no fences.

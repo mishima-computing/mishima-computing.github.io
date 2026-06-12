@@ -1,0 +1,14 @@
+Canonical role spec controls behavior: roles/implementer.md
+Required schema: schemas/implementation-result.schema.json
+
+Stage B self-review fix round 4 — ROOT CAUSE NOW DIAGNOSED by controller (contract IC-20260612-stageA-uiux-spec-001 governs).
+
+DIAGNOSIS (confirmed): the header has NO mobile treatment. .menu-toggle exists in CSS as display:none but there is no toggle markup and the .nav (5 items, each JA+EN inline) is never hidden, stacked, or wrapped at small widths. Its min-content width (~700px+) widens the whole page at 390px; every width:100% element then tracks the widened body — this is why fix rounds 2-3 on .btn/.proof-link did not resolve the symptom.
+
+TASK (CSS-only, no JS):
+1. At <=820px: restructure the header to fit 320px — allowed patterns: (a) two-row header (brand row + nav row with flex-wrap and horizontal scroll-snap-free wrapping), or (b) nav links wrap with reduced padding and JA-only labels via hiding .nav .lang-en at small widths IS NOT ALLOWED if it hides content the bilingual DOM audit counts — instead keep both spans but allow per-item stacking. Choose per htmlcss-modern-layout; tap targets >=44px.
+2. Keep the JA/theme toggles visible and tappable at 320/390.
+3. Verify statically that NO other nowrap/min-content element exceeds 320px (the nav was masking any remaining ones).
+4. Text content unchanged; run python3 scripts/check_encoding.py.
+## Output format
+Your FINAL message must be ONLY the implementation result JSON object (role_id implementer, implementation_contract_id "IC-20260612-stageA-uiux-spec-001"). First character "{", last character "}". No prose, no fences.
