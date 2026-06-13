@@ -520,6 +520,17 @@ html[lang="en"] .lang-ja:has(+ .lang-en) {
   min-width: 0;
 }
 
+.trust-register a {
+  align-items: flex-start;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  overflow-wrap: normal;
+  text-align: left;
+  word-break: normal;
+}
+
 .proof-strip {
   display: flex;
   flex-wrap: wrap;

@@ -26,7 +26,7 @@ The frozen metric cards `100%`, `< 10ms`, and `24 / 7` are explicitly not proof 
 
 | dimension | state | owner note |
 | --- | --- | --- |
-| wording | `FROZEN` | Stage B must preserve existing body text, JS-injected UI text, metadata text, machine-file labels, and manifest text as blocks. |
+| wording | `FROZEN` | Stage B must preserve existing body text, JS-injected UI text, metadata text, machine-file labels, and manifest text as blocks, except the recorded wording=FREE carve-out for the five `/` trust-register display labels. |
 | structure | `FREE` | Stage B may regroup existing blocks into an Evidence Ledger trust register, subject to the no-new-page baseline. |
 | order | `FREE` | Stage B may reorder frozen blocks to make proof adjacency visible. |
 | staging | `FREE` | Stage B may move existing blocks above or below the fold, including demoting the metric cards. |
@@ -79,16 +79,16 @@ Excluded interactions: no new public HTML page for `incidents/` or `docs/` unles
 
 ### structure
 
-The site structure becomes a trust register, not a new sitemap:
+The site structure becomes an Evidence Ledger trust register, not a new sitemap. Register entries use bilingual human labels over frozen deep-link targets, so the visible text names the trust function while the hrefs remain the existing legal, engineering, readiness, incident, and contact surfaces.
 
 1. Personhood: JA legal name, EN legal support name, registered office, representative, scheduled establishment, capital, origin lab.
-2. Public notice: `/kessan/` and the notice coordinates.
-3. Engineering provenance: `/reports/waterfall-agents/`, GitHub organization, and public repository links already present.
-4. Agent readiness: `/agent-readiness/`, JSON-LD, `manifest.json`, `llms.txt`, `sitemap.xml`, and `robots.txt` inventory.
-5. Operational candor: `/incidents/20260604-powershell-mojibake.md`, UTF-8 no-BOM discipline, and ADR-0001 static HTML rationale.
-6. Serverless proof: `/contact/` contact form demo and Cloudflare Workers/GitHub catalog explanation.
+2. Public notice: `決算公告` / `Public Notice` over frozen target `/kessan/` and the notice coordinates.
+3. Engineering provenance: `技術レポート AG-2026-001` / `Technical Report AG-2026-001` over frozen target `/reports/waterfall-agents/`, GitHub organization, and public repository links already present.
+4. Agent readiness: `AI対応マニフェスト` / `Agent Readiness Manifest` over frozen target `/agent-readiness/manifest.json`, plus `/agent-readiness/`, JSON-LD, `llms.txt`, `sitemap.xml`, and `robots.txt` inventory.
+5. Operational candor: `インシデント記録` / `Incident Report` over frozen target `/incidents/20260604-powershell-mojibake.md`, UTF-8 no-BOM discipline, and ADR-0001 static HTML rationale.
+6. Serverless proof: `お問い合わせ` / `Contact` over frozen target `/contact/` contact form demo and Cloudflare Workers/GitHub catalog explanation.
 
-Deep-link baseline: trust-register entries link to existing surfaces and markdown files. HTML rendering of incidents or docs is an owner-ruling-gated option only; Stage B must not presume it.
+Deep-link baseline: trust-register entries link to existing surfaces and markdown files with bilingual human labels rather than raw path display text. HTML rendering of incidents or docs is an owner-ruling-gated option only; Stage B must not presume it.
 
 Separable structural bets and fallbacks:
 
@@ -181,7 +181,9 @@ Encoding: Stage B must preserve UTF-8 no-BOM discipline and run the encoding che
 
 ## wording-preservation inventory
 
-The following inventory is the Stage B source map. It inventories real current files and requires preservation as blocks; it does not authorize replacement wording.
+The following inventory is the Stage B source map. It inventories real current files and requires preservation as blocks; it does not authorize replacement wording outside the five-label trust-register carve-out recorded below.
+
+Carve-out re-baseline: the `/` trust-register visible anchor labels are wording=FREE only for these five replacements: `/kessan/` becomes `決算公告` / `Public Notice`; `/reports/waterfall-agents/` becomes `技術レポート AG-2026-001` / `Technical Report AG-2026-001`; `/agent-readiness/manifest.json` becomes `AI対応マニフェスト` / `Agent Readiness Manifest`; `/incidents/20260604-powershell-mojibake.md` becomes `インシデント記録` / `Incident Report`; `/contact/` becomes `お問い合わせ` / `Contact`. The href targets remain frozen deep links, and the wording-preservation diff baseline treats only these five visible label strings as authorized replacements.
 
 ### shared body blocks
 
@@ -199,7 +201,7 @@ The following inventory is the Stage B source map. It inventories real current f
 - Hero tagline block beginning `富士の裾野から湧き出る清らかな水のように` and EN block beginning `Like the pristine spring waters born from Mount Fuji`.
 - CTA labels: `会社を知る` / `Discover Us`; `技術資料を閲覧` / `Read Reports`.
 - Metrics: `100%` with `自律エージェント検証` / `Autonomous Testing`; `< 10ms` with `極低遅延エッジ推論` / `Edge Latency`; `24 / 7` with `常時稼働インフラ` / `Continuous Ops`.
-- Company overview: `会社情報` / `Company Overview`; two overview paragraphs; CTA `電子公告を見る (決算公告)` / `View Electronic Public Notices`.
+- Company overview: `会社情報` / `Company Overview`; two overview paragraphs; CTA `電子公告を見る (決算公告)` / `View Electronic Public Notices`; trust-register labels `決算公告` / `Public Notice`, `技術レポート AG-2026-001` / `Technical Report AG-2026-001`, `AI対応マニフェスト` / `Agent Readiness Manifest`, `インシデント記録` / `Incident Report`, and `お問い合わせ` / `Contact` over their frozen deep-link targets.
 - Profile rows: `社名`, `代表取締役`, `本店所在地`, `創設ラボ`, `設立`, `資本金` with current values including `村田 曜啓`, `2026年6月 (予定)`, and `10,000円`.
 - Services: `自律型エージェント開発` / `Autonomous Agents`; `クラウド・エッジ推論基盤` / `Distributed Cloud`; `自動システム技術検証` / `Technical Validation`, with current card paragraphs.
 - Reports: `AG-2026-001`, `AG-2026-002`, `AG-2026-003`, dates, titles, summaries, bullets, and `全文を読む` / `Read Full Report`.
