@@ -455,35 +455,44 @@ html[lang="en"] .lang-ja:has(+ .lang-en) {
 
 /* --- HERO SECTION --- */
 .hero {
-  min-height: 100vh;
+  min-height: 100svh;
   position: relative;
   overflow: hidden;
   padding-top: 5rem;
 }
 
 .hero-first-viewport {
-  min-height: calc(100vh - 5rem);
-  display: flex;
-  align-items: center;
-  padding: 3rem 0;
+  min-height: calc(100svh - 5rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1.04fr) minmax(20rem, 0.96fr);
+  grid-template-areas:
+    "identity registry"
+    "claim registry"
+    "metrics metrics";
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: clamp(1.25rem, 3vh, 2.25rem) clamp(1.5rem, 4vw, 3rem);
+  align-content: center;
+  padding: clamp(1.5rem, 4vh, 2.75rem) 0 clamp(1.5rem, 4vh, 3rem);
 }
 
 .hero-ledger {
-  display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-  gap: clamp(1.5rem, 4vw, 3rem);
-  align-items: center;
-  width: 100%;
-  min-width: 0;
+  display: contents;
 }
 
 .hero-ledger-copy {
+  grid-area: identity;
+  align-self: end;
   max-width: 680px;
   min-width: 0;
 }
 
+.hero-profile-table {
+  grid-area: registry;
+  align-self: center;
+}
+
 .hero-proof {
-  margin: 2rem 0 1.5rem 0;
+  margin: 1.5rem 0 1.25rem 0;
 }
 
 .proof-link,
@@ -555,12 +564,14 @@ html[lang="en"] .lang-ja:has(+ .lang-en) {
 }
 
 .hero-claim {
-  padding: 8rem 0 4rem 0;
-  max-width: 840px;
+  grid-area: claim;
+  align-self: start;
+  padding: 0;
+  max-width: 760px;
 }
 
 .hero-claim-title {
-  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-size: clamp(2.1rem, 4.8vw, 4rem);
 }
 
 .hero-cta-single {
@@ -570,6 +581,10 @@ html[lang="en"] .lang-ja:has(+ .lang-en) {
 .hero-content {
   max-width: 800px;
   z-index: 1;
+}
+
+.hero-first-viewport .hero-pill {
+  margin-bottom: clamp(0.85rem, 2vh, 1.25rem);
 }
 
 .hero-pill {
@@ -604,7 +619,7 @@ html[lang="en"] .lang-ja:has(+ .lang-en) {
 }
 
 .hero-title {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.1rem;
   background: linear-gradient(135deg, var(--text-primary) 30%, var(--primary) 70%, var(--secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -612,10 +627,10 @@ html[lang="en"] .lang-ja:has(+ .lang-en) {
 }
 
 .hero-tagline {
-  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-size: clamp(1.12rem, 2vw, 1.45rem);
   color: var(--text-secondary);
   line-height: 1.5;
-  margin-bottom: 3rem;
+  margin-bottom: 1.75rem;
   font-weight: 300;
 }
 
@@ -673,12 +688,13 @@ html[lang="en"] .lang-ja:has(+ .lang-en) {
 
 /* --- METRICS / QUICK STATS --- */
 .hero-metrics {
+  grid-area: metrics;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 5rem;
+  gap: clamp(1rem, 3vw, 2rem);
+  margin-top: clamp(0.25rem, 2vh, 1.5rem);
   border-top: 1px solid var(--border-color);
-  padding-top: 3rem;
+  padding-top: clamp(1.25rem, 3vh, 2rem);
 }
 
 .metric-card {
@@ -1351,8 +1367,22 @@ html[lang="en"] .lang-ja:has(+ .lang-en) {
     gap: 3rem;
   }
 
-  .hero-ledger {
-    grid-template-columns: 1fr;
+  .hero-first-viewport {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "identity"
+      "claim"
+      "registry"
+      "metrics";
+    grid-template-rows: auto;
+    align-content: start;
+  }
+
+  .hero-ledger-copy,
+  .hero-claim,
+  .hero-profile-table {
+    align-self: start;
+    max-width: 100%;
   }
   
   .github-card {
@@ -1440,7 +1470,7 @@ html[lang="en"] .lang-ja:has(+ .lang-en) {
   }
 
   .hero-first-viewport {
-    min-height: calc(100vh - 11rem);
+    min-height: calc(100svh - 11rem);
   }
 
   .kessan-header,
