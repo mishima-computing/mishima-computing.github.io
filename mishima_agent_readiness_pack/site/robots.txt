@@ -1,0 +1,13 @@
+# Mishima Computing K.K. crawler policy
+# robots.txt manages crawler preferences only; it is not a security boundary.
+# Public company, technical catalog, and contact pages are intentionally crawlable.
+
+User-agent: *
+Allow: /
+
+# This public technical catalog is intentionally available for AI-assisted discovery.
+# Google-Extended does not control Google Search ranking; it controls specific Gemini/Vertex AI uses described by Google.
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://mishima-computing.github.io/sitemap.xml

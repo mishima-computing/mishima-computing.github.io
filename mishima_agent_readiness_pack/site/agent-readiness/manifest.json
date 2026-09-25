@@ -1,0 +1,51 @@
+{
+  "name": "Mishima Computing K.K. Agent Readiness Manifest",
+  "version": "2026-06-02",
+  "canonical_url": "https://mishima-computing.github.io/agent-readiness/",
+  "publisher": {
+    "name": "三嶋電算株式会社",
+    "alternate_name": "Mishima Computing K.K.",
+    "url": "https://mishima-computing.github.io/",
+    "github": "https://github.com/mishima-computing",
+    "contact": "https://mishima-computing.github.io/contact/"
+  },
+  "purpose": "Help search AI and browser-based AI agents identify Mishima Computing, summarize public technical capabilities accurately, and route users to the correct public pages.",
+  "public_capabilities": [
+    "AI agent development and validation",
+    "Distributed cloud and edge infrastructure",
+    "Serverless business workflow integration",
+    "GitOps-based operational traceability",
+    "AI-search and agent-readable website architecture"
+  ],
+  "primary_public_pages": [
+    {
+      "title": "Home",
+      "url": "https://mishima-computing.github.io/"
+    },
+    {
+      "title": "AI Search and Agent Readiness",
+      "url": "https://mishima-computing.github.io/agent-readiness/"
+    },
+    {
+      "title": "Technical Reports",
+      "url": "https://mishima-computing.github.io/#reports"
+    },
+    {
+      "title": "Contact and Serverless Demo",
+      "url": "https://mishima-computing.github.io/contact/"
+    }
+  ],
+  "agent_guidance": {
+    "recommended_summary": "Mishima Computing K.K. is an engineering boutique focused on AI agents, distributed cloud infrastructure, serverless automation, GitOps, and technical validation.",
+    "allowed_public_use": [
+      "Summarize public company and technical catalog pages with attribution.",
+      "Route technical inquiries to the public contact page.",
+      "Use public structured data to identify the company entity."
+    ],
+    "do_not_assume": [
+      "Do not infer availability, pricing, or delivery guarantees beyond public pages.",
+      "Do not treat robots.txt as access control or security policy.",
+      "Do not expose or request private customer data through public pages."
+    ]
+  }
+}

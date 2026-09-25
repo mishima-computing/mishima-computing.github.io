@@ -1,0 +1,12 @@
+Canonical role spec controls behavior: roles/implementer.md
+Required schema: schemas/implementation-result.schema.json
+
+PERCEPTUAL REVIEWER FINDINGS (first formal review under the new profile; contract IC-20260612-stageA-uiux-spec-001 governs). Two findings, both at 320px (true-width iframe captures):
+
+F1 — CJK mid-word line break: the 技術レポート nav pill wraps as 「技術レポー/ト」 (region x≈213–303 y≈128–176 in mobile-iframe-320.png). Fix per anchor:typography-cjk-latin#jlreq-line-composition: CJK nav labels must not break mid-word — line-break:strict + word-break:keep-all on nav pill labels, or allow the pill grid to give that cell more width / wrap between 技術 and レポート only if a sanctioned boundary exists; never mid-katakana-word.
+
+F2 — hero badge occluded by the stacked nav block at 320px (会社情報 badge, region x≈35–135 y≈226–254): bottom edge of the wrapped header overlaps the badge. Audit the header height vs hero padding-top relation at small widths (the hero padding was sized for the one-row header); fix so no header/hero overlap at 320/390. Reviewer caveat: iframe-harness divergence possible — verify your fix logic statically for both real-viewport and iframe rendering.
+
+Text content unchanged; run python3 scripts/check_encoding.py.
+## Output format
+Your FINAL message must be ONLY the implementation result JSON object (role_id implementer, implementation_contract_id "IC-20260612-stageA-uiux-spec-001"). First character "{", last character "}". No prose, no fences.

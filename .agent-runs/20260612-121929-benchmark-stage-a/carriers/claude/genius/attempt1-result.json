@@ -1,0 +1,314 @@
+{
+  "role_id": "genius",
+  "objective": "Stage A one-shot: evidence packet for docs/design/uiux-spec.md ratifying a design-thesis, five layers, decidable composition propositions, bilingual decision, and explicit motion restraint for mishima-computing.github.io; wording 100% frozen, structure/order/staging/format free; owner taste gate after prior 'つまらない' failure; claim-class-1 effects only.",
+  "substrate_inputs": [
+    {
+      "ref_type": "repo_pointer",
+      "locator": ".agent-org/intake-template.md",
+      "summary": "Spec skeleton: design-thesis must be a positive memorable move; ban-only invalid; 5 layers; named propositions need per-objective thresholds; proves:/timing-ranges discipline."
+    },
+    {
+      "ref_type": "repo_pointer",
+      "locator": ".agent-org/knowledge/ui/ui-corporate-trust-genre.md",
+      "summary": "First view establishes company personhood before campaign posture; 決算公告 gravity demands sober register; decision register names proof objects per view."
+    },
+    {
+      "ref_type": "repo_pointer",
+      "locator": ".agent-org/knowledge/ui/ui-composition-patterns.md + ui-information-design.md",
+      "summary": "Decidable checks: proof-artifact density floor, same-type section cap, one lead language per view, anti-monotony ranges; thresholds objective-declared, never pack constants."
+    },
+    {
+      "ref_type": "repo_pointer",
+      "locator": ".agent-org/knowledge/ui/ui-bilingual-typography.md",
+      "summary": "One lead language per view (襯托法); per-script tokens; EN ~45-75ch / JA ~15-40ch measure budgets; 4.5:1 body, 3:1 large contrast floors; jlreq mixed-script spacing."
+    },
+    {
+      "ref_type": "repo_pointer",
+      "locator": ".agent-org/knowledge/ui/anchors/evaluation-instruments.md#claim-classes",
+      "summary": "Spec may claim legibility/focus/scanability/credibility/appeal only; conversion/engagement/SEO need product measurement."
+    },
+    {
+      "ref_type": "repo_pointer",
+      "locator": ".agent-org/knowledge/ui/exemplars.md",
+      "summary": "Date-pinned registry: tailscale.com -> proof-artifact-density; deepseek.com/en -> one-lead-language (never cite bare domain); antgroup unverified pending #44."
+    }
+  ],
+  "official_spec_evidence": [
+    {
+      "ref_type": "standard",
+      "locator": "https://www.w3.org/TR/WCAG22/ (anchor:accessibility#wcag22-recommendation, REC 2024-12-12)",
+      "summary": "WCAG 2.2 conformance baseline; non-negotiable acceptance floors incl. SC 2.2.2 Pause/Stop/Hide and 2.3.3 Animation from Interactions for motion decision."
+    },
+    {
+      "ref_type": "standard",
+      "locator": "https://www.w3.org/TR/2020/NOTE-jlreq-20200811/ (anchor:typography-cjk-latin#jlreq-line-composition)",
+      "summary": "JLReq W3C Note 2020-08-11: Japanese line composition and mixed-script spacing; basis for per-script tokens and measure budgets."
+    },
+    {
+      "ref_type": "standard",
+      "locator": "https://waic.jp/resource/jis-x-8341-3-2016/ + https://waic.jp/docs/jis2016/compliance-guidelines/ (checked 2026-06-12)",
+      "summary": "Confirmed public pointer: WAIC JIS X 8341-3:2016 quick-reference and conformance-notation guideline; JIS X 8341-3:2016 is content-identical to WCAG 2.0 — valid JP mapping for the spec."
+    },
+    {
+      "ref_type": "paper",
+      "locator": "https://www.nngroup.com/articles/trustworthy-design/ (anchor:genre-corporate-trust#nng-corporate-credibility, 2016-05-08)",
+      "summary": "Credibility signaling via institutional proof and transparency; unsubstantiated claims undermine trust."
+    },
+    {
+      "ref_type": "paper",
+      "locator": "https://www.nngroup.com/articles/animation-duration/ (anchor:motion#nng-animation-duration, 2020-02-09)",
+      "summary": "Duration bands ~100-500ms for UI transitions; cite bands not fixed constants."
+    }
+  ],
+  "repo_evidence": [
+    {
+      "ref_type": "repo_pointer",
+      "locator": "index.html:140-204",
+      "summary": "Hero leads with poetic metaphor (湧水/Mt. Fuji) plus unverifiable metric cards (100%, <10ms, 24/7) — promotional LP register, claim-class-2 style, the 'つまらない'-risk surface."
+    },
+    {
+      "ref_type": "repo_pointer",
+      "locator": "assets/css/style.css:216-218 + index.html lang spans",
+      "summary": "[lang=ja] .lang-en{display:none !important} dual-span toggle: every block exists in JA+EN; visibility flips via JS lang toggle — JS dependency for content visibility."
+    },
+    {
+      "ref_type": "repo_pointer",
+      "locator": "assets/js/app.js:232-239 + index.html:417-433,499-516",
+      "summary": "Report AG-2026-003 body is injected into a JS modal — content invisible without JS; violates static-visibility constraint."
+    },
+    {
+      "ref_type": "repo_pointer",
+      "locator": "kessan/index.html:82-119; incidents/20260604-powershell-mojibake.md; docs/ADR-0001; reports/waterfall-agents/",
+      "summary": "Unusual genuine proof artifacts already exist: Companies Act Art.440(3) electronic notice, public incident post-mortem, ADR, dated signed reports — underexploited on index."
+    },
+    {
+      "ref_type": "repo_pointer",
+      "locator": "index.html:17-94; agent-readiness/index.html:80-180",
+      "summary": "Rich JSON-LD (Organization/Service/FAQ) — machine-readable trust surface; product story is itself trust/traceability for AI orgs."
+    }
+  ],
+  "kept_hypotheses": [
+    {
+      "hypothesis_id": "H1-receipts-thesis",
+      "mechanism": "Design-thesis 'the company that shows its receipts': first viewport = company personhood + dated, verifiable proof artifacts (決算公告, incident post-mortem, signed reports, open GitHub) as the memorable move; poetic hero copy kept verbatim but reframed as identity note; metric cards demoted out of proof position.",
+      "score": 4.6,
+      "verification_status": "confirmed",
+      "repo_evidence_refs": [
+        {
+          "ref_type": "repo_pointer",
+          "locator": "index.html:140-204",
+          "summary": "Current hero = metaphor + vanity metrics; inversion target."
+        },
+        {
+          "ref_type": "repo_pointer",
+          "locator": "kessan/ + incidents/ + reports/ + docs/ADR-0001",
+          "summary": "Real proof objects already in content; wording survives, order FREE allows promotion to first view."
+        },
+        {
+          "ref_type": "repo_pointer",
+          "locator": ".agent-org/knowledge/ui/ui-corporate-trust-genre.md",
+          "summary": "Rule: personhood before campaign posture; proof objects per view decidable check."
+        }
+      ],
+      "external_refs": [
+        {
+          "ref_type": "mature_implementation",
+          "locator": "https://tailscale.com@2026-06-12 (fetch-verified)",
+          "summary": "Live: proof-artifact-dense home — 30,000-business count, named logos, quantified case metrics, testimonials; registry pin re-confirmed."
+        },
+        {
+          "ref_type": "mature_implementation",
+          "locator": "https://www.vanta.com/@2026-06-12 (fetch-verified)",
+          "summary": "Trust-infra exemplar: hero 'Trust is everything — earn and prove it'; 16,000+ customers, logos, own SOC2/ISO badges in footer — proves-what-it-preaches pattern."
+        },
+        {
+          "ref_type": "paper",
+          "locator": "anchor:genre-corporate-trust#nng-corporate-credibility",
+          "summary": "Institutional proof and transparency drive credibility; matches claim-class-1."
+        }
+      ],
+      "expected_benefit": "Credibility + memorability (claim-class-1): the thesis is a positive move Stage B can be checked against — a trust/traceability company whose own homepage is a traceability artifact.",
+      "risks": [
+        "Sober register could also bore the owner if executed flatly; thesis needs a distinctive visual move, not just reordering.",
+        "決算公告 is 準備中(工事中) — an under-construction proof object can read as weakness if foregrounded uncritically.",
+        "Metric blocks (100%, <10ms, 24/7) must survive verbatim somewhere; placement must not re-promote them as proof."
+      ],
+      "rejection_conditions": [
+        "Owner re-declares hero placement/order FROZEN.",
+        "Owner taste preference confirmed to favor promotional LP register over trust register."
+      ],
+      "what_not_to_copy": [
+        "Do not copy Tailscale/Vanta conversion-style claims (hours saved, % reductions) — claim-class-2 and content invention.",
+        "Do not invent customer logos, badges, or certifications absent from frozen content."
+      ]
+    },
+    {
+      "hypothesis_id": "H2-one-lead-language",
+      "mechanism": "Replace JS lang-toggle + display:none!important dual spans with one-lead-language-per-view: JA lead, EN visible as typographically subordinate support (襯托法); per-script tokens, JA 15-40ch / EN 45-75ch measures; all frozen wording statically visible — removes JS dependency for content visibility incl. modal-only report body.",
+      "score": 4.3,
+      "verification_status": "confirmed",
+      "repo_evidence_refs": [
+        {
+          "ref_type": "repo_pointer",
+          "locator": "assets/css/style.css:216-218",
+          "summary": "Current mechanism hides one language entirely; both languages exist verbatim in every block."
+        },
+        {
+          "ref_type": "repo_pointer",
+          "locator": "assets/js/app.js:232-239",
+          "summary": "AG-2026-003 body JS-modal-only; must surface statically under same constraint."
+        },
+        {
+          "ref_type": "repo_pointer",
+          "locator": ".agent-org/knowledge/ui/ui-bilingual-typography.md",
+          "summary": "Lead-language rule, per-script tokens, measure budgets, contrast floors by script."
+        }
+      ],
+      "external_refs": [
+        {
+          "ref_type": "mature_implementation",
+          "locator": "https://www.deepseek.com/en@2026-06-12 (fetch-verified)",
+          "summary": "Live: EN lead with 中文 as support toggle; one-lead-language pattern; /en path pin re-confirmed, root diverges."
+        },
+        {
+          "ref_type": "standard",
+          "locator": "anchor:typography-cjk-latin#jlreq-line-composition (W3C Note 2020-08-11)",
+          "summary": "Mixed JA+Latin spacing and line-composition rules for the paired-text presentation."
+        }
+      ],
+      "expected_benefit": "Legibility + scanability (claim-class-1); satisfies hard constraint (no JS for content visibility) while passing the block-multiset wording gate exactly — both languages remain verbatim in DOM.",
+      "risks": [
+        "Doubled visible text raises density; needs explicit noise budget and subordinate styling tokens per view.",
+        "Surfacing modal report content without new pages strains the non-goal boundary; must reuse existing index/reports surfaces."
+      ],
+      "rejection_conditions": [
+        "Owner requires full JA/EN toggle parity (separate equal-prominence locales).",
+        "Stage B cannot meet contrast/measure budgets for subordinate script at required sizes."
+      ],
+      "what_not_to_copy": [
+        "Do not copy deepseek's separate-locale-path architecture — new pages are a non-goal.",
+        "Do not keep display:none for the secondary language; hidden text fails the static-visibility constraint."
+      ]
+    },
+    {
+      "hypothesis_id": "H3-decidable-acceptance-motion",
+      "mechanism": "Acceptance set with per-objective thresholds, each tagged Decidable/Advisory: proof-artifact density floor per view (e.g. >=2 dated proof objects on index first viewport), consecutive same-type section cap, first-viewport proposition check, WCAG 2.2 AA contrast floors via JIS X 8341-3 mapping; explicit motion decision: reduced-motion-safe, NN/g 100-500ms bands, no infinite pulse/orb animation without pause.",
+      "score": 4.1,
+      "verification_status": "confirmed",
+      "repo_evidence_refs": [
+        {
+          "ref_type": "repo_pointer",
+          "locator": "index.html:98-101,140-144",
+          "summary": "Existing grid-bg, glow orbs, .pulse — continuous decorative animation needing SC 2.2.2 review and reduced-motion fallback."
+        },
+        {
+          "ref_type": "repo_pointer",
+          "locator": ".agent-org/knowledge/ui/ui-composition-patterns.md",
+          "summary": "Named propositions require objective-declared thresholds in intake; no pack constants."
+        },
+        {
+          "ref_type": "repo_pointer",
+          "locator": ".agent-org/knowledge/ui/anchors/evaluation-instruments.md#decidable-card-checks",
+          "summary": "Checks must be decidable without #44 tooling: intake, screenshot, pointer verification, WCAG mapping."
+        }
+      ],
+      "external_refs": [
+        {
+          "ref_type": "standard",
+          "locator": "https://www.w3.org/TR/WCAG22/ + anchor:motion#wcag22-motion-criteria",
+          "summary": "SC 2.2.2, 2.3.1, 2.3.3 ground the motion-restraint decision as acceptance criteria."
+        },
+        {
+          "ref_type": "standard",
+          "locator": "https://waic.jp/resource/jis-x-8341-3-2016/ (checked 2026-06-12)",
+          "summary": "Confirmed JP-official mapping pointer (JIS X 8341-3:2016 = WCAG 2.0 content) for accessibility floors in a K.K. context."
+        },
+        {
+          "ref_type": "paper",
+          "locator": "anchor:motion#nng-animation-duration",
+          "summary": "Duration bands for the explicit timing-ranges entry; no fixed constants."
+        }
+      ],
+      "expected_benefit": "Makes Stage B mechanically checkable against the thesis; converts prior failure mode (vague/ban-only spec) into Decidable propositions; motion restraint becomes a recorded design decision, not an omission.",
+      "risks": [
+        "Thresholds set without #44 perceptual tooling must be hand-checkable in Stage B; over-specifying invites false fails.",
+        "Density floor wrongly tuned could force proof clutter and hurt the taste gate."
+      ],
+      "rejection_conditions": [
+        "Any proposition not mechanically checkable in Stage B must be re-tagged Advisory, not silently kept Decidable.",
+        "Owner narrows interpretation-scope making structure thresholds moot."
+      ],
+      "what_not_to_copy": [
+        "No pack-set constants (e.g. fixed ms or fixed px) presented as universal rules.",
+        "No claim-class-2 acceptance criteria (SEO/conversion targets) in the spec."
+      ]
+    }
+  ],
+  "refuted_hypotheses": [
+    {
+      "hypothesis_id": "H4-vanity-metrics-as-proof",
+      "mechanism": "Treat existing hero metric cards (100% / <10ms / 24/7) as the proof-artifact layer satisfying the density floor.",
+      "score": 1.5,
+      "verification_status": "refuted",
+      "repo_evidence_refs": [
+        {
+          "ref_type": "repo_pointer",
+          "locator": "index.html:170-192",
+          "summary": "Metrics are unsourced, undated, unverifiable in content."
+        }
+      ],
+      "external_refs": [
+        {
+          "ref_type": "paper",
+          "locator": "https://www.nngroup.com/articles/trustworthy-design/",
+          "summary": "Unsubstantiated superlative claims reduce credibility; proof objects must be verifiable."
+        }
+      ],
+      "expected_benefit": "None beyond surface density; refuted as proof mechanism.",
+      "risks": [
+        "Counting these toward the density floor would hollow out the thesis."
+      ],
+      "rejection_conditions": [
+        "n/a — refuted; wording still survives verbatim as non-proof content."
+      ],
+      "what_not_to_copy": [
+        "Do not let unverifiable numbers count as proof artifacts in the Decidable density check."
+      ]
+    }
+  ],
+  "unverified_hypotheses": [
+    {
+      "hypothesis_id": "H5-antgroup-register",
+      "mechanism": "antgroup.com corporate-trust register as additional styling reference for the sober JA institutional register.",
+      "score": 2.5,
+      "verification_status": "unverified",
+      "repo_evidence_refs": [
+        {
+          "ref_type": "repo_pointer",
+          "locator": ".agent-org/knowledge/ui/exemplars.md",
+          "summary": "Owner-recorded, JS-rendered, unverified-by-fetch pending #44 capture tooling."
+        }
+      ],
+      "external_refs": [],
+      "expected_benefit": "Possible register reference only; hypothesis-class.",
+      "risks": [
+        "Cannot be fetch-verified; must not be cited as evidence in the spec."
+      ],
+      "rejection_conditions": [
+        "Remains unverifiable at Stage B."
+      ],
+      "what_not_to_copy": [
+        "Do not promote antgroup to canonical evidence; note-only per registry."
+      ]
+    }
+  ],
+  "what_not_to_copy": [
+    "Ban-only spec shape — the ratified post-mortem cause of the prior taste-gate failure; thesis must be a positive move.",
+    "JS-dependent content visibility (lang toggle, report modal) anywhere in the accepted design.",
+    "Exemplar visual cloning (Tailscale/Vanta/deepseek aesthetics) instead of pattern extraction.",
+    "Claim-class-2 promises (SEO, conversion, engagement) in spec or acceptance criteria.",
+    "Fabricated proof objects: no invented logos, certifications, customers, or metrics — proof must come from existing frozen content.",
+    "Pack-set constants in place of objective-declared thresholds."
+  ],
+  "handoff_to_aufheben": "Build uiux-spec.md around H1 thesis 'show the receipts': first viewport = company personhood + dated proof artifacts (kessan, incident post-mortem, reports, GitHub); demote vanity metrics (H4 refuted as proof). H2: JA-lead/EN-support per view, both languages statically visible, kill JS lang-toggle and modal-only report body. H3: Decidable acceptance set — proof-density floor, section-type cap, first-viewport check, WCAG2.2 AA via waic.jp JIS X 8341-3 mapping, reduced-motion + NN/g bands. Claim-class-1 only. Scores advisory; keep/drop authority is yours."
+}

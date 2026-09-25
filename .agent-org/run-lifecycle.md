@@ -1,0 +1,124 @@
+# Run Lifecycle
+
+## Purpose
+
+This policy defines runtime initialization for the final Bootstrap roster.
+
+## Run ID
+
+Generate `run_id` after target repository confirmation:
+
+```text
+YYYYMMDD-HHMMSS-<shortsha>
+```
+
+Use the current target `HEAD` short SHA for `<shortsha>`.
+
+## Runtime Directory
+
+Initialize:
+
+```text
+.agent-runs/<run_id>/
+  intake/
+  carriers/
+  results/
+  gates/
+  worktrees/
+  logs/
+```
+
+`.agent-runs/` must remain ignored by Git.
+
+Codex main is responsible for confirming the ignore rule during approved pack materialization. It may add exactly `.agent-runs/` to the target root `.gitignore` if absent.
+
+## Default Sequence
+
+1. Run CI action writer agents when the objective is CI automation.
+2. Run designer agents when implementation design is needed.
+3. Run `aufheben-designer` to create one implementation contract.
+4. Run `implementer` only from that implementation contract.
+5. Run deterministic local tooling when configured.
+6. Report changed files, commands run, checks, gaps, and remaining work.
+
+Stage-A/Stage-B for UI/UX:
+
+- Stage-A UI/UX SPEC: for human-facing surfaces, run a docs-only UI/UX SPEC cycle and ratify it by merge before implementation cycles.
+- Stage-B intake: the ratified spec enters implementation intake at CI-constraints rank.
+- Experience Constraints live in `.agent-org/intake-template.md`; this lifecycle only orders Stage-A and Stage-B.
+
+Aufheben verdict handling:
+
+- After designers, the controller runs `aufheben-designer`.
+- On "proceed", continue with the unchanged implementation contract path.
+- On "redo", the controller re-invokes only the named designers with redo_brief appended as input, then re-runs `aufheben-designer`.
+- MAX 2 redo rounds.
+- If still not "proceed" after 2 rounds, treat as "escalate".
+- On "escalate", stop and surface to controller/human.
+- Record redo rounds and verdicts in run notes.
+- redo_max=2 is provisional, set to gather data; revise when thrash or premature-escalation patterns emerge.
+
+## Gate Profile
+
+Default gate profile:
+
+```text
+gate_profile: bootstrap-final-minimal
+```
+
+Required mechanical facts:
+
+- git status
+- HEAD SHA
+- changed files
+- forbidden path check
+
+Optional if not configured:
+
+- lint
+- typecheck
+- tests
+- build
+- secret scan
+
+Unavailable project-specific checks must be reported as gaps.
+
+## Carrier Execution Timeout
+
+Default carrier execution timeout is 30 minutes of wall-clock time per carrier process.
+
+On expiry, the controller kills the carrier process and records `carrier_timeout` in `carrier-status.json`. Silent hangs are detectable only by timeout; the default may be raised per invocation when the controller expects a legitimately longer run.
+
+## Resume
+
+If a carrier dies or hangs after writing workspace changes but before reporting, preserve the dead attempt's artifacts unmodified and re-invoke the same role with the original file scope and contract.
+
+The resume prompt must be verify-and-report only:
+
+```text
+Resume the same role from the existing workspace state. Do not redesign. Verify existing work against the original contract. Run required_checks. Emit the required report.
+```
+
+The resumed role must not receive wider file scope than its original contract.
+
+## Closeout
+
+Controller disclosure is a closeout artifact only. `gates/controller-disclosure.json` is written post-verdict/closeout only, never before the `aufheben-designer` verdict, and must disclose each handoff against the leak classes recorded in `roles/controller.md`.
+
+Final report must include:
+
+- run_id
+- target repo
+- branch
+- HEAD SHA
+- active agents used
+- carrier fallbacks
+- changed files
+- commands run
+- checks passed
+- checks failed
+- gaps
+- warnings
+- `.agent-runs/<run_id>/gates/aufheben-input-embed.json`
+- `.agent-runs/<run_id>/gates/controller-disclosure.json` when controller disclosure is written
+- controller may distill adopted-cycle facts into `.agent-org/knowledge/cards/` per `.agent-org/knowledge/README.md`

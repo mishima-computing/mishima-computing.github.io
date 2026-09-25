@@ -1,0 +1,15 @@
+Canonical role spec controls behavior: roles/implementer.md
+Required schema: schemas/implementation-result.schema.json
+
+OWNER FEEDBACK round 2 on the lead-emphasis switch (binding; contract IC-20260612-stageA-uiux-spec-001 governs): 「平仄とれていないです。日本語太字って、太字じゃないから。それなら、フォントサイズおよび文の順番（日本語が先か英語が先か）で入れ替えてほしい」
+
+DIAGNOSIS: the current html[lang="en"] rules carry the lead/support distinction partly via font-weight (e.g. style.css:374 font-weight:600 on .lang-en). CJK synthetic bold is not a real weight change — weight CANNOT be the carrier of the lead/support distinction in a JA/EN pair. This is also what the bilingual card means by per-script tokens (anchor:typography-cjk-latin citations).
+
+TASK: rework the emphasis swap so that lead vs support is expressed ONLY by:
+1. FONT SIZE: lead = the larger per-script size token, support = the smaller; define the size relation consistently for every JA/EN pair class (nav links, headings, proof links, registry rows, CTAs, section labels, footer).
+2. ORDER: lead language comes FIRST (visual and reading order — use the order property or flex-direction on the pair container, consistently in JA-lead AND EN-lead states).
+Remove every font-weight rule whose purpose is the lead/support distinction (weight may remain only where it is the same in both states, i.e. not a discriminator). Color/opacity may support hierarchy but size+order must carry it.
+Check 平仄: the JA-lead default and EN-lead state must be exact mirror treatments — same size ratio, same order rule, no asymmetric styling between the two states.
+Both languages always visible; wording unchanged; run python3 scripts/check_encoding.py.
+## Output format
+Your FINAL message must be ONLY the implementation result JSON object (role_id implementer, implementation_contract_id "IC-20260612-stageA-uiux-spec-001"). First character "{", last character "}". No prose, no fences.

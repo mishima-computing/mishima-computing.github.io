@@ -1,0 +1,14 @@
+Canonical role spec controls behavior: roles/implementer.md
+Required schema: schemas/implementation-result.schema.json
+
+OWNER FEEDBACK after benchmark pass (binding, contract IC-20260612-stageA-uiux-spec-001 still governs design truth): 「日英並記にしたことで、ENボタンがもう意味不明になっています」 — the legacy language-toggle button now flips html[lang] to no visible effect because both languages are always visible.
+
+The ratified spec (docs/design/uiux-spec.md line ~98, ~137) already states the bilingual model is JA-lead + EN-visible-support with NO JS-toggle dependency. Resolve the orphaned control. Two admissible designs — choose ONE per the spec and implement completely:
+
+A) LEAD-EMPHASIS SWITCH (preferred if clean): the button becomes a lead-language preference. html[lang=en] swaps visual emphasis via CSS only — .lang-en becomes lead-prominent (size/weight/order) and .lang-ja becomes support — BOTH always visible in DOM (the spec's invariant). Button labels EN/JA and aria labels keep their existing strings (wording gate stays green). Works without JS on first paint (default JA-lead).
+
+B) REMOVAL: delete the button, its JS, and its CSS. The owner's message authorizes the wording deletion of the EN/JA labels + aria strings (record this authorization in your notes and list the removed strings).
+
+Either way: no content visibility may ever depend on JS; tap target rules hold; run python3 scripts/check_encoding.py.
+## Output format
+Your FINAL message must be ONLY the implementation result JSON object (role_id implementer, implementation_contract_id "IC-20260612-stageA-uiux-spec-001"). First character "{", last character "}". No prose, no fences.
