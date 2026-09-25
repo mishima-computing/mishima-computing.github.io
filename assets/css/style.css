@@ -1687,9 +1687,10 @@ textarea.form-control {
 }
 
 /* ==========================================================================
-   HERO — 三島の清流 (procedural WebGL water)
-   Decorative layer behind the hero copy. Falls back to a still gradient when
-   WebGL is unavailable or JavaScript is off.
+   三島の清流 — procedural WebGL water
+   Decorative layer. Two placements: .seiryu--hero fills the hero section,
+   .seiryu--page is a fixed ground behind a whole page. Falls back to a still
+   gradient when WebGL is unavailable or JavaScript is off.
    ========================================================================== */
 
 :root {
@@ -1699,6 +1700,8 @@ textarea.form-control {
   --seiryu-veil-soft:   hsla(224, 40%, 8%, 0.44);
   --seiryu-veil-top:    hsla(224, 40%, 8%, 0.90);
   --seiryu-veil-bottom: hsla(224, 40%, 8%, 0.68);
+  /* Page-wide ground sits under body copy and form controls: heavier. */
+  --seiryu-veil-page:   hsla(224, 40%, 8%, 0.56);
   --seiryu-fallback-1: hsla(188, 90%, 45%, 0.16);
   --seiryu-fallback-2: hsla(196, 70%, 30%, 0.10);
   --seiryu-fallback-3: hsla(188, 85%, 40%, 0.14);
@@ -1709,12 +1712,13 @@ textarea.form-control {
   --seiryu-veil-soft:   hsla(210, 40%, 98%, 0.52);
   --seiryu-veil-top:    hsla(210, 40%, 98%, 0.92);
   --seiryu-veil-bottom: hsla(210, 40%, 98%, 0.74);
+  --seiryu-veil-page:   hsla(210, 40%, 98%, 0.70);
   --seiryu-fallback-1: hsla(188, 80%, 60%, 0.22);
   --seiryu-fallback-2: hsla(196, 60%, 70%, 0.16);
   --seiryu-fallback-3: hsla(188, 75%, 62%, 0.20);
 }
 
-.hero-seiryu {
+.seiryu {
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -1723,7 +1727,11 @@ textarea.form-control {
   contain: strict;
 }
 
-.hero-seiryu canvas {
+.seiryu--page {
+  position: fixed;
+}
+
+.seiryu canvas {
   display: block;
   width: 100%;
   height: 100%;
@@ -1731,17 +1739,17 @@ textarea.form-control {
   transition: opacity 900ms ease;
 }
 
-.hero-seiryu[data-seiryu="on"] canvas {
+.seiryu[data-seiryu-state="on"] canvas {
   opacity: 1;
 }
 
-.hero-seiryu[data-seiryu="off"] canvas {
+.seiryu[data-seiryu-state="off"] canvas {
   display: none;
 }
 
 /* Still fallback: visible until the first WebGL frame lands, and forever
    when WebGL or JS is unavailable. */
-.hero-seiryu::before {
+.seiryu::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -1751,14 +1759,17 @@ textarea.form-control {
   transition: opacity 900ms ease;
 }
 
-.hero-seiryu[data-seiryu="on"]::before {
+.seiryu[data-seiryu-state="on"]::before {
   opacity: 0;
 }
 
-/* Keeps the hero copy readable over the water. */
-.hero-seiryu-scrim {
+.seiryu-veil {
   position: absolute;
   inset: 0;
+}
+
+/* Hero: veil the copy side, leave the open side clear. */
+.seiryu--hero .seiryu-veil {
   background:
     linear-gradient(
       90deg,
@@ -1777,7 +1788,7 @@ textarea.form-control {
 
 @media (max-width: 900px) {
   /* Single column: the copy sits over the whole width, so veil vertically. */
-  .hero-seiryu-scrim {
+  .seiryu--hero .seiryu-veil {
     background: linear-gradient(
       180deg,
       var(--seiryu-veil-top) 0%,
@@ -1788,7 +1799,25 @@ textarea.form-control {
   }
 }
 
+/* Page ground: even veil, heaviest under the header band. */
+.seiryu--page .seiryu-veil {
+  background: linear-gradient(
+    180deg,
+    var(--seiryu-veil-top) 0%,
+    var(--seiryu-veil-page) 18%,
+    var(--seiryu-veil-page) 100%
+  );
+}
+
 .hero > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Content must sit above a page-wide water ground. Keyed off a body class
+   rather than :has(), so browsers without :has() still stack correctly. */
+.has-seiryu-page main,
+.has-seiryu-page .footer {
   position: relative;
   z-index: 1;
 }

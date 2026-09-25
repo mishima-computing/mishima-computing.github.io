@@ -5,8 +5,13 @@
  * three.js as a single full-screen quad. No image assets: the riverbed,
  * caustics, ripples and baikamo weed are all generated in the fragment shader.
  *
- * Purely decorative. All hero copy stays in static HTML so that non-JS
- * crawlers and AI agents still read the full DOM (see README).
+ * Two intensities, chosen with data-seiryu-mode on the stage element:
+ *   "hero" - the stream as the subject: full flow, caustics and glints.
+ *   "calm" - the stream as a ground: slower, flatter, quieter, so page copy
+ *            and form controls stay the focus.
+ *
+ * Purely decorative. All copy stays in static HTML so that non-JS crawlers
+ * and AI agents still read the full DOM (see README).
  */
 
 import * as THREE from '../vendor/three.module.min.js';
@@ -29,6 +34,7 @@ const FRAGMENT_SHADER = /* glsl */ `
   uniform float uTheme;    // 0.0 = dark, 1.0 = light
   uniform vec2  uPointer;  // -1..1, smoothed
   uniform float uQuality;  // 0.0 = reduced, 1.0 = full
+  uniform float uCalm;     // 0.0 = hero intensity, 1.0 = calm ground
 
   #define TAU 6.28318530718
   #define FBM_M mat2(1.62, 1.18, -1.18, 1.62)
@@ -217,8 +223,8 @@ const FRAGMENT_SHADER = /* glsl */ `
     float t = uTime;
 
     // Tilted ground plane: the bed recedes toward the top of the frame.
-    float dist = 1.0 / (1.78 - uv.y * 0.96);
-    vec2 w = vec2((uv.x - 0.5) * aspect * dist, dist * 1.35) * 2.6;
+    float dist = 1.0 / (mix(1.78, 2.55, uCalm) - uv.y * mix(0.96, 0.80, uCalm));
+    vec2 w = vec2((uv.x - 0.5) * aspect * dist, dist * 1.35) * mix(2.6, 3.1, uCalm);
     float lod = clamp((dist - 0.60) / 0.75, 0.0, 1.0);
 
     // Surface height, 4 taps around the sample for the normal.
@@ -228,7 +234,7 @@ const FRAGMENT_SHADER = /* glsl */ `
     float hD = surfaceH(w - vec2(0.0, e), t);
     float hU = surfaceH(w + vec2(0.0, e), t);
 
-    float amp = mix(0.055, 0.020, lod);
+    float amp = mix(0.055, 0.020, lod) * mix(1.0, 0.72, uCalm);
     vec2 grad = vec2(hR - hL, hU - hD) * (amp / (2.0 * e));
     vec3 N = normalize(vec3(-grad, 1.0));
 
@@ -245,7 +251,7 @@ const FRAGMENT_SHADER = /* glsl */ `
     float flower;
     float weed = baikamo(b * 0.85, t, flower);
     vec3 weedCol = mix(vec3(0.085, 0.230, 0.150), vec3(0.200, 0.420, 0.235), fbm2(b * 5.0));
-    bed = mix(bed, weedCol, weed * 0.88);
+    bed = mix(bed, weedCol, weed * 0.88 * mix(1.0, 0.55, uCalm));
     bedN = normalize(mix(bedN, vec3(0.0, 0.0, 1.0), weed * 0.6));
 
     vec3 L = normalize(vec3(-0.30 + uPointer.x * 0.16, 0.42 + uPointer.y * 0.12, 0.86));
@@ -255,7 +261,7 @@ const FRAGMENT_SHADER = /* glsl */ `
     bed *= 0.62 + 0.62 * clamp(dot(bedN, L), 0.0, 1.0);
 
     float ca = caustics(b * 0.95 - vec2(t * 0.05, 0.0), t * 0.5);
-    ca *= mix(1.0, 0.30, lod) * mix(1.25, 0.60, depth);
+    ca *= mix(1.0, 0.30, lod) * mix(1.25, 0.60, depth) * mix(1.0, 0.58, uCalm);
     bed += (bed * 1.05 + vec3(0.30, 0.52, 0.55)) * ca * mix(0.70, 1.00, uTheme);
 
     // Water column: Beer-Lambert absorption of clear spring water.
@@ -275,12 +281,12 @@ const FRAGMENT_SHADER = /* glsl */ `
     // Specular glints on the ripples.
     vec3 H = normalize(L + V);
     float sparkle = smoothstep(0.25, 0.90, pow(clamp(dot(N, H), 0.0, 1.0), 240.0));
-    col += mix(vec3(0.45, 0.72, 0.85), vec3(1.00, 0.98, 0.92), uTheme) * sparkle * 1.60;
+    col += mix(vec3(0.45, 0.72, 0.85), vec3(1.00, 0.98, 0.92), uTheme) * sparkle * 1.60 * mix(1.0, 0.45, uCalm);
 
     // Foam where stones break the shallow surface.
     float foam = smoothstep(0.62, 0.95, bedH) * smoothstep(0.42, 0.10, depth);
     foam *= 0.40 + 0.60 * smoothstep(0.35, 0.75, fbm2(w * 6.0 - vec2(t * 1.1, 0.0)));
-    col = mix(col, mix(vec3(0.72, 0.85, 0.90), vec3(1.0), uTheme), foam * 0.55);
+    col = mix(col, mix(vec3(0.72, 0.85, 0.90), vec3(1.0), uTheme), foam * 0.55 * mix(1.0, 0.30, uCalm));
 
     // Haze into the page background upstream, then vignette.
     vec3 far = mix(vec3(0.030, 0.105, 0.135), vec3(0.780, 0.860, 0.900), uTheme);
@@ -291,7 +297,7 @@ const FRAGMENT_SHADER = /* glsl */ `
     col += mix(vec3(0.06, 0.13, 0.15), vec3(0.10, 0.16, 0.16), uTheme) * streak * (1.0 - lod);
 
     vec2 vv = (uv - 0.5) * vec2(1.05, 1.0);
-    col *= 1.0 - 0.26 * dot(vv, vv);
+    col *= 1.0 - mix(0.26, 0.34, uCalm) * dot(vv, vv);
     col = clamp(col, 0.0, 1.0);
     col = mix(col, col * col * (3.0 - 2.0 * col), 0.35);
     col = pow(col, vec3(0.94));
@@ -312,11 +318,12 @@ function hasWebGL2() {
 }
 
 function boot() {
-  const canvas = document.getElementById('seiryu-canvas');
-  const stage = canvas && canvas.closest('.hero-seiryu');
-  if (!canvas || !stage) return;
+  const stage = document.querySelector('[data-seiryu-mode]');
+  const canvas = stage && stage.querySelector('canvas');
+  if (!stage || !canvas) return;
 
-  const markOff = () => stage.setAttribute('data-seiryu', 'off');
+  const calm = stage.dataset.seiryuMode === 'calm' ? 1 : 0;
+  const markOff = () => stage.setAttribute('data-seiryu-state', 'off');
 
   if (!hasWebGL2()) {
     markOff();
@@ -350,8 +357,12 @@ function boot() {
     uTime: { value: 6.0 },
     uTheme: { value: document.documentElement.getAttribute('data-theme') === 'light' ? 1 : 0 },
     uPointer: { value: new THREE.Vector2(0, 0) },
-    uQuality: { value: weakGpu ? 0.0 : 1.0 }
+    uQuality: { value: weakGpu ? 0.0 : 1.0 },
+    uCalm: { value: calm }
   };
+
+  // A calm ground should drift, not run.
+  const timeScale = calm ? 0.55 : 1.0;
 
   const scene = new THREE.Scene();
   const camera = new THREE.Camera();
@@ -380,7 +391,7 @@ function boot() {
 
   function draw() {
     renderer.render(scene, camera);
-    stage.setAttribute('data-seiryu', 'on');
+    stage.setAttribute('data-seiryu-state', 'on');
   }
 
   // --- still frame for reduced motion -------------------------------------
@@ -404,7 +415,7 @@ function boot() {
     const dt = Math.min((now - last) / 1000, 1 / 30);
     last = now;
 
-    uniforms.uTime.value += dt;
+    uniforms.uTime.value += dt * timeScale;
     uniforms.uTheme.value += (themeTarget - uniforms.uTheme.value) * Math.min(1, dt * 4.0);
     uniforms.uPointer.value.lerp(pointerTarget, Math.min(1, dt * 2.5));
 
