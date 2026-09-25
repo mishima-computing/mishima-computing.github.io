@@ -38,7 +38,13 @@
   }
   </script>
 </head>
-<body>
+<body class="has-seiryu-page">
+
+  <!-- 三島の清流 - calm ground behind the whole page -->
+  <div class="seiryu seiryu--page" data-seiryu-mode="calm" aria-hidden="true">
+    <canvas></canvas>
+    <div class="seiryu-veil"></div>
+  </div>
 
   <!-- Dynamic Design Background Elements -->
   <div class="grid-bg" id="grid-bg"></div>
@@ -281,5 +287,6 @@
 
   <!-- Scripts -->
   <script src="../assets/js/app.js"></script>
+  <script type="module" src="../assets/js/seiryu.js"></script>
 </body>
 </html>
