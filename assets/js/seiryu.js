@@ -35,6 +35,7 @@ const FRAGMENT_SHADER = /* glsl */ `
   uniform vec2  uPointer;  // -1..1, smoothed
   uniform float uQuality;  // 0.0 = reduced, 1.0 = full
   uniform float uCalm;     // 0.0 = hero intensity, 1.0 = calm ground
+  uniform vec4  uFish;     // x: run 0..1 (<0 idle), y: lane, z: seed, w: size
 
   #define TAU 6.28318530718
   #define FBM_M mat2(1.62, 1.18, -1.18, 1.62)
@@ -191,6 +192,46 @@ const FRAGMENT_SHADER = /* glsl */ `
     return m;
   }
 
+  /* ---------------- ayu (鮎), seen from above ----------------
+     Dorsal view: we look down on the back, so the body is a slim spindle,
+     the paired pectoral fins show, and the caudal fin is a narrow blade
+     rather than a broad fan. Local coords: +y forward, body spans [-1, 1]. */
+
+  float ayu(vec2 p, float t, float seed) {
+    // the tail whips, the head barely moves
+    float whip = 1.0 - smoothstep(-1.0, 0.55, p.y);
+    p.x -= 0.105 * whip * sin(p.y * 3.1 - t * 7.6 + seed * TAU);
+
+    // body: widest just behind the head, tapering to a thin caudal peduncle
+    float body = 0.0;
+    float k = 1.0 - p.y * p.y;
+    if (k > 0.0) {
+      float halfw = 0.178 * pow(max(0.0, 1.0 - pow(abs(p.y), 2.6)), 0.5)
+                  * (0.52 + 0.48 * smoothstep(-1.0, 0.40, p.y));
+      body = smoothstep(halfw, halfw * 0.45, abs(p.x));
+    }
+
+    // caudal fin: edge-on from above, so narrow and forked
+    float tail = 0.0;
+    float ty = -p.y - 0.88;
+    if (ty > 0.0) {
+      float spread = 0.022 + 0.26 * ty;
+      float fork = 1.0 - 0.55 * smoothstep(0.14, 0.30, ty) * smoothstep(spread * 0.55, 0.0, abs(p.x));
+      tail = smoothstep(spread, spread * 0.35, abs(p.x)) * smoothstep(0.30, 0.19, ty) * fork;
+    }
+
+    // pectoral fins: the giveaway that this is a dorsal view
+    float ang = -0.75;
+    mat2 pr = mat2(cos(ang), -sin(ang), sin(ang), cos(ang));
+    vec2 pq = pr * (vec2(abs(p.x), p.y) - vec2(0.135, 0.34));
+    float pec = smoothstep(1.0, 0.66, length(pq / vec2(0.050, 0.165)));
+
+    // dorsal fin: a thin blade on the midline
+    float dors = smoothstep(0.030, 0.010, abs(p.x)) * smoothstep(0.34, 0.12, abs(p.y - 0.02));
+
+    return clamp(body + tail * 0.95 + pec * 0.70 + dors * 0.55, 0.0, 1.0);
+  }
+
   /* ---------------- caustic light net ---------------- */
 
   float causticOctave(vec2 p0, float t) {
@@ -264,6 +305,41 @@ const FRAGMENT_SHADER = /* glsl */ `
     ca *= mix(1.0, 0.30, lod) * mix(1.25, 0.60, depth) * mix(1.0, 0.58, uCalm);
     bed += (bed * 1.05 + vec3(0.30, 0.52, 0.55)) * ca * mix(0.70, 1.00, uTheme);
 
+    // An ayu holding station, then running upstream. Drawn under the surface:
+    // refracted with the bed, shadowed onto the stones, absorbed by the water.
+    float fishM = 0.0;
+    vec3 fishCol = vec3(0.0);
+    if (uFish.x >= 0.0) {
+      float ph = uFish.x;
+      float fy = mix(-0.22, 1.22, ph);
+      float swing = ph * 7.0 + uFish.z * TAU;
+      vec2 centre = vec2(uFish.y + 0.045 * sin(swing), fy);
+
+      // same refraction as the bed, so the ripples bend the fish too
+      vec2 fuv = uv + grad * depth * 0.09;
+      vec2 rel = (fuv - centre) * vec2(aspect, 1.0);
+      float fs = uFish.w * mix(1.0, 0.55, clamp(fy, 0.0, 1.0));
+
+      if (abs(rel.x) < fs * 0.55 && abs(rel.y) < fs * 1.35) {
+        float tilt = 0.28 * cos(swing);
+        mat2 rot = mat2(cos(tilt), -sin(tilt), sin(tilt), cos(tilt));
+        vec2 p = (rot * rel) / fs;
+
+        fishM = ayu(p, t, uFish.z);
+        float shadow = ayu((rot * (rel + L.xy * depth * 0.11)) / fs, t, uFish.z);
+
+        bed *= 1.0 - 0.42 * shadow * (1.0 - fishM);
+
+        // Counter-shaded from above: dark olive spine, flanks catching a
+        // little light, the ayu's amber shoulder mark just off the midline.
+        float spine = smoothstep(0.0, 0.10, abs(p.x));
+        fishCol = mix(vec3(0.055, 0.105, 0.075), vec3(0.185, 0.245, 0.170), spine);
+        fishCol += vec3(0.34, 0.26, 0.07) * 0.20
+                 * smoothstep(0.05, 0.12, abs(p.x)) * smoothstep(0.55, 0.15, abs(p.y - 0.30));
+        bed = mix(bed, fishCol, fishM * 0.94);
+      }
+    }
+
     // Water column: Beer-Lambert absorption of clear spring water.
     vec3 ext = vec3(1.05, 0.30, 0.17);
     float path = depth * mix(1.00, 1.55, lod);
@@ -271,6 +347,7 @@ const FRAGMENT_SHADER = /* glsl */ `
     vec3 scatter = mix(vec3(0.055, 0.215, 0.235), vec3(0.200, 0.500, 0.495), uTheme);
 
     vec3 col = bed * trans + scatter * (1.0 - trans);
+    col += fishCol * fishM * 0.12;   // mid-water, so less absorbed than the bed
     col += vec3(0.95, 0.97, 0.90) * flower * 0.90 * trans;
 
     // Sky reflected off the surface (Fresnel).
@@ -358,7 +435,8 @@ function boot() {
     uTheme: { value: document.documentElement.getAttribute('data-theme') === 'light' ? 1 : 0 },
     uPointer: { value: new THREE.Vector2(0, 0) },
     uQuality: { value: weakGpu ? 0.0 : 1.0 },
-    uCalm: { value: calm }
+    uCalm: { value: calm },
+    uFish: { value: new THREE.Vector4(-1, 0.5, 0, 0.075) }
   };
 
   // A calm ground should drift, not run.
@@ -403,6 +481,28 @@ function boot() {
   }
 
   // --- animated ------------------------------------------------------------
+  // --- an ayu runs upstream about once a minute (hero only) ----------------
+  const FISH_SWIM = 11;   // seconds to cross the frame
+  let fishAt = 0;
+
+  function scheduleFish(now, first) {
+    // first sighting comes sooner than a full minute, then roughly every 60s
+    fishAt = now + (first ? 12 + Math.random() * 8 : 36 + Math.random() * 26);
+    const f = uniforms.uFish.value;
+    f.y = 0.16 + Math.random() * 0.68;          // lane across the stream
+    f.z = Math.random();                        // seed: tail phase, weave
+    f.w = 0.062 + Math.random() * 0.028;        // half body length, in viewport
+  }
+
+  function updateFish(now) {
+    const f = uniforms.uFish.value;
+    const elapsed = now - fishAt;
+    if (elapsed < 0) { f.x = -1; return; }
+    if (elapsed <= FISH_SWIM) { f.x = elapsed / FISH_SWIM; return; }
+    f.x = -1;
+    scheduleFish(now, false);
+  }
+
   const pointerTarget = new THREE.Vector2(0, 0);
   let themeTarget = uniforms.uTheme.value;
   let last = performance.now();
@@ -418,6 +518,7 @@ function boot() {
     uniforms.uTime.value += dt * timeScale;
     uniforms.uTheme.value += (themeTarget - uniforms.uTheme.value) * Math.min(1, dt * 4.0);
     uniforms.uPointer.value.lerp(pointerTarget, Math.min(1, dt * 2.5));
+    if (!calm) updateFish(uniforms.uTime.value);
 
     draw();
   }
@@ -441,6 +542,7 @@ function boot() {
   }
 
   resize();
+  if (!calm) scheduleFish(uniforms.uTime.value, true);
 
   let resizeTimer = 0;
   window.addEventListener('resize', () => {
